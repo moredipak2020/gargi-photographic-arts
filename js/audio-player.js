@@ -1,6 +1,6 @@
 /* ==========================================================================
    GARGI PHOTOGRAPHIC ARTS - LUXURY AMBIENT MUSIC ENGINE
-   Browser User Activation Specification: Direct Event Call Playback Unlock
+   Volume & Audio Output Fix: Direct Volume Assignment (0.85) for Immediate Sound
    ========================================================================== */
 
 const AMBIENT_PLAYLIST = [
@@ -73,8 +73,7 @@ class AmbientAudioEngine {
     this.audio = new Audio();
     this.isPlaying = false;
     this.isMuted = false;
-    this.targetVolume = 0.45;
-    this.fadeInterval = null;
+    this.targetVolume = 0.85; // Crisp, clear, audible volume level
 
     this.initUI();
     this.loadTrack(this.currentIndex);
@@ -116,24 +115,23 @@ class AmbientAudioEngine {
 
     this.audio.src = track.src;
     this.audio.loop = true;
-    this.audio.volume = 0;
+    this.audio.volume = this.targetVolume; // Direct clear volume!
   }
 
   /* Direct User Activation Call: Invokes audio.play() DIRECTLY inside Chrome/Safari's active event stack */
   setupDirectUserActivationUnlock() {
     const unlockAndPlay = () => {
-      if (this.isPlaying) return;
+      if (this.isPlaying && !this.audio.paused) return;
       this.audio.muted = false;
-      this.audio.volume = 0;
+      this.audio.volume = this.targetVolume;
       
       const p = this.audio.play();
       if (p !== undefined) {
         p.then(() => {
           this.isPlaying = true;
-          this.fadeInVolume();
           this.updateUIState();
         }).catch(err => {
-          console.log("Audio unlock waiting for tap:", err);
+          console.log("Audio play require gesture:", err);
         });
       }
 
@@ -152,39 +150,31 @@ class AmbientAudioEngine {
       this.pause();
     } else {
       this.audio.muted = false;
+      this.audio.volume = this.targetVolume;
       this.audio.play().then(() => {
         this.isPlaying = true;
-        this.fadeInVolume();
         this.updateUIState();
       });
     }
   }
 
   pause() {
-    this.fadeOutVolume(() => {
-      this.audio.pause();
-      this.isPlaying = false;
-      this.updateUIState();
-    });
+    this.audio.pause();
+    this.isPlaying = false;
+    this.updateUIState();
   }
 
   nextTrack() {
     const wasPlaying = this.isPlaying;
-    if (this.isPlaying) {
-      this.fadeOutVolume(() => {
-        this.audio.pause();
-        this.advanceIndex();
-        if (wasPlaying) {
-          this.audio.muted = false;
-          this.audio.play().then(() => {
-            this.isPlaying = true;
-            this.fadeInVolume();
-            this.updateUIState();
-          });
-        }
+    this.audio.pause();
+    this.advanceIndex();
+    if (wasPlaying) {
+      this.audio.muted = false;
+      this.audio.volume = this.targetVolume;
+      this.audio.play().then(() => {
+        this.isPlaying = true;
+        this.updateUIState();
       });
-    } else {
-      this.advanceIndex();
     }
   }
 
@@ -199,32 +189,6 @@ class AmbientAudioEngine {
     if (this.muteBtn) {
       this.muteBtn.innerHTML = this.isMuted ? '🔇' : '🔊';
     }
-  }
-
-  fadeInVolume() {
-    clearInterval(this.fadeInterval);
-    const target = this.isMuted ? 0 : this.targetVolume;
-    this.fadeInterval = setInterval(() => {
-      if (this.audio.volume < target - 0.03) {
-        this.audio.volume = Math.min(target, this.audio.volume + 0.05);
-      } else {
-        this.audio.volume = target;
-        clearInterval(this.fadeInterval);
-      }
-    }, 50);
-  }
-
-  fadeOutVolume(callback) {
-    clearInterval(this.fadeInterval);
-    this.fadeInterval = setInterval(() => {
-      if (this.audio.volume > 0.05) {
-        this.audio.volume = Math.max(0, this.audio.volume - 0.06);
-      } else {
-        this.audio.volume = 0;
-        clearInterval(this.fadeInterval);
-        if (callback) callback();
-      }
-    }, 40);
   }
 
   updateUIState() {
