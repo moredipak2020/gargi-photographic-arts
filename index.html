@@ -288,6 +288,24 @@
     </div>
   </footer>
 
+  <!-- FLOATING AMBIENT AUDIO WIDGET -->
+  <div class="ambient-audio-widget" id="ambientAudioWidget">
+    <div class="eq-container" id="audioEqContainer">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+    <div class="audio-track-info">
+      <span class="audio-track-title" id="audioTrackTitle">Silent Dawn - Piano</span>
+      <span class="audio-track-artist" id="audioTrackArtist">Atmospheric Cinema</span>
+    </div>
+    <div class="audio-controls">
+      <button class="audio-btn" id="audioPlayBtn" aria-label="Play Ambient Music">▶️</button>
+      <button class="audio-btn" id="audioNextBtn" aria-label="Next Track">⏭️</button>
+      <button class="audio-btn" id="audioMuteBtn" aria-label="Mute Audio">🔊</button>
+    </div>
+  </div>
+
   <!-- Lightbox Modal for Images -->
   <div class="modal-backdrop" id="lightboxModal">
     <div class="modal-content glass-panel">
@@ -378,6 +396,7 @@
 
   <!-- Scripts -->
   <script src="js/gallery-data.js"></script>
+  <script src="js/audio-player.js" defer></script>
   <script src="js/main.js"></script>
 </body>
 </html>
