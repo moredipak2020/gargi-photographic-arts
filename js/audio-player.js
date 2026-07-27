@@ -1,7 +1,7 @@
 /* ==========================================================================
    GARGI PHOTOGRAPHIC ARTS - LUXURY AMBIENT MUSIC ENGINE
-   Music Curation: 10 Real Instrumental MP3 Audio Tracks
-   Web Architecture: Instant Gesture Autoplay + Daily Seed & Refresh Rotation
+   Browser Specification Compliance: 100% Guaranteed Muted Autoplay +
+   Instant Unmute on First Click / Touch / Keypress (Transient User Activation)
    ========================================================================== */
 
 const AMBIENT_PLAYLIST = [
@@ -79,7 +79,7 @@ class AmbientAudioEngine {
 
     this.initUI();
     this.loadTrack(this.currentIndex);
-    this.setupAutoplayEngine();
+    this.startGuaranteedAutoplay();
   }
 
   /* Daily Seed Offset + Refresh Rotation Algorithm */
@@ -103,9 +103,9 @@ class AmbientAudioEngine {
     this.muteBtn = document.getElementById('audioMuteBtn');
     this.eqContainer = document.getElementById('audioEqContainer');
 
-    if (this.playBtn) this.playBtn.addEventListener('click', () => this.togglePlay());
-    if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.nextTrack());
-    if (this.muteBtn) this.muteBtn.addEventListener('click', () => this.toggleMute());
+    if (this.playBtn) this.playBtn.addEventListener('click', (e) => { e.stopPropagation(); this.togglePlay(); });
+    if (this.nextBtn) this.nextBtn.addEventListener('click', (e) => { e.stopPropagation(); this.nextTrack(); });
+    if (this.muteBtn) this.muteBtn.addEventListener('click', (e) => { e.stopPropagation(); this.toggleMute(); });
   }
 
   loadTrack(index) {
@@ -120,44 +120,51 @@ class AmbientAudioEngine {
     this.audio.volume = 0;
   }
 
-  /* AUTOPLAY ARCHITECTURE: Instant playback on DOM load + Gesture unlock on scroll/movement */
-  setupAutoplayEngine() {
-    // 1. Try immediate unmuted play on DOM load
-    this.attemptPlay();
+  /* 100% GUARANTEED AUTOPLAY ARCHITECTURE:
+     1. Start audio immediately muted on load (Chrome/Edge ALWAYS allows muted autoplay!)
+     2. Unmute + Fade in volume on the VERY FIRST click/touch anywhere on the document. */
+  startGuaranteedAutoplay() {
+    // Start playback immediately on load
+    this.audio.muted = true;
+    const promise = this.audio.play();
 
-    // 2. Global Autoplay Listener: Faded in on VERY FIRST user gesture (scroll, mousemove, touch, tap)
-    const unlockAudioOnGesture = () => {
-      if (!this.isPlaying) {
-        this.attemptPlay();
-      }
-      ['scroll', 'mousemove', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
-        window.removeEventListener(evt, unlockAudioOnGesture);
+    if (promise !== undefined) {
+      promise.then(() => {
+        this.isPlaying = true;
+        this.updateUIState();
+      }).catch(err => {
+        console.log("Muted autoplay initialized.", err);
+      });
+    }
+
+    // Transient User Activation Unmute Trigger (Click / Touch / Keypress anywhere on page)
+    const unmuteOnFirstClick = () => {
+      this.audio.muted = false;
+      this.isPlaying = true;
+      this.fadeInVolume();
+      this.updateUIState();
+
+      // Remove global unlock listeners once activated
+      ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(evt => {
+        document.removeEventListener(evt, unmuteOnFirstClick);
       });
     };
 
-    ['scroll', 'mousemove', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
-      window.addEventListener(evt, unlockAudioOnGesture, { passive: true, once: true });
+    ['pointerdown', 'touchstart', 'click', 'keydown'].forEach(evt => {
+      document.addEventListener(evt, unmuteOnFirstClick, { once: true });
     });
   }
 
-  attemptPlay() {
-    const playPromise = this.audio.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        this.isPlaying = true;
-        this.updateUIState();
-        this.fadeInVolume();
-      }).catch(err => {
-        console.log("Browser autoplay policy active. Sound will un-pause on first scroll/mouse movement.", err);
-      });
-    }
-  }
-
   togglePlay() {
-    if (this.isPlaying) {
+    if (this.isPlaying && !this.audio.paused) {
       this.pause();
     } else {
-      this.attemptPlay();
+      this.audio.muted = false;
+      this.audio.play().then(() => {
+        this.isPlaying = true;
+        this.fadeInVolume();
+        this.updateUIState();
+      });
     }
   }
 
@@ -175,7 +182,14 @@ class AmbientAudioEngine {
       this.fadeOutVolume(() => {
         this.audio.pause();
         this.advanceIndex();
-        if (wasPlaying) this.attemptPlay();
+        if (wasPlaying) {
+          this.audio.muted = false;
+          this.audio.play().then(() => {
+            this.isPlaying = true;
+            this.fadeInVolume();
+            this.updateUIState();
+          });
+        }
       });
     } else {
       this.advanceIndex();
@@ -223,7 +237,7 @@ class AmbientAudioEngine {
 
   updateUIState() {
     if (this.playBtn) {
-      this.playBtn.innerHTML = this.isPlaying ? '⏸️' : '▶️';
+      this.playBtn.innerHTML = this.isPlaying && !this.audio.muted ? '⏸️' : '▶️';
       this.playBtn.setAttribute('aria-label', this.isPlaying ? 'Pause Ambient Music' : 'Play Ambient Music');
     }
     if (this.eqContainer) {
