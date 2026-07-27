@@ -2,5 +2,7 @@ node_modules/
 .DS_Store
 .wrangler/
 .env
+.env.local
+.env.*
 .idea/
 .vscode/
