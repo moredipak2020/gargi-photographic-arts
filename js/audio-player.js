@@ -1,96 +1,29 @@
 /* ==========================================================================
    GARGI PHOTOGRAPHIC ARTS - LUXURY AMBIENT MUSIC ENGINE
-   Volume & Audio Output Fix: Direct Volume Assignment (0.85) for Immediate Sound
+   Track Selection: User Curated Track "Calm Ambient Dreamscape"
    ========================================================================== */
 
 const AMBIENT_PLAYLIST = [
   {
     id: "track-1",
-    title: "Sahyadri Dawn - Serene Reflection",
-    artist: "Acoustic Ambient",
-    src: "assets/audio/track1_music.mp3"
-  },
-  {
-    id: "track-2",
-    title: "Royal Bansuri - Raag Yaman",
-    artist: "Devotional Flute & Pad",
-    src: "assets/audio/track2_music.mp3"
-  },
-  {
-    id: "track-3",
-    title: "Velvet Twilight - Soft Chords",
-    artist: "Acoustic Harmony",
-    src: "assets/audio/track3_music.mp3"
-  },
-  {
-    id: "track-4",
-    title: "Vrindavan Solitude - Peace & Chimes",
-    artist: "Santoor & Sacred Aura",
-    src: "assets/audio/track4_music.mp3"
-  },
-  {
-    id: "track-5",
-    title: "Golden Horizon - Warm Strings",
-    artist: "Gargi Cinema Soundscapes",
-    src: "assets/audio/track5_music.mp3"
-  },
-  {
-    id: "track-6",
-    title: "Rain & Sitar over Western Ghats",
-    artist: "Nature & Classical Heritage",
-    src: "assets/audio/track6_music.mp3"
-  },
-  {
-    id: "track-7",
-    title: "Sacred Temple - 136.1Hz OM Tone",
-    artist: "Deep Spiritual Vibration",
-    src: "assets/audio/track7_music.mp3"
-  },
-  {
-    id: "track-8",
-    title: "Whispering Pines - Ambient Cello",
-    artist: "Serene Reflection",
-    src: "assets/audio/track8_music.mp3"
-  },
-  {
-    id: "track-9",
-    title: "Celestial Glass - 432Hz Harmony",
-    artist: "Spatial Soundscape",
-    src: "assets/audio/track9_music.mp3"
-  },
-  {
-    id: "track-10",
-    title: "Royal Twilight - Fine Art Chords",
-    artist: "Gargi Photographic Arts Signature",
-    src: "assets/audio/track10_music.mp3"
+    title: "Calm Ambient Dreamscape",
+    artist: "Pixabay Serenity",
+    src: "assets/audio/calm_ambient_dreamscape.mp3"
   }
 ];
 
 class AmbientAudioEngine {
   constructor() {
     this.playlist = AMBIENT_PLAYLIST;
-    this.currentIndex = this.calculateInitialTrackIndex();
+    this.currentIndex = 0;
     this.audio = new Audio();
     this.isPlaying = false;
     this.isMuted = false;
-    this.targetVolume = 0.85; // Crisp, clear, audible volume level
+    this.targetVolume = 0.85;
 
     this.initUI();
     this.loadTrack(this.currentIndex);
     this.setupDirectUserActivationUnlock();
-  }
-
-  /* Daily Seed Offset + Refresh Rotation Algorithm */
-  calculateInitialTrackIndex() {
-    const today = new Date();
-    const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const dailyBase = dateSeed % this.playlist.length;
-
-    let refreshCount = parseInt(sessionStorage.getItem('gargi_ambient_refresh_count') || '0', 10);
-    refreshCount += 1;
-    sessionStorage.setItem('gargi_ambient_refresh_count', refreshCount.toString());
-
-    return (dailyBase + refreshCount - 1) % this.playlist.length;
   }
 
   initUI() {
@@ -115,7 +48,7 @@ class AmbientAudioEngine {
 
     this.audio.src = track.src;
     this.audio.loop = true;
-    this.audio.volume = this.targetVolume; // Direct clear volume!
+    this.audio.volume = this.targetVolume;
   }
 
   /* Direct User Activation Call: Invokes audio.play() DIRECTLY inside Chrome/Safari's active event stack */
@@ -167,7 +100,8 @@ class AmbientAudioEngine {
   nextTrack() {
     const wasPlaying = this.isPlaying;
     this.audio.pause();
-    this.advanceIndex();
+    this.currentIndex = (this.currentIndex + 1) % this.playlist.length;
+    this.loadTrack(this.currentIndex);
     if (wasPlaying) {
       this.audio.muted = false;
       this.audio.volume = this.targetVolume;
@@ -176,11 +110,6 @@ class AmbientAudioEngine {
         this.updateUIState();
       });
     }
-  }
-
-  advanceIndex() {
-    const nextIdx = (this.currentIndex + 1) % this.playlist.length;
-    this.loadTrack(nextIdx);
   }
 
   toggleMute() {
