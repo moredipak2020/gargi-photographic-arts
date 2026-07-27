@@ -1,69 +1,69 @@
 /* ==========================================================================
    GARGI PHOTOGRAPHIC ARTS - LUXURY AMBIENT MUSIC ENGINE
-   Music Curation & Web Architecture: 10 Local High-Fidelity Audio Tracks,
-   Daily Seed Offset, Per-Refresh Rotation & Seamless Autoplay Engine
+   Music Curation: 10 Real Instrumental MP3 Audio Tracks
+   Web Architecture: Instant Gesture Autoplay + Daily Seed & Refresh Rotation
    ========================================================================== */
 
 const AMBIENT_PLAYLIST = [
   {
     id: "track-1",
-    title: "Sahyadri Dawn - Solfeggio 528Hz",
-    artist: "Atmospheric Meditation",
-    src: "assets/audio/track1_sahyadri_dawn.wav"
+    title: "Sahyadri Dawn - Serene Reflection",
+    artist: "Acoustic Ambient",
+    src: "assets/audio/track1_music.mp3"
   },
   {
     id: "track-2",
     title: "Royal Bansuri - Raag Yaman",
-    artist: "Devotional Flute Resonance",
-    src: "assets/audio/track2_royal_bansuri.wav"
+    artist: "Devotional Flute & Pad",
+    src: "assets/audio/track2_music.mp3"
   },
   {
     id: "track-3",
-    title: "Velvet Twilight - Soft Strings",
+    title: "Velvet Twilight - Soft Chords",
     artist: "Acoustic Harmony",
-    src: "assets/audio/track3_velvet_twilight.wav"
+    src: "assets/audio/track3_music.mp3"
   },
   {
     id: "track-4",
     title: "Vrindavan Solitude - Peace & Chimes",
-    artist: "Santoor & Sacred Pad",
-    src: "assets/audio/track4_vrindavan_peace.wav"
+    artist: "Santoor & Sacred Aura",
+    src: "assets/audio/track4_music.mp3"
   },
   {
     id: "track-5",
-    title: "Golden Horizon - Warm Orchestral",
+    title: "Golden Horizon - Warm Strings",
     artist: "Gargi Cinema Soundscapes",
-    src: "assets/audio/track5_golden_horizon.wav"
+    src: "assets/audio/track5_music.mp3"
   },
   {
     id: "track-6",
     title: "Rain & Sitar over Western Ghats",
     artist: "Nature & Classical Heritage",
-    src: "assets/audio/track6_rain_and_sitar.wav"
+    src: "assets/audio/track6_music.mp3"
   },
   {
     id: "track-7",
     title: "Sacred Temple - 136.1Hz OM Tone",
-    artist: "Deep Spiritual Resonance",
-    src: "assets/audio/track7_sacred_temple.wav"
+    artist: "Deep Spiritual Vibration",
+    src: "assets/audio/track7_music.mp3"
   },
   {
     id: "track-8",
     title: "Whispering Pines - Ambient Cello",
     artist: "Serene Reflection",
-    src: "assets/audio/track8_whispering_pines.wav"
+    src: "assets/audio/track8_music.mp3"
   },
   {
     id: "track-9",
     title: "Celestial Glass - 432Hz Harmony",
     artist: "Spatial Soundscape",
-    src: "assets/audio/track9_celestial_aurora.wav"
+    src: "assets/audio/track9_music.mp3"
   },
   {
     id: "track-10",
     title: "Royal Twilight - Fine Art Chords",
     artist: "Gargi Photographic Arts Signature",
-    src: "assets/audio/track10_gargi_signature.wav"
+    src: "assets/audio/track10_music.mp3"
   }
 ];
 
@@ -74,7 +74,7 @@ class AmbientAudioEngine {
     this.audio = new Audio();
     this.isPlaying = false;
     this.isMuted = false;
-    this.targetVolume = 0.40;
+    this.targetVolume = 0.45;
     this.fadeInterval = null;
 
     this.initUI();
@@ -82,7 +82,7 @@ class AmbientAudioEngine {
     this.setupAutoplayEngine();
   }
 
-  /* Daily Seed + Refresh Rotation Algorithm */
+  /* Daily Seed Offset + Refresh Rotation Algorithm */
   calculateInitialTrackIndex() {
     const today = new Date();
     const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
@@ -117,49 +117,47 @@ class AmbientAudioEngine {
 
     this.audio.src = track.src;
     this.audio.loop = true;
-    this.audio.volume = 0; // Start at 0 for smooth fade-in
+    this.audio.volume = 0;
   }
 
-  /* Autoplay Engine: Bypasses Browser Autoplay Restrictions on First Scroll/Move/Click */
+  /* AUTOPLAY ARCHITECTURE: Instant playback on DOM load + Gesture unlock on scroll/movement */
   setupAutoplayEngine() {
-    // 1. Attempt immediate unmuted play on DOM load
-    this.play();
+    // 1. Try immediate unmuted play on DOM load
+    this.attemptPlay();
 
-    // 2. Global Autoplay Triggers for immediate smooth audio start on ANY user presence
-    const triggerAutoplayOnPresence = () => {
+    // 2. Global Autoplay Listener: Faded in on VERY FIRST user gesture (scroll, mousemove, touch, tap)
+    const unlockAudioOnGesture = () => {
       if (!this.isPlaying) {
-        this.play();
+        this.attemptPlay();
       }
-      ['mousemove', 'scroll', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
-        window.removeEventListener(evt, triggerAutoplayOnPresence);
+      ['scroll', 'mousemove', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
+        window.removeEventListener(evt, unlockAudioOnGesture);
       });
     };
 
-    ['mousemove', 'scroll', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
-      window.addEventListener(evt, triggerAutoplayOnPresence, { passive: true, once: true });
+    ['scroll', 'mousemove', 'touchstart', 'click', 'pointerdown', 'keydown'].forEach(evt => {
+      window.addEventListener(evt, unlockAudioOnGesture, { passive: true, once: true });
     });
   }
 
-  togglePlay() {
-    if (this.isPlaying) {
-      this.pause();
-    } else {
-      this.play();
-    }
-  }
-
-  play() {
-    this.audio.volume = 0;
+  attemptPlay() {
     const playPromise = this.audio.play();
-
     if (playPromise !== undefined) {
       playPromise.then(() => {
         this.isPlaying = true;
         this.updateUIState();
         this.fadeInVolume();
       }).catch(err => {
-        console.log("Autoplay waiting for first mouse move or scroll interaction...", err);
+        console.log("Browser autoplay policy active. Sound will un-pause on first scroll/mouse movement.", err);
       });
+    }
+  }
+
+  togglePlay() {
+    if (this.isPlaying) {
+      this.pause();
+    } else {
+      this.attemptPlay();
     }
   }
 
@@ -177,7 +175,7 @@ class AmbientAudioEngine {
       this.fadeOutVolume(() => {
         this.audio.pause();
         this.advanceIndex();
-        if (wasPlaying) this.play();
+        if (wasPlaying) this.attemptPlay();
       });
     } else {
       this.advanceIndex();
@@ -207,7 +205,7 @@ class AmbientAudioEngine {
         this.audio.volume = target;
         clearInterval(this.fadeInterval);
       }
-    }, 60);
+    }, 50);
   }
 
   fadeOutVolume(callback) {
@@ -220,7 +218,7 @@ class AmbientAudioEngine {
         clearInterval(this.fadeInterval);
         if (callback) callback();
       }
-    }, 50);
+    }, 40);
   }
 
   updateUIState() {
