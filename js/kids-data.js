@@ -1,6 +1,6 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - KIDS SUB-GALLERY DATA (50 FRAMES)
-// Auto-generated from Dipak More's 41 kids clicks + 9 empty frame slots
+// Built with real EXIF metadata from Nikon Z6III files
 // ==========================================================================
 
 const kidsGalleryData = [
@@ -15,13 +15,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "12.0-24.0 mm f/4.0 @ 24mm",
+      "aperture": "f/4.0",
+      "shutter": "1/40s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #01 in native 2:3 portrait framing (3392x4592 px)."
+      "story": "Dipak More original click #01 (3392x4592 px). EXIF: NIKON D5600, 12.0-24.0 mm f/4.0 @ 24mm, f/4.0 @ 1/40s, ISO 400."
     }
   },
   {
@@ -35,13 +35,13 @@ const kidsGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "12.0-24.0 mm f/4.0 @ 19mm",
+      "aperture": "f/4.0",
+      "shutter": "1/125s",
+      "iso": "ISO 640",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #02 in native 3:2 landscape framing (5372x3817 px)."
+      "story": "Dipak More original click #02 (5372x3817 px). EXIF: NIKON D5600, 12.0-24.0 mm f/4.0 @ 19mm, f/4.0 @ 1/125s, ISO 640."
     }
   },
   {
@@ -56,12 +56,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/2.8",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #03 in native 2:3 portrait framing (1844x2963 px)."
+      "story": "Dipak More original click #03 (1844x2963 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -76,12 +76,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm",
+      "aperture": "f/1.4",
+      "shutter": "1/8000s",
+      "iso": "ISO 10000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #04 in native 3:2 landscape framing (6048x4032 px)."
+      "story": "Dipak More original click #04 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm, f/1.4 @ 1/8000s, ISO 10000."
     }
   },
   {
@@ -96,12 +96,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm",
+      "aperture": "f/1.4",
+      "shutter": "1/8000s",
+      "iso": "ISO 11400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #05 in native 3:2 landscape framing (6048x4032 px)."
+      "story": "Dipak More original click #05 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm, f/1.4 @ 1/8000s, ISO 11400."
     }
   },
   {
@@ -115,13 +115,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "50.0 mm f/1.8 @ 50mm",
+      "aperture": "f/2.8",
+      "shutter": "1/125s",
+      "iso": "ISO 125",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #06 in native 2:3 portrait framing (2622x3749 px)."
+      "story": "Dipak More original click #06 (2622x3749 px). EXIF: NIKON D5600, 50.0 mm f/1.8 @ 50mm, f/2.8 @ 1/125s, ISO 125."
     }
   },
   {
@@ -136,12 +136,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "SIRUI Z 85mm f/1.4S @ 85mm",
+      "aperture": "f/1.4",
+      "shutter": "1/125s",
+      "iso": "ISO 5600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #07 in native 3:2 landscape framing (4346x3104 px)."
+      "story": "Dipak More original click #07 (4346x3104 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S @ 85mm, f/1.4 @ 1/125s, ISO 5600."
     }
   },
   {
@@ -156,12 +156,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "SIRUI Z 85mm f/1.4S @ 85mm",
+      "aperture": "f/1.4",
+      "shutter": "1/125s",
+      "iso": "ISO 6400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #08 in native 2:3 portrait framing (3343x4773 px)."
+      "story": "Dipak More original click #08 (3343x4773 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S @ 85mm, f/1.4 @ 1/125s, ISO 6400."
     }
   },
   {
@@ -175,13 +175,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
       "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "shutter": "1/160s",
+      "iso": "ISO 125",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #09 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #09 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/1.8 @ 1/160s, ISO 125."
     }
   },
   {
@@ -195,13 +195,13 @@ const kidsGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/1.8",
+      "shutter": "1/160s",
+      "iso": "ISO 140",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #10 in native 3:2 landscape framing (6000x4000 px)."
+      "story": "Dipak More original click #10 (6000x4000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/1.8 @ 1/160s, ISO 140."
     }
   },
   {
@@ -215,13 +215,13 @@ const kidsGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/5.6",
+      "shutter": "1/60s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #11 in native 3:2 landscape framing (6000x4000 px)."
+      "story": "Dipak More original click #11 (6000x4000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/5.6 @ 1/60s, ISO 100."
     }
   },
   {
@@ -235,13 +235,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/5.6",
+      "shutter": "1/60s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #12 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #12 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/5.6 @ 1/60s, ISO 100."
     }
   },
   {
@@ -255,13 +255,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/5.6",
+      "shutter": "1/60s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #13 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #13 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/5.6 @ 1/60s, ISO 100."
     }
   },
   {
@@ -276,12 +276,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/2.8",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #14 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #14 (4000x6000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -295,13 +295,13 @@ const kidsGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
+      "camera": "NIKON D5600",
+      "lens": "18.0-55.0 mm f/3.5-5.6 @ 40mm",
+      "aperture": "f/4.8",
+      "shutter": "1/80s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #15 in native 3:2 landscape framing (3267x2234 px)."
+      "story": "Dipak More original click #15 (3267x2234 px). EXIF: NIKON D5600, 18.0-55.0 mm f/3.5-5.6 @ 40mm, f/4.8 @ 1/80s, ISO 100."
     }
   },
   {
@@ -315,13 +315,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/2.2",
+      "shutter": "1/80s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #16 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #16 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/2.2 @ 1/80s, ISO 400."
     }
   },
   {
@@ -335,13 +335,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/2.2",
+      "shutter": "1/80s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #17 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #17 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/2.2 @ 1/80s, ISO 400."
     }
   },
   {
@@ -355,13 +355,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/2.2",
+      "shutter": "1/80s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #18 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #18 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/2.2 @ 1/80s, ISO 400."
     }
   },
   {
@@ -375,13 +375,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/2.2",
+      "shutter": "1/80s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #19 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #19 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/2.2 @ 1/80s, ISO 400."
     }
   },
   {
@@ -395,13 +395,13 @@ const kidsGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/2.2",
+      "shutter": "1/80s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #20 in native 2:3 portrait framing (4000x6000 px)."
+      "story": "Dipak More original click #20 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/2.2 @ 1/80s, ISO 400."
     }
   },
   {
@@ -418,10 +418,10 @@ const kidsGalleryData = [
       "camera": "Nikon Z6III",
       "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/2.8",
-      "shutter": "1/800s",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #21 in native 3:2 landscape framing (6000x4000 px)."
+      "story": "Dipak More original click #21 (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -436,12 +436,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/5.6",
+      "shutter": "1/50s",
+      "iso": "ISO 1400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #22 in native 3:2 landscape framing (3627x2370 px)."
+      "story": "Dipak More original click #22 (3627x2370 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/5.6 @ 1/50s, ISO 1400."
     }
   },
   {
@@ -456,12 +456,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/5.6",
+      "shutter": "1/50s",
+      "iso": "ISO 720",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #23 in native 3:2 landscape framing (3255x1831 px)."
+      "story": "Dipak More original click #23 (3255x1831 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/5.6 @ 1/50s, ISO 720."
     }
   },
   {
@@ -476,12 +476,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 67mm",
       "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "shutter": "1/100s",
+      "iso": "ISO 640",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #24 in native 3:2 landscape framing (3961x2393 px)."
+      "story": "Dipak More original click #24 (3961x2393 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 67mm, f/2.8 @ 1/100s, ISO 640."
     }
   },
   {
@@ -496,12 +496,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "shutter": "1/125s",
+      "iso": "ISO 800",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #25 in native 3:2 landscape framing (3984x2656 px)."
+      "story": "Dipak More original click #25 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/125s, ISO 800."
     }
   },
   {
@@ -516,12 +516,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #26 in native 3:2 landscape framing (3984x2656 px)."
+      "story": "Dipak More original click #26 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
     }
   },
   {
@@ -536,12 +536,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #27 in native 3:2 landscape framing (3449x2469 px)."
+      "story": "Dipak More original click #27 (3449x2469 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
     }
   },
   {
@@ -556,12 +556,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #28 in native 3:2 landscape framing (3449x2469 px)."
+      "story": "Dipak More original click #28 (3449x2469 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
     }
   },
   {
@@ -576,12 +576,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #29 in native 3:2 landscape framing (3250x1919 px)."
+      "story": "Dipak More original click #29 (3250x1919 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
     }
   },
   {
@@ -596,12 +596,12 @@ const kidsGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #30 in native 3:2 landscape framing (3984x2656 px)."
+      "story": "Dipak More original click #30 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
     }
   },
   {
@@ -616,12 +616,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
+      "aperture": "f/2.8",
+      "shutter": "1/60s",
+      "iso": "ISO 3200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #31 in native 2:3 portrait framing (2527x3870 px)."
+      "story": "Dipak More original click #31 (2527x3870 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/2.8 @ 1/60s, ISO 3200."
     }
   },
   {
@@ -636,12 +636,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
+      "aperture": "f/2.8",
+      "shutter": "1/60s",
+      "iso": "ISO 3200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #32 in native 2:3 portrait framing (2527x3870 px)."
+      "story": "Dipak More original click #32 (2527x3870 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/2.8 @ 1/60s, ISO 3200."
     }
   },
   {
@@ -656,12 +656,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/2.8",
+      "shutter": "1/200s",
+      "iso": "ISO 2500",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #33 in native 2:3 portrait framing (2993x4181 px)."
+      "story": "Dipak More original click #33 (2993x4181 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 2500."
     }
   },
   {
@@ -676,12 +676,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/2.8",
+      "shutter": "1/200s",
+      "iso": "ISO 1800",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #34 in native 2:3 portrait framing (2692x3808 px)."
+      "story": "Dipak More original click #34 (2692x3808 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 1800."
     }
   },
   {
@@ -696,12 +696,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/5.6",
+      "shutter": "1/125s",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #35 in native 2:3 portrait framing (4032x6048 px)."
+      "story": "Dipak More original click #35 (4032x6048 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/5.6 @ 1/125s, ISO 200."
     }
   },
   {
@@ -716,12 +716,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm",
+      "aperture": "f/2.8",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #36 in native 2:3 portrait framing (3184x5661 px)."
+      "story": "Dipak More original click #36 (3184x5661 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -736,12 +736,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 39mm",
+      "aperture": "f/2.8",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #37 in native 2:3 portrait framing (3869x5803 px)."
+      "story": "Dipak More original click #37 (3869x5803 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 39mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -758,10 +758,10 @@ const kidsGalleryData = [
       "camera": "Nikon Z6III",
       "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/2.8",
-      "shutter": "1/800s",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #38 in native 3:2 landscape framing (4496x3000 px)."
+      "story": "Dipak More original click #38 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -775,13 +775,13 @@ const kidsGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/800s",
-      "iso": "ISO 100",
+      "camera": "NIKON D5600",
+      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
+      "aperture": "f/3.5",
+      "shutter": "1/80s",
+      "iso": "ISO 640",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #39 in native 3:2 landscape framing (4496x3000 px)."
+      "story": "Dipak More original click #39 (4496x3000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/3.5 @ 1/80s, ISO 640."
     }
   },
   {
@@ -798,10 +798,10 @@ const kidsGalleryData = [
       "camera": "Nikon Z6III",
       "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/2.8",
-      "shutter": "1/800s",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #40 in native 3:2 landscape framing (4496x3000 px)."
+      "story": "Dipak More original click #40 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -816,12 +816,12 @@ const kidsGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/800s",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/2.8",
+      "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #41 in native 2:3 portrait framing (1836x3264 px)."
+      "story": "Dipak More original click #41 (1836x3264 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -841,7 +841,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #42 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #42 is ready for Dipak More's next click."
     }
   },
   {
@@ -861,7 +861,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #43 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #43 is ready for Dipak More's next click."
     }
   },
   {
@@ -881,7 +881,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #44 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #44 is ready for Dipak More's next click."
     }
   },
   {
@@ -901,7 +901,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #45 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #45 is ready for Dipak More's next click."
     }
   },
   {
@@ -921,7 +921,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #46 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #46 is ready for Dipak More's next click."
     }
   },
   {
@@ -941,7 +941,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #47 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #47 is ready for Dipak More's next click."
     }
   },
   {
@@ -961,7 +961,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #48 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #48 is ready for Dipak More's next click."
     }
   },
   {
@@ -981,7 +981,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #49 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #49 is ready for Dipak More's next click."
     }
   },
   {
@@ -1001,7 +1001,7 @@ const kidsGalleryData = [
       "shutter": "1/800s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Frame Slot #50 is ready for Dipak More's next click. Drop photo in assets/images/kids/!"
+      "story": "Frame Slot #50 is ready for Dipak More's next click."
     }
   }
 ];

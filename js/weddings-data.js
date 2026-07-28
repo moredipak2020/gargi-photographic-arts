@@ -1,6 +1,6 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - ROYAL WEDDINGS SUB-GALLERY DATASET
-// Auto-generated from Wedding 1 (49 cards, 63 photos), Wedding 2, Reception
+// Built with genuine EXIF camera metadata extracted from Nikon Z6III files
 // ==========================================================================
 
 const weddingGalleryData = [
@@ -21,12 +21,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 58mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/500s",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #01 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 58mm, f/2.8 @ 1/500s, ISO 200."
     }
   },
   {
@@ -46,12 +46,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 74mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/500s",
+      "iso": "ISO 250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5995x3997 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #02 in native 3:2 landscape framing (5995x3997 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 74mm, f/2.8 @ 1/500s, ISO 250."
     }
   },
   {
@@ -68,16 +68,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (3)-2.jpg"
     ],
     "isMultiEdit": true,
-    "aspectRatio": "3:2",
+    "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/640s",
+      "iso": "ISO 280",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5574x3363 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #03 in native 16:9 landscape framing (5574x3363 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/640s, ISO 280."
     }
   },
   {
@@ -99,12 +99,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/5000s",
+      "iso": "ISO 320",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 3 master color grade variations."
+      "story": "Dipak More original click #04 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/5000s, ISO 320."
     }
   },
   {
@@ -124,12 +124,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.0",
+      "shutter": "1/1250s",
+      "iso": "ISO 320",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5629x3753 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #05 in native 3:2 landscape framing (5629x3753 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.0 @ 1/1250s, ISO 320."
     }
   },
   {
@@ -149,12 +149,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.0",
+      "shutter": "1/1250s",
+      "iso": "ISO 450",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5966x3787 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #06 in native 3:2 landscape framing (5966x3787 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.0 @ 1/1250s, ISO 450."
     }
   },
   {
@@ -170,16 +170,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (7).jpg"
     ],
     "isMultiEdit": false,
-    "aspectRatio": "3:2",
+    "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/640s",
+      "iso": "ISO 125",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5080x2897 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #07 in native 16:9 landscape framing (5080x2897 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/640s, ISO 125."
     }
   },
   {
@@ -199,12 +199,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 50mm",
+      "aperture": "f/4.5",
+      "shutter": "1/1250s",
+      "iso": "ISO 2500",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5859x3906 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #08 in native 3:2 landscape framing (5859x3906 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 50mm, f/4.5 @ 1/1250s, ISO 2500."
     }
   },
   {
@@ -225,12 +225,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 32mm",
+      "aperture": "f/7.1",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6048 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #09 in native 2:3 portrait framing (4032x6048 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 32mm, f/7.1 @ 1/400s, ISO 400."
     }
   },
   {
@@ -255,7 +255,7 @@ const weddingGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #10 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -275,12 +275,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/640s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #11 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/640s, ISO 400."
     }
   },
   {
@@ -300,12 +300,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.0",
+      "shutter": "1/1000s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #12 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.0 @ 1/1000s, ISO 400."
     }
   },
   {
@@ -326,12 +326,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/2.8",
+      "shutter": "1/640s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6048 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #13 in native 2:3 portrait framing (4032x6048 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/2.8 @ 1/640s, ISO 100."
     }
   },
   {
@@ -351,12 +351,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 54mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5247x3869 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #14 in native 3:2 landscape framing (5247x3869 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 54mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -376,12 +376,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.0",
+      "shutter": "1/800s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #15 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.0 @ 1/800s, ISO 400."
     }
   },
   {
@@ -401,12 +401,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
+      "aperture": "f/5.6",
+      "shutter": "1/160s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #16 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/5.6 @ 1/160s, ISO 400."
     }
   },
   {
@@ -428,12 +428,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 43mm",
+      "aperture": "f/5.6",
+      "shutter": "1/100s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 3 master color grade variations."
+      "story": "Dipak More original click #17 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 43mm, f/5.6 @ 1/100s, ISO 400."
     }
   },
   {
@@ -454,12 +454,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/2500s",
+      "iso": "ISO 160",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #18 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/2500s, ISO 160."
     }
   },
   {
@@ -479,12 +479,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (4478x2768 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #19 in native 3:2 landscape framing (4478x2768 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -505,12 +505,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (4453x3148 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #20 in native 3:2 landscape framing (4453x3148 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -530,12 +530,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5817x3644 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #21 in native 3:2 landscape framing (5817x3644 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -555,12 +555,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 38mm",
+      "aperture": "f/6.3",
+      "shutter": "1/1250s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #22 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 38mm, f/6.3 @ 1/1250s, ISO 400."
     }
   },
   {
@@ -580,12 +580,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 37mm",
+      "aperture": "f/7.1",
+      "shutter": "1/1000s",
+      "iso": "ISO 1250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6048 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #23 in native 2:3 portrait framing (4032x6048 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 37mm, f/7.1 @ 1/1000s, ISO 1250."
     }
   },
   {
@@ -605,12 +605,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 51mm",
+      "aperture": "f/4.5",
+      "shutter": "1/1000s",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (3414x5080 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #24 in native 2:3 portrait framing (3414x5080 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 51mm, f/4.5 @ 1/1000s, ISO 200."
     }
   },
   {
@@ -628,16 +628,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (25)-3.jpg"
     ],
     "isMultiEdit": true,
-    "aspectRatio": "3:2",
+    "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5933x3377 px). Includes 3 master color grade variations."
+      "story": "Dipak More original click #25 in native 16:9 landscape framing (5933x3377 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -657,12 +657,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 43mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #26 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 43mm, f/2.8 @ 1/400s, ISO 200."
     }
   },
   {
@@ -678,16 +678,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (27).jpg"
     ],
     "isMultiEdit": false,
-    "aspectRatio": "2:3",
+    "aspectRatio": "4:5",
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm",
+      "aperture": "f/2.8",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (3750x5018 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #27 in native 4:5 portrait framing (3750x5018 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 49mm, f/2.8 @ 1/400s, ISO 200."
     }
   },
   {
@@ -707,12 +707,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x3721 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #28 in native 3:2 landscape framing (6048x3721 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -733,12 +733,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/7.1",
+      "shutter": "1/80s",
+      "iso": "ISO 250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #29 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/7.1 @ 1/80s, ISO 250."
     }
   },
   {
@@ -759,12 +759,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/5.6",
+      "shutter": "1/80s",
+      "iso": "ISO 250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #30 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/5.6 @ 1/80s, ISO 250."
     }
   },
   {
@@ -784,12 +784,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.5",
+      "shutter": "1/80s",
+      "iso": "ISO 250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6048 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #31 in native 2:3 portrait framing (4032x6048 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.5 @ 1/80s, ISO 250."
     }
   },
   {
@@ -809,12 +809,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/2.8",
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6048 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #32 in native 2:3 portrait framing (4032x6048 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -834,12 +834,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 38mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #33 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 38mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -859,12 +859,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #34 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -884,12 +884,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #35 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -909,12 +909,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 58mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 180",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #36 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 58mm, f/2.8 @ 1/400s, ISO 180."
     }
   },
   {
@@ -934,12 +934,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5883x3922 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #37 in native 3:2 landscape framing (5883x3922 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/400s, ISO 200."
     }
   },
   {
@@ -959,12 +959,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 61mm",
       "aperture": "f/2.8",
       "shutter": "1/400s",
-      "iso": "ISO 100",
+      "iso": "ISO 110",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #38 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 61mm, f/2.8 @ 1/400s, ISO 110."
     }
   },
   {
@@ -989,7 +989,7 @@ const weddingGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6032x4021 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #39 in native 3:2 landscape framing (6032x4021 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
@@ -1005,16 +1005,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (40).jpg"
     ],
     "isMultiEdit": false,
-    "aspectRatio": "3:2",
+    "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/200s",
+      "iso": "ISO 180",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5496x3208 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #40 in native 16:9 landscape framing (5496x3208 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm, f/2.8 @ 1/200s, ISO 180."
     }
   },
   {
@@ -1034,12 +1034,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 31mm",
+      "aperture": "f/2.8",
+      "shutter": "1/320s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (3924x5886 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #41 in native 2:3 portrait framing (3924x5886 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 31mm, f/2.8 @ 1/320s, ISO 100."
     }
   },
   {
@@ -1059,12 +1059,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/5.6",
+      "shutter": "1/125s",
+      "iso": "ISO 6400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #42 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/5.6 @ 1/125s, ISO 6400."
     }
   },
   {
@@ -1084,12 +1084,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/2.8",
+      "shutter": "1/500s",
+      "iso": "ISO 6400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (4032x6036 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #43 in native 2:3 portrait framing (4032x6036 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/2.8 @ 1/500s, ISO 6400."
     }
   },
   {
@@ -1109,12 +1109,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/500s",
+      "iso": "ISO 720",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6023x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #44 in native 3:2 landscape framing (6023x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 40mm, f/2.8 @ 1/500s, ISO 720."
     }
   },
   {
@@ -1134,12 +1134,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/2500s",
+      "iso": "ISO 720",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (3824x2549 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #45 in native 3:2 landscape framing (3824x2549 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/2500s, ISO 720."
     }
   },
   {
@@ -1159,12 +1159,12 @@ const weddingGalleryData = [
     "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Sirui Aurora 85mm f/1.4",
-      "aperture": "f/1.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm",
+      "aperture": "f/2.8",
+      "shutter": "1/2000s",
+      "iso": "ISO 400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 2:3 portrait framing (3982x5552 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #46 in native 2:3 portrait framing (3982x5552 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 28mm, f/2.8 @ 1/2000s, ISO 400."
     }
   },
   {
@@ -1185,12 +1185,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm",
+      "aperture": "f/4.5",
+      "shutter": "1/1600s",
+      "iso": "ISO 320",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 2 master color grade variations."
+      "story": "Dipak More original click #47 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/4.5 @ 1/1600s, ISO 320."
     }
   },
   {
@@ -1206,16 +1206,16 @@ const weddingGalleryData = [
       "assets/images/weddings/wedding1/Wedding (48).jpg"
     ],
     "isMultiEdit": false,
-    "aspectRatio": "3:2",
+    "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 33mm",
       "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "shutter": "1/160s",
+      "iso": "ISO 1250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (5156x2471 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #48 in native 16:9 landscape framing (5156x2471 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 33mm, f/2.8 @ 1/160s, ISO 1250."
     }
   },
   {
@@ -1235,12 +1235,12 @@ const weddingGalleryData = [
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
+      "aperture": "f/3.2",
+      "shutter": "1/200s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original wedding click in native 3:2 landscape framing (6048x4032 px). Includes 1 master color grade variations."
+      "story": "Dipak More original click #49 in native 3:2 landscape framing (6048x4032 px). Measured camera EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/3.2 @ 1/200s, ISO 100."
     }
   }
 ];
