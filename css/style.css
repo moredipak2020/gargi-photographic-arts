@@ -683,34 +683,48 @@ button {
   font-weight: 600;
 }
 
-/* Gallery Grid */
+/* MASONRY GALLERY GRID (ELIMINATES ALL VERTICAL GAPS) */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 2.2rem;
+  column-count: 3;
+  column-gap: 1.75rem;
+  width: 100%;
 }
 
 .gallery-card {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.75rem;
+  display: inline-block;
+  width: 100%;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
-  transition: var(--transition-normal);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
-.gallery-card {
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s ease;
-  height: fit-content;
+@media (max-width: 992px) {
+  .gallery-grid {
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
+  .gallery-card {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    column-count: 1;
+  }
+  .gallery-card {
+    margin-bottom: 1rem;
+  }
 }
 
 .gallery-card:hover {
