@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Photography Sub-Gallery (50 Frames) | Gargi Photographic Arts</title>
+  <meta name="description" content="Dedicated Kids & Childhood Milestones Photography Sub-Gallery featuring 50 fine-art framed container slots in native 2:3 portrait & 3:2 landscape framing by Dipak More.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+<body>
+
+  <!-- FRAMER-STYLE ANIMATED AMBIENT MESH GRADIENT BACKGROUND -->
+  <div class="aurora-background-container" aria-hidden="true">
+    <div class="aurora-sphere aurora-sphere-1"></div>
+    <div class="aurora-sphere aurora-sphere-2"></div>
+    <div class="aurora-sphere aurora-sphere-3"></div>
+    <div class="aurora-sphere aurora-sphere-4"></div>
+  </div>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header scrolled">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-mark">G</div>
+        <div>
+          <span class="brand-title">Gargi</span>
+          <span class="brand-subtitle">Photographic Arts</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="btn-outline" style="padding: 0.4rem 1.1rem; font-size: 0.82rem;">← Back to Main Portfolio</a></li>
+          <li><a href="index.html#work?category=kids" class="nav-link">Main Gallery</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="btn-primary" onclick="openBookingModalWithService('kids')">Inquire Kids Shoot</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header Section -->
+  <section class="section-padding" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="section-header" style="max-width: 850px;">
+        <span class="section-tag">Childhood Milestones & Innocence</span>
+        <h1 class="section-title" style="font-size: 3.2rem;">Kids Photography Sub-Gallery</h1>
+        <p class="section-description">
+          A dedicated museum-grade portfolio collection engineered to hold <strong>50 Master Frame Slots</strong> (mixing 2:3 vertical portraits & 3:2 horizontal landscapes). Designed specifically for Dipak More's childhood milestone clicks.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="glass-panel" style="display: flex; justify-content: space-around; padding: 1.25rem; margin-top: 2rem; border-radius: var(--radius-md);">
+          <div style="text-align: center;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-primary);">50</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Total Frame Slots</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-primary);">2:3 & 3:2</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Nikon Z6III Ratios</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-primary);">85mm</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Bokeh Optics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Gallery Filter Bar -->
+      <div class="filter-container" style="justify-content: center; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+        <button class="filter-btn active" data-kids-filter="all">All 50 Frames</button>
+        <button class="filter-btn" data-kids-filter="portrait">📱 2:3 Vertical Portraits</button>
+        <button class="filter-btn" data-kids-filter="landscape">🖼️ 3:2 Horizontal Landscapes</button>
+        <button class="filter-btn" data-kids-filter="active">✨ Active Master Photos</button>
+        <button class="filter-btn" data-kids-filter="empty">🖼️ Ready Frame Slots</button>
+      </div>
+
+      <!-- 50 Frame Grid Container -->
+      <div class="gallery-grid" id="kidsFramesGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="copyright text-center" style="text-align: center;">
+        © 2026 Gargi Photographic Arts. Dedicated Kids Sub-Gallery. Powered by Dipak More.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING AMBIENT AUDIO WIDGET -->
+  <div class="ambient-audio-widget" id="ambientAudioWidget">
+    <div class="eq-container" id="audioEqContainer">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+    <div class="audio-track-info">
+      <span class="audio-track-title" id="audioTrackTitle">Sahyadri Dawn - Piano</span>
+      <span class="audio-track-artist" id="audioTrackArtist">Atmospheric Cinema</span>
+    </div>
+    <div class="audio-controls">
+      <button class="audio-btn" id="audioPlayBtn" aria-label="Play Ambient Music">▶️</button>
+      <button class="audio-btn" id="audioNextBtn" aria-label="Next Track">⏭️</button>
+      <button class="audio-btn" id="audioMuteBtn" aria-label="Mute Audio">🔊</button>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Images -->
+  <div class="modal-backdrop" id="lightboxModal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-container">
+        <div class="lightbox-media" id="lightboxMedia">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="lightbox-details" id="lightboxDetails">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking & Inquiry Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-content glass-panel" style="max-width: 600px;">
+      <button class="modal-close-btn" aria-label="Close Booking Modal">✕</button>
+      <div class="booking-form">
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem; text-align: center;">Inquire Kids Shoot</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2rem;">
+          Book a fine-art outdoor or studio childhood milestone session with Dipak More.
+        </p>
+
+        <form id="inquiryForm">
+          <div class="form-group">
+            <label class="form-label" for="clientName">Your Full Name</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Radhesh More" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" class="form-input" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="shootDate">Preferred Shoot Date</label>
+            <input type="date" id="shootDate" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="messageText">Project Details / Location</label>
+            <textarea id="messageText" class="form-textarea" rows="4" placeholder="Tell us about child age, milestone details, or garden/studio preferences..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+            Submit Kids Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/kids-data.js"></script>
+  <script src="js/audio-player.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderKidsGrid('all');
+      initKidsFilterControls();
+      initModals();
+    });
+
+    function renderKidsGrid(filter = 'all') {
+      const grid = document.getElementById('kidsFramesGrid');
+      if (!grid || typeof kidsGalleryData === 'undefined') return;
+
+      grid.innerHTML = '';
+
+      let items = kidsGalleryData;
+      if (filter === 'portrait') {
+        items = items.filter(i => i.orientation === 'portrait');
+      } else if (filter === 'landscape') {
+        items = items.filter(i => i.orientation === 'landscape');
+      } else if (filter === 'active') {
+        items = items.filter(i => !i.isPlaceholder);
+      } else if (filter === 'empty') {
+        items = items.filter(i => i.isPlaceholder);
+      }
+
+      items.forEach(item => {
+        const card = document.createElement('div');
+        const aspectClass = item.aspectRatio ? `aspect-${item.aspectRatio.replace(':', '-')}` : 'aspect-2-3';
+        const frameStr = String(item.frameNumber).padStart(2, '0');
+
+        if (item.isPlaceholder) {
+          card.className = `museum-frame-card empty-frame ${aspectClass}`;
+          card.innerHTML = `
+            <span class="frame-number-badge">FRAME #${frameStr}</span>
+            <span class="gallery-card-badge" style="background: rgba(212,175,55,0.15); border-color: var(--border-gold);">${item.aspectRatio} ${item.orientation.toUpperCase()}</span>
+            <div class="empty-frame-inner">
+              <div class="empty-frame-icon">📷</div>
+              <div class="empty-frame-slot-title">Frame Container #${frameStr}</div>
+              <div class="empty-frame-tag">Ready for Dipak's Click (${item.aspectRatio})</div>
+              <div style="font-size: 0.72rem; color: var(--gold-light); margin-top: 0.5rem; opacity: 0.85;">Click to view EXIF & Upload Specs</div>
+            </div>
+          `;
+        } else {
+          card.className = `museum-frame-card ${aspectClass}`;
+          card.innerHTML = `
+            <span class="frame-number-badge">FRAME #${frameStr}</span>
+            <div class="gallery-img-wrapper">
+              <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy" />
+              <span class="gallery-card-badge">${item.aspectRatio} MASTER</span>
+              <div class="gallery-card-overlay" style="opacity: 1; background: linear-gradient(to top, rgba(7,7,10,0.95) 0%, transparent 60%);">
+                <h3 class="gallery-card-title">${item.title}</h3>
+                <div class="gallery-card-meta">
+                  <span>📷 ${item.exif.camera}</span>
+                  <span>📍 ${item.exif.location.split(',')[0]}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        card.addEventListener('click', () => openKidsLightbox(item.id));
+        grid.appendChild(card);
+      });
+
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(
+          '#kidsFramesGrid .museum-frame-card',
+          { opacity: 0, y: 30, scale: 0.95 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: 'power2.out' }
+        );
+      }
+    }
+
+    function initKidsFilterControls() {
+      const filterBtns = document.querySelectorAll('.filter-btn[data-kids-filter]');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filterVal = btn.getAttribute('data-kids-filter');
+          renderKidsGrid(filterVal);
+        });
+      });
+    }
+
+    function openKidsLightbox(itemId) {
+      const item = kidsGalleryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      const modal = document.getElementById('lightboxModal');
+      const mediaContainer = document.getElementById('lightboxMedia');
+      const detailsContainer = document.getElementById('lightboxDetails');
+
+      if (item.isPlaceholder) {
+        mediaContainer.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; min-height: 400px; background: rgba(15,15,22,0.9); border-radius: 12px; border: 2px dashed var(--border-gold); padding: 2rem; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem; filter: drop-shadow(0 4px 15px rgba(212,175,55,0.4));">🖼️</div>
+            <h3 style="font-size: 2rem; color: var(--gold-light); margin-bottom: 0.5rem;">Frame Slot #${String(item.frameNumber).padStart(2, '0')} Container</h3>
+            <p style="color: var(--text-muted); max-width: 400px; font-size: 0.9rem;">
+              Reserved fine-art frame container ready for Dipak's photo click (${item.aspectRatio} ${item.orientation} orientation).
+            </p>
+          </div>
+        `;
+      } else {
+        mediaContainer.innerHTML = `<img src="${item.src}" alt="${item.title}" />`;
+      }
+
+      detailsContainer.innerHTML = `
+        <div>
+          <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">Frame Container #${String(item.frameNumber).padStart(2, '0')} (${item.aspectRatio})</span>
+          <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+          
+          <div class="exif-list">
+            <div class="exif-item">
+              <label>Camera Body</label>
+              <span>${item.exif.camera}</span>
+            </div>
+            <div class="exif-item">
+              <label>Optics / Lens</label>
+              <span>${item.exif.lens}</span>
+            </div>
+            <div class="exif-item">
+              <label>Aperture & Shutter</label>
+              <span>${item.exif.aperture} @ ${item.exif.shutter}</span>
+            </div>
+            <div class="exif-item">
+              <label>ISO & Location</label>
+              <span>${item.exif.iso} | ${item.exif.location.split(',')[0]}</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
+          <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openBookingModalWithService('kids')">Inquire Kids Shoot Session</button>
+        </div>
+      `;
+
+      modal.classList.add('active');
+    }
+
+    function openBookingModalWithService(serviceCategory = 'kids') {
+      closeModals();
+      document.getElementById('bookingModal').classList.add('active');
+    }
+
+    function initModals() {
+      const closeBtns = document.querySelectorAll('.modal-close-btn');
+      closeBtns.forEach(btn => btn.addEventListener('click', closeModals));
+
+      const backdrops = document.querySelectorAll('.modal-backdrop');
+      backdrops.forEach(backdrop => {
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) closeModals();
+        });
+      });
+
+      const bookingForm = document.getElementById('inquiryForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert("Thank you! Your Kids shoot inquiry has been logged. Dipak More will reach out to discuss your project details shortly.");
+          closeModals();
+        });
+      }
+    }
+
+    function closeModals() {
+      document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+    }
+  </script>
+</body>
+</html>

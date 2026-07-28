@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
 
   <!-- GSAP Animation Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -41,11 +41,16 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="#weddings-showcase" class="nav-link">Weddings</a></li>
-          <li><a href="#digital-albums" class="nav-link">Digital Albums</a></li>
-          <li><a href="#work" class="nav-link">Gallery</a></li>
-          <li><a href="#ai-video" class="nav-link">AI Motion Cinema</a></li>
-          <li><a href="#about" class="nav-link">About & Gear</a></li>
+          <li><a href="#work?category=all" class="nav-link">All Works</a></li>
+          <li><a href="#work?category=weddings" class="nav-link">Weddings</a></li>
+          <li><a href="#work?category=portraits" class="nav-link">Portraits</a></li>
+          <li><a href="#work?category=kids" class="nav-link">Kids</a></li>
+          <li><a href="#work?category=family" class="nav-link">Family</a></li>
+          <li><a href="#work?category=wildlife" class="nav-link">Birding</a></li>
+          <li><a href="#work?category=landscape" class="nav-link">Landscapes</a></li>
+          <li><a href="#work?category=ai-edits" class="nav-link">AI Edits</a></li>
+          <li><a href="#work?category=devotional" class="nav-link">Devotional AI</a></li>
+          <li><a href="#work?category=cinematic" class="nav-link">Cinematic</a></li>
         </ul>
       </nav>
 
@@ -158,12 +163,96 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Curated Collections</span>
-        <h2 class="section-title">Visual Gallery</h2>
-        <p class="section-description">Explore our full range of visual work across weddings, portraits, kids, family, birding, landscapes, AI edits, and devotional art.</p>
+        <h2 class="section-title">Visual Gallery & Category Hub</h2>
+        <p class="section-description">Select any category below to explore native 3:2 landscape and 2:3 portrait Nikon Z6III photography collections.</p>
+      </div>
+
+      <!-- 3x3 VISUAL CATEGORY HUB (Inspired by Reference Design) -->
+      <div class="category-hub-grid" id="categoryHub">
+        <div class="category-tile" onclick="selectCategory('portraits')">
+          <img src="assets/images/indian_portrait.png" alt="Portraits" class="category-tile-img">
+          <span class="category-tile-badge">PORTRAITS</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Nikon Z6III</span>
+            <h3 class="category-tile-title">Fine Art Portraiture</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="window.location.href='weddings-gallery.html'">
+          <img src="assets/images/weddings/wedding1/Wedding (10).jpg" alt="Weddings" class="category-tile-img">
+          <span class="category-tile-badge" style="border-color: var(--gold-primary); background: var(--gold-primary); color: #07070A;">49 CARDS • 63 PHOTOS ↗</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Multi-Edit Sliders</span>
+            <h3 class="category-tile-title">Weddings & Receptions (3 Stories) ↗</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('ai-edits')">
+          <img src="assets/images/ai_edits.png" alt="AI Edits" class="category-tile-img">
+          <span class="category-tile-badge">AI-EDITS</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Retouching</span>
+            <h3 class="category-tile-title">AI Fine Art & Edits</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('landscape')">
+          <img src="assets/images/landscape.png" alt="Landscapes" class="category-tile-img">
+          <span class="category-tile-badge">LANDSCAPE</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">16:9, 3:2 & 2:3 Sahyadri</span>
+            <h3 class="category-tile-title">Western Ghats Landscapes</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('wildlife')">
+          <img src="assets/images/wildlife_portrait.png" alt="Wildlife" class="category-tile-img">
+          <span class="category-tile-badge">WILDLIFE</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Birding Optics</span>
+            <h3 class="category-tile-title">Birding & Nature</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('family')">
+          <img src="assets/images/indian_family.png" alt="Family" class="category-tile-img">
+          <span class="category-tile-badge">FAMILY</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Heritage</span>
+            <h3 class="category-tile-title">Family & Connections</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="window.location.href='kids-gallery.html'">
+          <img src="assets/images/kids/kid (1).jpg" alt="Kids" class="category-tile-img">
+          <span class="category-tile-badge" style="border-color: var(--gold-primary); background: var(--gold-primary); color: #07070A;">41 CLICKS • 50 FRAMES ↗</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Dedicated Sub-Gallery</span>
+            <h3 class="category-tile-title">Kids & Milestones (50 Frames) ↗</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('devotional')">
+          <img src="assets/images/vitthal_art.png" alt="Devotional" class="category-tile-img">
+          <span class="category-tile-badge">DEVOTIONAL</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Divine Fine Art</span>
+            <h3 class="category-tile-title">Devotional AI Art</h3>
+          </div>
+        </div>
+
+        <div class="category-tile" onclick="selectCategory('cinematic')">
+          <img src="assets/images/cinematic_story.png" alt="Cinematic" class="category-tile-img">
+          <span class="category-tile-badge">CINEMATIC</span>
+          <div class="category-tile-overlay">
+            <span class="category-tile-ratio">3:2 & 2:3 Film Emulation</span>
+            <h3 class="category-tile-title">Cinematic Stories</h3>
+          </div>
+        </div>
       </div>
 
       <!-- Single Responsive Filter Container -->
-      <div class="filter-container">
+      <div class="filter-container" style="margin-top: 2rem;">
         <button class="filter-btn active" data-filter="all">All Works</button>
         <button class="filter-btn" data-filter="weddings">💍 Weddings</button>
         <button class="filter-btn" data-filter="portraits">Portraits</button>
@@ -173,6 +262,14 @@
         <button class="filter-btn" data-filter="landscape">⛰️ Landscapes</button>
         <button class="filter-btn" data-filter="ai-edits">✨ AI Edits & Retouching</button>
         <button class="filter-btn" data-filter="devotional">🛕 Devotional AI</button>
+        <button class="filter-btn" data-filter="cinematic">🎬 Cinematic</button>
+      </div>
+
+      <!-- Orientation Aspect Filter Bar -->
+      <div class="orientation-filter-container">
+        <button class="orientation-btn active" data-orientation="all">All Orientations</button>
+        <button class="orientation-btn" data-orientation="landscape">🖼️ 3:2 / 16:9 Landscape</button>
+        <button class="orientation-btn" data-orientation="portrait">📱 2:3 / 9:16 Portrait</button>
       </div>
 
       <!-- Dynamic Gallery Grid -->

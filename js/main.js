@@ -1,16 +1,20 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - CORE APPLICATION SCRIPT
-// Features: Gallery Filtering, Digital Flipbook Modal, Video Songs & Shorts Engine
+// Features: Dual-Orientation Gallery Filtering, 3x3 Category Hub, Video Engine, Hash Routing
 // ==========================================================================
+
+let currentCategoryFilter = 'all';
+let currentOrientationFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
-  renderGallery('all');
-  renderVideoShowcase('all');
-  renderGearCabinet();
   initFilterControls();
+  initOrientationControls();
   initVideoFilterControls();
   initModals();
+  initURLHashRouting();
+  renderVideoShowcase('all');
+  renderGearCabinet();
   initGSAPAnimations();
 });
 
@@ -34,29 +38,79 @@ function initHeader() {
   }
 }
 
-// Render Portfolio Gallery Grid
-function renderGallery(filterCategory = 'all') {
+// Global Category Selection Handler (Called from Category Hub Tiles & Nav Links)
+function selectCategory(categoryName) {
+  currentCategoryFilter = categoryName;
+
+  // Update Category Filter Buttons Active State
+  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  filterBtns.forEach(btn => {
+    if (btn.getAttribute('data-filter') === categoryName) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // Re-render Gallery
+  renderGallery(currentCategoryFilter, currentOrientationFilter);
+
+  // Smooth Scroll to Visual Gallery Section
+  const workSection = document.getElementById('work');
+  if (workSection) {
+    workSection.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Update URL hash without forcing full jump reload
+  if (history.pushState) {
+    history.pushState(null, null, `#work?category=${categoryName}`);
+  }
+}
+
+// Render Portfolio Gallery Grid with Dual-Orientation Support
+function renderGallery(filterCategory = 'all', filterOrientation = 'all') {
   const galleryGrid = document.getElementById('galleryGrid');
   if (!galleryGrid) return;
 
   galleryGrid.innerHTML = '';
 
-  const filteredItems = filterCategory === 'all'
-    ? galleryData.filter(item => item.type === 'image')
-    : galleryData.filter(item => item.category === filterCategory && item.type === 'image');
+  let filteredItems = galleryData.filter(item => item.type === 'image');
 
-  filteredItems.forEach((item, index) => {
+  // Category Filter
+  if (filterCategory !== 'all') {
+    filteredItems = filteredItems.filter(item => item.category === filterCategory);
+  }
+
+  // Orientation Filter
+  if (filterOrientation !== 'all') {
+    filteredItems = filteredItems.filter(item => item.orientation === filterOrientation);
+  }
+
+  if (filteredItems.length === 0) {
+    galleryGrid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+        <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">No master photographs found for this filter combination.</p>
+        <button class="btn-outline" onclick="selectCategory('all'); resetOrientationFilter();">View All Works</button>
+      </div>
+    `;
+    return;
+  }
+
+  filteredItems.forEach((item) => {
     const card = document.createElement('div');
-    card.className = 'gallery-card';
+    
+    // Map ratio strings (e.g. "3:2" -> "aspect-3-2", "2:3" -> "aspect-2-3")
+    const aspectClass = item.aspectRatio ? `aspect-${item.aspectRatio.replace(':', '-')}` : 'aspect-3-2';
+    card.className = `gallery-card ${aspectClass}`;
     card.setAttribute('data-id', item.id);
 
-    // Clean category badge name (e.g. WEDDINGS)
-    const badgeText = item.category.toUpperCase();
+    const badgeCategory = item.category.toUpperCase();
+    const ratioBadge = item.aspectRatio ? ` • ${item.aspectRatio}` : '';
 
     card.innerHTML = `
       <div class="gallery-img-wrapper">
         <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy" />
-        <span class="gallery-card-badge">${badgeText}</span>
+        <span class="gallery-card-badge">${badgeCategory}${ratioBadge}</span>
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title">${item.title}</h3>
           <div class="gallery-card-meta">
@@ -70,6 +124,79 @@ function renderGallery(filterCategory = 'all') {
     card.addEventListener('click', () => openLightbox(item.id));
     galleryGrid.appendChild(card);
   });
+
+  // GSAP Staggered Entrance Animation on Render
+  if (typeof gsap !== 'undefined') {
+    gsap.fromTo(
+      '#galleryGrid .gallery-card',
+      { opacity: 0, y: 25, scale: 0.96 },
+      { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.06, ease: 'power2.out' }
+    );
+  }
+}
+
+// Reset Orientation Filter
+function resetOrientationFilter() {
+  currentOrientationFilter = 'all';
+  const orientationBtns = document.querySelectorAll('.orientation-btn[data-orientation]');
+  orientationBtns.forEach(btn => {
+    if (btn.getAttribute('data-orientation') === 'all') btn.classList.add('active');
+    else btn.classList.remove('active');
+  });
+}
+
+// Category Filter Controls
+function initFilterControls() {
+  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategoryFilter = btn.getAttribute('data-filter');
+      renderGallery(currentCategoryFilter, currentOrientationFilter);
+    });
+  });
+}
+
+// Orientation Filter Controls
+function initOrientationControls() {
+  const orientationBtns = document.querySelectorAll('.orientation-btn[data-orientation]');
+  orientationBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      orientationBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentOrientationFilter = btn.getAttribute('data-orientation');
+      renderGallery(currentCategoryFilter, currentOrientationFilter);
+    });
+  });
+}
+
+// URL Hash Routing Handler
+function initURLHashRouting() {
+  const handleHashChange = () => {
+    const hash = window.location.hash;
+    if (!hash) {
+      renderGallery('all', 'all');
+      return;
+    }
+
+    // Support #work?category=weddings or #weddings or #portraits
+    let category = 'all';
+    if (hash.includes('category=')) {
+      category = hash.split('category=')[1].split('&')[0];
+    } else if (hash.length > 1) {
+      const cleanHash = hash.replace('#', '').toLowerCase();
+      const validCategories = ['weddings', 'portraits', 'kids', 'family', 'wildlife', 'landscape', 'ai-edits', 'devotional', 'cinematic'];
+      if (validCategories.includes(cleanHash)) {
+        category = cleanHash;
+      }
+    }
+
+    selectCategory(category);
+  };
+
+  window.addEventListener('hashchange', handleHashChange);
+  handleHashChange(); // Initial load check
 }
 
 // Render AI Video Showcase Section
@@ -110,6 +237,19 @@ function renderVideoShowcase(videoFilter = 'all') {
   });
 }
 
+// Video Filter Controls
+function initVideoFilterControls() {
+  const videoFilterBtns = document.querySelectorAll('.filter-btn[data-video-filter]');
+  videoFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      videoFilterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const videoSubtype = btn.getAttribute('data-video-filter');
+      renderVideoShowcase(videoSubtype);
+    });
+  });
+}
+
 // Render Photographer Gear Cabinet
 function renderGearCabinet() {
   const gearGrid = document.getElementById('gearGrid');
@@ -132,32 +272,6 @@ function renderGearCabinet() {
   });
 }
 
-// Gallery Filter Controls
-function initFilterControls() {
-  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const category = btn.getAttribute('data-filter');
-      renderGallery(category);
-    });
-  });
-}
-
-// Video Filter Controls
-function initVideoFilterControls() {
-  const videoFilterBtns = document.querySelectorAll('.filter-btn[data-video-filter]');
-  videoFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      videoFilterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const videoSubtype = btn.getAttribute('data-video-filter');
-      renderVideoShowcase(videoSubtype);
-    });
-  });
-}
-
 // Lightbox Modal Functions
 function openLightbox(itemId) {
   const item = galleryData.find(i => i.id === itemId);
@@ -175,7 +289,7 @@ function openLightbox(itemId) {
 
   detailsContainer.innerHTML = `
     <div>
-      <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">${item.category} Collection</span>
+      <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">${item.category} Collection (${item.aspectRatio})</span>
       <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
       

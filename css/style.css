@@ -719,6 +719,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   transition: transform 0.6s ease;
 }
 
@@ -741,6 +742,228 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   z-index: 2;
+}
+
+/* 3x3 VISUAL CATEGORY HUB GRID (Inspired by Reference Design) */
+.category-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+@media (max-width: 992px) {
+  .category-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .category-hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.category-tile {
+  position: relative;
+  height: 280px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.category-tile:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--gold-primary);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.85), 0 0 35px var(--gold-glow);
+}
+
+.category-tile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.8s ease;
+}
+
+.category-tile:hover .category-tile-img {
+  transform: scale(1.08);
+}
+
+.category-tile-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(7, 7, 10, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--gold-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+
+.category-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 7, 10, 0.95) 0%, rgba(7, 7, 10, 0.35) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.category-tile-ratio {
+  font-size: 0.75rem;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.category-tile-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+/* Orientation Aspect Ratio Filter Buttons */
+.orientation-filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.orientation-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.orientation-btn:hover, .orientation-btn.active {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* Dynamic Aspect Ratio Card Sizing for 3:2 and 2:3 */
+.gallery-card.aspect-3-2 .gallery-img-wrapper {
+  height: 300px;
+}
+
+.gallery-card.aspect-2-3 .gallery-img-wrapper {
+  height: 480px;
+}
+
+.gallery-card.aspect-16-9 .gallery-img-wrapper {
+  height: 260px;
+}
+
+.gallery-card.aspect-9-16 .gallery-img-wrapper {
+  height: 520px;
+}
+
+/* MUSEUM FINE-ART FRAME CONTAINER STYLES FOR SUB-GALLERIES */
+.museum-frame-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 3px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(0, 0, 0, 0.85);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+.museum-frame-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--gold-primary);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 35px var(--gold-glow);
+}
+
+.museum-frame-card.empty-frame {
+  border: 2px dashed rgba(212, 175, 55, 0.45);
+  background: linear-gradient(135deg, rgba(20, 20, 28, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+}
+
+.museum-frame-card.empty-frame:hover {
+  border-style: solid;
+  border-color: var(--gold-primary);
+  background: linear-gradient(135deg, rgba(30, 28, 20, 0.95) 0%, rgba(15, 14, 10, 0.98) 100%);
+}
+
+.empty-frame-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.empty-frame-icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.museum-frame-card:hover .empty-frame-icon {
+  transform: scale(1.15) rotate(5deg);
+  opacity: 1;
+}
+
+.empty-frame-slot-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  margin-bottom: 0.25rem;
+}
+
+.empty-frame-tag {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.frame-number-badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  background: rgba(7, 7, 10, 0.92);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--gold-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  z-index: 3;
 }
 
 .gallery-card-overlay {
@@ -1004,6 +1227,7 @@ button {
 }
 
 .lightbox-media {
+  position: relative;
   background: #000;
   display: flex;
   align-items: center;
@@ -1013,7 +1237,58 @@ button {
 
 .lightbox-media img {
   max-height: 80vh;
+  width: 100%;
   object-fit: contain;
+}
+
+/* LIGHTBOX GLASSMORPHISM SHINY SVG NAVIGATION ARROWS */
+.lightbox-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(7, 7, 10, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 25;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  user-select: none;
+  padding: 0;
+}
+
+.lightbox-nav-arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--gold-primary);
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.lightbox-nav-arrow:hover {
+  background: var(--gold-primary);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.9), 0 10px 35px rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.12);
+}
+
+.lightbox-nav-arrow:hover svg {
+  stroke: #07070A;
+}
+
+.lightbox-nav-arrow.prev {
+  left: 10px;
+}
+
+.lightbox-nav-arrow.next {
+  right: 10px;
 }
 
 .lightbox-details {

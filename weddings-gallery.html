@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Weddings & Reception Sub-Gallery | Gargi Photographic Arts</title>
+  <meta name="description" content="Dedicated Royal Wedding Photography Sub-Gallery featuring Wedding 1, Wedding 2, and Wedding Reception collections, interactive multi-edit sliders, and 3D digital flipbooks by Dipak More.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+
+  <!-- GSAP Animation Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+</head>
+<body>
+
+  <!-- FRAMER-STYLE ANIMATED AMBIENT MESH GRADIENT BACKGROUND -->
+  <div class="aurora-background-container" aria-hidden="true">
+    <div class="aurora-sphere aurora-sphere-1"></div>
+    <div class="aurora-sphere aurora-sphere-2"></div>
+    <div class="aurora-sphere aurora-sphere-3"></div>
+    <div class="aurora-sphere aurora-sphere-4"></div>
+  </div>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header scrolled">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-mark">G</div>
+        <div>
+          <span class="brand-title">Gargi</span>
+          <span class="brand-subtitle">Photographic Arts</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="btn-outline" style="padding: 0.4rem 1.1rem; font-size: 0.82rem;">← Back to Main Portfolio</a></li>
+          <li><a href="index.html#weddings-showcase" class="nav-link">Main Weddings Showcase</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <button class="btn-primary" onclick="openBookingModalWithService('weddings')">Book Wedding Package</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header Section -->
+  <section class="section-padding" style="padding-top: 140px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="section-header" style="max-width: 850px;">
+        <span class="section-tag">Heartfelt Indian Vivah & Reception Stories</span>
+        <h1 class="section-title" style="font-size: 3.2rem;">Weddings & Receptions Sub-Gallery</h1>
+        <p class="section-description">
+          Explore our dedicated wedding collections: <strong>Wedding Story 1</strong>, <strong>Wedding Story 2</strong>, and <strong>Evening Reception</strong>. Featuring interactive multi-edit sliders to compare color grade variations (Natural Color, B&W Fine Art, Warm Film) on identical shots.
+        </p>
+
+        <!-- Digital Flipbook & Stats Bar -->
+        <div class="glass-panel" style="display: flex; justify-content: space-around; align-items: center; padding: 1.5rem; margin-top: 2rem; border-radius: var(--radius-md); flex-wrap: wrap; gap: 1rem;">
+          <div style="text-align: center;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-primary);">3</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Collections (W1, W2, Reception)</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold-primary);">Multi-Edit</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Color Grade Sliders</div>
+          </div>
+          <a href="https://royal-digital-flip-album.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">
+            📖 Launch Digital 3D Album ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- Sub-Gallery Filter Bar -->
+      <div class="filter-container" style="justify-content: center; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+        <button class="filter-btn active" data-wedding-filter="all">All Wedding Stories</button>
+        <button class="filter-btn" data-wedding-filter="wedding1">🌸 Wedding Story 1</button>
+        <button class="filter-btn" data-wedding-filter="wedding2">💍 Wedding Story 2</button>
+        <button class="filter-btn" data-wedding-filter="reception">✨ Evening Reception</button>
+        <button class="filter-btn" data-wedding-filter="portrait">📱 2:3 Portrait Frames</button>
+        <button class="filter-btn" data-wedding-filter="landscape">🖼️ 3:2 Landscape Frames</button>
+      </div>
+
+      <!-- Wedding Grid Container -->
+      <div class="gallery-grid" id="weddingsGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="copyright text-center" style="text-align: center;">
+        © 2026 Gargi Photographic Arts. Royal Weddings Sub-Gallery. Powered by Dipak More.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING AMBIENT AUDIO WIDGET -->
+  <div class="ambient-audio-widget" id="ambientAudioWidget">
+    <div class="eq-container" id="audioEqContainer">
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+      <div class="eq-bar"></div>
+    </div>
+    <div class="audio-track-info">
+      <span class="audio-track-title" id="audioTrackTitle">Sahyadri Dawn - Piano</span>
+      <span class="audio-track-artist" id="audioTrackArtist">Atmospheric Cinema</span>
+    </div>
+    <div class="audio-controls">
+      <button class="audio-btn" id="audioPlayBtn" aria-label="Play Ambient Music">▶️</button>
+      <button class="audio-btn" id="audioNextBtn" aria-label="Next Track">⏭️</button>
+      <button class="audio-btn" id="audioMuteBtn" aria-label="Mute Audio">🔊</button>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Images -->
+  <div class="modal-backdrop" id="lightboxModal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close-btn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-container">
+        <div class="lightbox-media" id="lightboxMedia">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="lightbox-details" id="lightboxDetails">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking & Inquiry Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-content glass-panel" style="max-width: 600px;">
+      <button class="modal-close-btn" aria-label="Close Booking Modal">✕</button>
+      <div class="booking-form">
+        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem; text-align: center;">Book Royal Wedding Package</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-bottom: 2rem;">
+          Includes high dynamic range Nikon Z6III coverage, 85mm f/1.4 portrait bokeh, and hosted 3D Digital Flipbook Album.
+        </p>
+
+        <form id="inquiryForm">
+          <div class="form-group">
+            <label class="form-label" for="clientName">Your Full Name</label>
+            <input type="text" id="clientName" class="form-input" placeholder="e.g. Radhesh & Sneha" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" class="form-input" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="shootDate">Wedding Date</label>
+            <input type="date" id="shootDate" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="messageText">Venue & Wedding Details</label>
+            <textarea id="messageText" class="form-textarea" rows="4" placeholder="Tell us about your wedding venue, reception location, or shoot vision..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem;">
+            Submit Wedding Inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="js/weddings-data.js"></script>
+  <script src="js/audio-player.js" defer></script>
+  <script>
+    // State map to track active variant index for multi-edit items
+    const activeVariantMap = {};
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderWeddingsGrid('all');
+      initWeddingFilterControls();
+      initModals();
+    });
+
+    function renderWeddingsGrid(filter = 'all') {
+      const grid = document.getElementById('weddingsGrid');
+      if (!grid || typeof weddingGalleryData === 'undefined') return;
+
+      grid.innerHTML = '';
+
+      let items = weddingGalleryData;
+      if (filter === 'wedding1') {
+        items = items.filter(i => i.collection === 'wedding1');
+      } else if (filter === 'wedding2') {
+        items = items.filter(i => i.collection === 'wedding2');
+      } else if (filter === 'reception') {
+        items = items.filter(i => i.collection === 'reception');
+      } else if (filter === 'portrait') {
+        items = items.filter(i => i.orientation === 'portrait');
+      } else if (filter === 'landscape') {
+        items = items.filter(i => i.orientation === 'landscape');
+      }
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; color: var(--text-muted);">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">No photos found in this sub-collection yet.</p>
+            <p style="font-size: 0.9rem; color: var(--gold-light);">Drop photos into <strong>assets/images/weddings/wedding1/</strong>, <strong>wedding2/</strong>, or <strong>reception/</strong>!</p>
+          </div>
+        `;
+        return;
+      }
+
+      items.forEach(item => {
+        const card = document.createElement('div');
+        const aspectClass = item.aspectRatio ? `aspect-${item.aspectRatio.replace(':', '-')}` : 'aspect-3-2';
+        card.className = `gallery-card ${aspectClass}`;
+        card.setAttribute('data-id', item.id);
+
+        // Initialize active variant index
+        if (!(item.id in activeVariantMap)) {
+          activeVariantMap[item.id] = 0;
+        }
+
+        const isMulti = item.variants && item.variants.length > 1;
+        const totalVars = isMulti ? item.variants.length : 1;
+        const currentVarIdx = activeVariantMap[item.id];
+        const currentSrc = isMulti ? item.variants[currentVarIdx] : item.src;
+
+        const badgeText = item.collectionName ? item.collectionName.toUpperCase() : 'ROYAL WEDDING';
+        const multiTag = isMulti ? `<span class="variant-badge-tag">🎨 ${currentVarIdx + 1}/${totalVars} COLOR EDITS</span>` : '';
+
+        const sliderControlsHTML = isMulti ? `
+          <div class="variant-slider-controls">
+            <button class="variant-nav-btn prev-btn" onclick="event.stopPropagation(); changeVariant('${item.id}', -1, ${totalVars})" aria-label="Previous Edit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="variant-nav-btn next-btn" onclick="event.stopPropagation(); changeVariant('${item.id}', 1, ${totalVars})" aria-label="Next Edit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        ` : '';
+
+        card.innerHTML = `
+          ${multiTag}
+          <div class="gallery-img-wrapper" id="img-wrapper-${item.id}">
+            <img src="${currentSrc}" alt="${item.title}" class="gallery-img" id="img-element-${item.id}" loading="lazy" />
+            <span class="gallery-card-badge">${badgeText} • ${item.aspectRatio}</span>
+            ${sliderControlsHTML}
+            <div class="gallery-card-overlay">
+              <h3 class="gallery-card-title">${item.title}</h3>
+              <div class="gallery-card-meta">
+                <span>📷 ${item.exif.camera}</span>
+                <span>📍 ${item.exif.location.split(',')[0]}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => openWeddingLightbox(item.id));
+        grid.appendChild(card);
+      });
+
+      if (typeof gsap !== 'undefined') {
+        gsap.fromTo(
+          '#weddingsGrid .gallery-card',
+          { opacity: 0, y: 25, scale: 0.96 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.05, ease: 'power2.out' }
+        );
+      }
+    }
+
+    function changeVariant(itemId, delta, totalVariants) {
+      if (!(itemId in activeVariantMap)) activeVariantMap[itemId] = 0;
+      let newIdx = (activeVariantMap[itemId] + delta) % totalVariants;
+      if (newIdx < 0) newIdx = totalVariants - 1;
+      activeVariantMap[itemId] = newIdx;
+
+      const item = weddingGalleryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      const imgEl = document.getElementById(`img-element-${itemId}`);
+      if (imgEl && item.variants) {
+        imgEl.style.opacity = '0.3';
+        setTimeout(() => {
+          imgEl.src = item.variants[newIdx];
+          imgEl.style.opacity = '1';
+        }, 150);
+      }
+
+      // Update badge tag
+      const card = document.querySelector(`.gallery-card[data-id="${itemId}"]`);
+      if (card) {
+        const badgeTag = card.querySelector('.variant-badge-tag');
+        if (badgeTag) {
+          badgeTag.innerHTML = `🎨 ${newIdx + 1}/${totalVariants} COLOR EDITS`;
+        }
+      }
+    }
+
+    function initWeddingFilterControls() {
+      const filterBtns = document.querySelectorAll('.filter-btn[data-wedding-filter]');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filterVal = btn.getAttribute('data-wedding-filter');
+          renderWeddingsGrid(filterVal);
+        });
+      });
+    }
+
+    function openWeddingLightbox(itemId) {
+      const item = weddingGalleryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      const modal = document.getElementById('lightboxModal');
+      const mediaContainer = document.getElementById('lightboxMedia');
+      const detailsContainer = document.getElementById('lightboxDetails');
+
+      const isMulti = item.variants && item.variants.length > 1;
+      const totalVars = isMulti ? item.variants.length : 1;
+      const currentVarIdx = activeVariantMap[itemId] || 0;
+      const currentSrc = isMulti ? item.variants[currentVarIdx] : item.src;
+
+      // Find current item index in full dataset for card-to-card navigation
+      const currentItemIdx = weddingGalleryData.findIndex(i => i.id === itemId);
+      const prevItem = weddingGalleryData[(currentItemIdx - 1 + weddingGalleryData.length) % weddingGalleryData.length];
+      const nextItem = weddingGalleryData[(currentItemIdx + 1) % weddingGalleryData.length];
+
+      const svgPrev = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`;
+      const svgNext = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+
+      let navArrowsHTML = '';
+      if (isMulti) {
+        const prevVarIdx = (currentVarIdx - 1 + totalVars) % totalVars;
+        const nextVarIdx = (currentVarIdx + 1) % totalVars;
+        navArrowsHTML = `
+          <button class="lightbox-nav-arrow prev" onclick="switchLightboxVariant('${item.id}', ${prevVarIdx})" title="Previous Color Edit">${svgPrev}</button>
+          <button class="lightbox-nav-arrow next" onclick="switchLightboxVariant('${item.id}', ${nextVarIdx})" title="Next Color Edit">${svgNext}</button>
+        `;
+      } else {
+        navArrowsHTML = `
+          <button class="lightbox-nav-arrow prev" onclick="openWeddingLightbox('${prevItem.id}')" title="Previous Photo">${svgPrev}</button>
+          <button class="lightbox-nav-arrow next" onclick="openWeddingLightbox('${nextItem.id}')" title="Next Photo">${svgNext}</button>
+        `;
+      }
+
+      mediaContainer.innerHTML = `
+        ${navArrowsHTML}
+        <img src="${currentSrc}" id="lightboxMainImg" alt="${item.title}" />
+      `;
+
+      let variantSelectorHTML = '';
+      if (isMulti) {
+        variantSelectorHTML = `
+          <div style="margin-top: 1rem; margin-bottom: 1rem;">
+            <label style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; display: block; margin-bottom: 0.4rem;">Select Color Grade / Edit Variant:</label>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              ${item.variants.map((v, idx) => `
+                <button class="filter-btn ${idx === currentVarIdx ? 'active' : ''}" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" onclick="switchLightboxVariant('${item.id}', ${idx})">
+                  Edit #${idx + 1}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+
+      const flipbookBtnHTML = item.flipbookUrl
+        ? `<a href="${item.flipbookUrl}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-bottom: 0.75rem; width: 100%; justify-content: center;">📖 Launch Digital 3D Album ↗</a>`
+        : '';
+
+      detailsContainer.innerHTML = `
+        <div>
+          <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">${item.collectionName || 'Wedding Story'} (${item.aspectRatio})</span>
+          <h2 style="font-size: 2.2rem; margin: 0.3rem 0 0.5rem 0;">${item.title}</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+          
+          ${variantSelectorHTML}
+
+          <div class="exif-list">
+            <div class="exif-item">
+              <label>Camera Body</label>
+              <span>${item.exif.camera}</span>
+            </div>
+            <div class="exif-item">
+              <label>Optics / Lens</label>
+              <span>${item.exif.lens}</span>
+            </div>
+            <div class="exif-item">
+              <label>Aperture & Shutter</label>
+              <span>${item.exif.aperture} @ ${item.exif.shutter}</span>
+            </div>
+            <div class="exif-item">
+              <label>ISO & Location</label>
+              <span>${item.exif.iso} | ${item.exif.location.split(',')[0]}</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.25rem;">
+          ${flipbookBtnHTML}
+          <button class="btn-outline" style="width: 100%; justify-content: center;" onclick="openBookingModalWithService('weddings')">Inquire Wedding Shoot</button>
+        </div>
+      `;
+
+      modal.classList.add('active');
+    }
+
+    function switchLightboxVariant(itemId, variantIdx) {
+      activeVariantMap[itemId] = variantIdx;
+
+      // Update card image and badge on grid as well
+      const item = weddingGalleryData.find(i => i.id === itemId);
+      if (item) {
+        const imgEl = document.getElementById(`img-element-${itemId}`);
+        if (imgEl && item.variants && item.variants[variantIdx]) {
+          imgEl.src = item.variants[variantIdx];
+        }
+        const card = document.querySelector(`.gallery-card[data-id="${itemId}"]`);
+        if (card && item.variants) {
+          const badgeTag = card.querySelector('.variant-badge-tag');
+          if (badgeTag) {
+            badgeTag.innerHTML = `🎨 ${variantIdx + 1}/${item.variants.length} COLOR EDITS`;
+          }
+        }
+      }
+
+      openWeddingLightbox(itemId);
+    }
+
+    function openBookingModalWithService(serviceCategory = 'weddings') {
+      closeModals();
+      document.getElementById('bookingModal').classList.add('active');
+    }
+
+    function initModals() {
+      const closeBtns = document.querySelectorAll('.modal-close-btn');
+      closeBtns.forEach(btn => btn.addEventListener('click', closeModals));
+
+      const backdrops = document.querySelectorAll('.modal-backdrop');
+      backdrops.forEach(backdrop => {
+        backdrop.addEventListener('click', (e) => {
+          if (e.target === backdrop) closeModals();
+        });
+      });
+
+      const bookingForm = document.getElementById('inquiryForm');
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert("Thank you! Your Royal Wedding inquiry has been logged. Dipak More will reach out to discuss your wedding coverage details shortly.");
+          closeModals();
+        });
+      }
+    }
+
+    function closeModals() {
+      document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+    }
+  </script>
+</body>
+</html>
