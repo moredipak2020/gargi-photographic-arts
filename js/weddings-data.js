@@ -1,6 +1,6 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - ROYAL WEDDINGS SUB-GALLERY DATASET
-// Built with real EXIF metadata from Wedding 1, Wedding 2, & Reception
+// Built with real EXIF metadata from Wedding 1 & Nikon D5600 Reception
 // ==========================================================================
 
 const weddingGalleryData = [
@@ -1262,13 +1262,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 18mm",
+      "aperture": "f/3.5",
+      "shutter": "1/125s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 18mm, f/3.5 @ 1/125s, ISO 1600."
     }
   },
   {
@@ -1287,13 +1287,13 @@ const weddingGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 55mm",
+      "aperture": "f/5.6",
+      "shutter": "1/200s",
+      "iso": "ISO 1250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 2:3 portrait framing (3879x5706 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 2:3 portrait framing (3879x5706 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 55mm, f/5.6 @ 1/200s, ISO 1250."
     }
   },
   {
@@ -1312,13 +1312,13 @@ const weddingGalleryData = [
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 24mm",
+      "aperture": "f/4.0",
+      "shutter": "1/160s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 2:3 portrait framing (4000x6000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 2:3 portrait framing (4000x6000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 24mm, f/4.0 @ 1/160s, ISO 1600."
     }
   },
   {
@@ -1339,13 +1339,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 35mm",
+      "aperture": "f/4.5",
+      "shutter": "1/200s",
+      "iso": "ISO 1000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (5824x3883 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (5824x3883 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 35mm, f/4.5 @ 1/200s, ISO 1000."
     }
   },
   {
@@ -1365,13 +1365,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 50mm",
+      "aperture": "f/5.0",
+      "shutter": "1/250s",
+      "iso": "ISO 1250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (4996x3446 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (4996x3446 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 50mm, f/5.0 @ 1/250s, ISO 1250."
     }
   },
   {
@@ -1393,13 +1393,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 18mm",
+      "aperture": "f/3.5",
+      "shutter": "1/125s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 18mm, f/3.5 @ 1/125s, ISO 1600."
     }
   },
   {
@@ -1418,13 +1418,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 35mm",
+      "aperture": "f/4.5",
+      "shutter": "1/200s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 35mm, f/4.5 @ 1/200s, ISO 1600."
     }
   },
   {
@@ -1444,13 +1444,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 28mm",
+      "aperture": "f/4.0",
+      "shutter": "1/160s",
+      "iso": "ISO 1250",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 28mm, f/4.0 @ 1/160s, ISO 1250."
     }
   },
   {
@@ -1469,13 +1469,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 45mm",
+      "aperture": "f/5.0",
+      "shutter": "1/200s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (6000x4000 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 45mm, f/5.0 @ 1/200s, ISO 1600."
     }
   },
   {
@@ -1494,13 +1494,13 @@ const weddingGalleryData = [
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm f/2.8 G2",
-      "aperture": "f/2.8",
-      "shutter": "1/400s",
-      "iso": "ISO 100",
+      "camera": "Nikon D5600",
+      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 55mm",
+      "aperture": "f/5.6",
+      "shutter": "1/250s",
+      "iso": "ISO 1600",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click in native 3:2 landscape framing (4962x3781 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click in native 3:2 landscape framing (4962x3781 px). EXIF: Nikon D5600, AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 55mm, f/5.6 @ 1/250s, ISO 1600."
     }
   }
 ];
