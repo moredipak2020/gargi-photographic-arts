@@ -1705,8 +1705,8 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
 /* Bird Articulated Wrapper */
 .hummingbird-wrapper {
   position: relative;
-  width: 60px;
-  height: 50px;
+  width: 92px;
+  height: 70px;
   pointer-events: none;
   will-change: transform;
   transform-style: preserve-3d;
@@ -1714,7 +1714,7 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
 }
 
 .hummingbird-svg {
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.45));
+  filter: drop-shadow(0 6px 16px rgba(0, 229, 255, 0.45)) drop-shadow(0 2px 8px rgba(255, 23, 68, 0.4));
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -1724,7 +1724,7 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
     transform: rotateY(0deg) rotateZ(0deg) scaleY(1);
   }
   50% {
-    transform: rotateY(70deg) rotateZ(-30deg) scaleY(0.4);
+    transform: rotateY(72deg) rotateZ(-32deg) scaleY(0.38);
   }
 }
 
@@ -1733,35 +1733,35 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
     transform: rotateY(0deg) rotateZ(0deg) scaleY(1);
   }
   50% {
-    transform: rotateY(-70deg) rotateZ(30deg) scaleY(0.4);
+    transform: rotateY(-72deg) rotateZ(32deg) scaleY(0.38);
   }
 }
 
 .wing-front {
-  transform-origin: 46px 34px;
-  animation: wingFlutterFront 0.075s infinite ease-in-out alternate;
+  transform-origin: 56px 42px;
+  animation: wingFlutterFront 0.07s infinite ease-in-out alternate;
 }
 
 .wing-back {
-  transform-origin: 42px 32px;
-  animation: wingFlutterBack 0.075s infinite ease-in-out alternate;
+  transform-origin: 50px 40px;
+  animation: wingFlutterBack 0.07s infinite ease-in-out alternate;
 }
 
 /* Extendable Nectar Straw / Tongue */
 .nectar-straw {
-  transform-origin: 93px 32px;
+  transform-origin: 115px 40px;
   transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), stroke-width 0.15s ease;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 /* Pecking & Click Siphon Interaction */
 .pecking-active .hummingbird-svg {
-  transform: scale(1.18) translateX(7px);
-  filter: drop-shadow(0 0 16px rgba(255, 223, 0, 0.95));
+  transform: scale(1.22) translateX(9px);
+  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.95)) drop-shadow(0 0 12px rgba(255, 23, 68, 0.9));
 }
 
 .pecking-active .nectar-straw {
-  transform: scaleX(2.3) scaleY(1.4);
+  transform: scaleX(2.4) scaleY(1.5);
   opacity: 1;
   stroke: #FFFFFF;
 }
@@ -1769,12 +1769,12 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
 /* Hover Feeding Aura */
 .feeding-aura {
   position: absolute;
-  top: 12px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
+  top: 18px;
+  left: 28px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0) 70%);
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.4) 0%, rgba(212, 175, 55, 0.25) 50%, rgba(255, 23, 68, 0) 75%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -1791,28 +1791,28 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
     opacity: 0.4;
   }
   100% {
-    transform: scale(1.35);
-    opacity: 0.85;
+    transform: scale(1.4);
+    opacity: 0.9;
   }
 }
 
 /* Radial Nectar Ripple Bloom on Click */
 .nectar-bloom-sparkle {
   position: absolute;
-  top: 14px;
-  left: 56px;
-  width: 14px;
-  height: 14px;
+  top: 26px;
+  left: 78px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 2px solid #FFEFA6;
-  box-shadow: 0 0 12px var(--gold-light), inset 0 0 6px #FFF;
+  border: 2px solid #00E5FF;
+  box-shadow: 0 0 16px #FFD700, inset 0 0 8px #FFF;
   opacity: 0;
   pointer-events: none;
   transform: scale(0.2);
 }
 
 .nectar-bloom-sparkle.bloom-trigger {
-  animation: nectarRippleBloom 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+  animation: nectarRippleBloom 0.42s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
 }
 
 @keyframes nectarRippleBloom {
@@ -1822,7 +1822,7 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
   }
   100% {
     opacity: 0;
-    transform: scale(4.2);
+    transform: scale(4.5);
   }
 }
 

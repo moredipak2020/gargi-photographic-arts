@@ -1,6 +1,6 @@
 // ==========================================================================
-// GARGI PHOTOGRAPHIC ARTS - GOLDEN HUMMINGBIRD ANIMATED CURSOR ENGINE
-// High-performance 60FPS flight kinematics, wing flutter, and nectar straw click
+// GARGI PHOTOGRAPHIC ARTS - JEWEL-TONED HUMMINGBIRD ANIMATED CURSOR ENGINE
+// Realistic aerodynamics, upright pitch lock (±35° max), and nectar straw click
 // ==========================================================================
 
 (function() {
@@ -16,17 +16,22 @@
   }
 
   // Configuration Constants
-  const LERP_FACTOR = 0.14; // Flight smoothing responsiveness
-  const FLIGHT_BANKING_MAX = 28; // Max banking angle in degrees
-  const PARTICLE_EMIT_INTERVAL = 3; // Frames between stardust emission
+  const LERP_FACTOR = 0.13; // Flight smoothing factor
+  const MAX_PITCH_DEG = 35; // Strict clamping: prevents upside-down orientation
+  const PARTICLE_EMIT_INTERVAL = 2; // Frames between stardust emission
 
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
   let birdX = mouseX;
   let birdY = mouseY;
-  let birdAngle = 0;
   let birdVelocityX = 0;
   let birdVelocityY = 0;
+  
+  let currentPitch = 0;
+  let targetPitch = 0;
+  let currentScaleX = 1; // 1 = facing right, -1 = facing left
+  let targetFacing = 1;
+
   let isHovering = false;
   let isPecking = false;
   let frameCount = 0;
@@ -40,7 +45,7 @@
   let particles = [];
 
   function createHummingbirdDOM() {
-    // 1. Create Canvas for Golden Stardust Trail
+    // 1. Create Canvas for Golden & Prismatic Stardust Trail
     canvas = document.createElement('canvas');
     canvas.id = 'hummingbirdTrailCanvas';
     canvas.className = 'hummingbird-trail-canvas';
@@ -59,33 +64,52 @@
     cursorContainer.id = 'goldenHummingbirdCursor';
     cursorContainer.className = 'hummingbird-cursor-container';
 
-    // 3. SVG Golden Hummingbird with Wing Anatomy & Nectar Straw
+    // 3. SVG Hummingbird: Vivid Jewel Tones (Emerald, Sapphire, Ruby, Gold)
     cursorContainer.innerHTML = `
       <div class="hummingbird-wrapper" id="hummingbirdBirdWrapper">
-        <svg class="hummingbird-svg" viewBox="0 0 100 80" width="56" height="45" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hummingbird-svg" viewBox="0 0 130 95" width="88" height="66" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- Metallic Gold Gradients -->
-            <linearGradient id="goldBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <!-- Emerald Iridescent Crown & Back Gradient -->
+            <linearGradient id="emeraldIridescentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00E5FF" />
+              <stop offset="30%" stop-color="#00E676" />
+              <stop offset="65%" stop-color="#D4AF37" />
+              <stop offset="100%" stop-color="#00796B" />
+            </linearGradient>
+
+            <!-- Ruby-Magenta Throat Gorget Gradient -->
+            <linearGradient id="rubyGorgetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF1744" />
+              <stop offset="50%" stop-color="#F50057" />
+              <stop offset="85%" stop-color="#D500F9" />
+              <stop offset="100%" stop-color="#FFD700" />
+            </linearGradient>
+
+            <!-- Sapphire-Prism Translucent Wing Gradient -->
+            <linearGradient id="sapphireWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="rgba(0, 229, 255, 0.95)" />
+              <stop offset="35%" stop-color="rgba(41, 121, 255, 0.85)" />
+              <stop offset="70%" stop-color="rgba(101, 31, 255, 0.7)" />
+              <stop offset="100%" stop-color="rgba(212, 175, 55, 0.55)" />
+            </linearGradient>
+
+            <!-- Chest & Belly Champagne Gradient -->
+            <linearGradient id="chestBellyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="40%" stop-color="#E0F7FA" />
+              <stop offset="75%" stop-color="#FFEFA6" />
+              <stop offset="100%" stop-color="#D4AF37" />
+            </linearGradient>
+
+            <!-- Nectar Straw Stream Gradient -->
+            <linearGradient id="nectarStrawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#FFEFA6" />
-              <stop offset="35%" stop-color="#D4AF37" />
-              <stop offset="70%" stop-color="#AA7C11" />
-              <stop offset="100%" stop-color="#6B4B03" />
+              <stop offset="50%" stop-color="#FFD700" />
+              <stop offset="100%" stop-color="#FF4081" />
             </linearGradient>
 
-            <linearGradient id="goldWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="rgba(255, 239, 166, 0.9)" />
-              <stop offset="50%" stop-color="rgba(212, 175, 55, 0.75)" />
-              <stop offset="100%" stop-color="rgba(170, 124, 17, 0.4)" />
-            </linearGradient>
-
-            <linearGradient id="strawNectarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#FFEFA6" />
-              <stop offset="60%" stop-color="#FFD700" />
-              <stop offset="100%" stop-color="#FFFFFF" />
-            </linearGradient>
-
-            <filter id="goldGlowFilter" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="2" result="blur" />
+            <filter id="jewelGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="2.5" result="blur" />
               <feMerge>
                 <feMergeNode in="blur" />
                 <feMergeNode in="SourceGraphic" />
@@ -93,38 +117,46 @@
             </filter>
           </defs>
 
-          <!-- Tail Feathers -->
-          <path class="bird-tail" d="M22 42 L6 52 Q12 40 24 38 Z" fill="url(#goldBodyGrad)" />
-          <path class="bird-tail-accent" d="M20 40 L2 46 Q10 38 22 36 Z" fill="#FFEFA6" opacity="0.8" />
-
-          <!-- Left / Back Wing -->
-          <g class="bird-wing wing-back">
-            <path d="M42 32 C38 12, 28 -2, 22 -6 C26 6, 32 20, 36 34 Z" fill="url(#goldWingGrad)" filter="url(#goldGlowFilter)" />
+          <!-- Split Forked Sapphire-Emerald Tail Feathers -->
+          <g class="bird-tail-group">
+            <path d="M26 52 L4 68 Q14 50 28 46 Z" fill="#00796B" />
+            <path d="M24 50 L0 60 Q12 46 26 44 Z" fill="#2979FF" opacity="0.9" />
+            <path d="M22 48 L2 52 Q14 44 26 42 Z" fill="#00E5FF" opacity="0.8" />
           </g>
 
-          <!-- Main Torso & Belly -->
-          <path class="bird-body" d="M22 38 C28 26, 46 22, 58 26 C66 29, 72 35, 68 43 C64 50, 42 52, 28 46 C24 43, 22 40, 22 38 Z" fill="url(#goldBodyGrad)" />
+          <!-- Left / Back Wing (Sapphire Prism) -->
+          <g class="bird-wing wing-back">
+            <path d="M52 40 C46 16, 32 -4, 24 -10 C30 4, 38 24, 44 42 Z" fill="url(#sapphireWingGrad)" filter="url(#jewelGlowFilter)" />
+          </g>
 
-          <!-- Iridescent Chest Feathers Overlay -->
-          <path d="M38 30 C46 28, 56 31, 60 36 C56 42, 44 44, 34 38 Z" fill="#FFEFA6" opacity="0.45" />
+          <!-- Torso & Emerald Iridescent Back -->
+          <path class="bird-back" d="M26 46 C34 32, 56 26, 72 32 C82 36, 88 44, 82 54 C78 62, 50 64, 34 56 C28 53, 26 49, 26 46 Z" fill="url(#emeraldIridescentGrad)" />
 
-          <!-- Head & Crown -->
-          <circle cx="68" cy="30" r="8.5" fill="url(#goldBodyGrad)" />
-          <circle cx="70" cy="28" r="2.2" fill="#2A1B02" />
-          <circle cx="70.8" cy="27.2" r="0.8" fill="#FFFFFF" />
+          <!-- Soft Chest & Belly Layer -->
+          <path class="bird-belly" d="M44 38 C56 34, 70 38, 76 46 C70 54, 52 56, 40 48 Z" fill="url(#chestBellyGrad)" opacity="0.9" />
 
-          <!-- Ruby/Amber Throat Shimmer -->
-          <ellipse cx="64" cy="35" rx="4.5" ry="3" fill="#D4AF37" opacity="0.9" />
+          <!-- Iridescent Scalloped Feather Accent -->
+          <path d="M48 36 C58 32, 72 35, 78 42 C72 48, 56 50, 44 44 Z" fill="#00E5FF" opacity="0.35" />
 
-          <!-- Slender Beak Base -->
-          <path class="bird-beak" d="M75 30 L94 32 L75 32.8 Z" fill="#AA7C11" />
+          <!-- Head & Emerald Crown -->
+          <circle cx="82" cy="38" r="10.5" fill="url(#emeraldIridescentGrad)" />
 
-          <!-- Extendable Nectar Straw / Tongue -->
-          <line class="nectar-straw" id="nectarStrawLine" x1="93" y1="32" x2="108" y2="32" stroke="url(#strawNectarGrad)" stroke-width="1.8" stroke-linecap="round" />
+          <!-- Brilliant Ruby-Magenta Throat Gorget -->
+          <path d="M76 42 C82 40, 88 44, 84 50 C78 54, 74 48, 76 42 Z" fill="url(#rubyGorgetGrad)" filter="url(#jewelGlowFilter)" />
 
-          <!-- Right / Fore Wing -->
+          <!-- Obsidian Eye with Diamond Catchlight -->
+          <circle cx="84.5" cy="35" r="2.8" fill="#111111" />
+          <circle cx="85.5" cy="34" r="1.1" fill="#FFFFFF" />
+
+          <!-- Needle Beak (Slender & Proportional) -->
+          <path class="bird-beak" d="M91 38 L116 40 L91 41.5 Z" fill="#212121" />
+
+          <!-- Extendable Luminous Nectar Straw / Tongue -->
+          <line class="nectar-straw" id="nectarStrawLine" x1="115" y1="40" x2="135" y2="40" stroke="url(#nectarStrawGrad)" stroke-width="2.2" stroke-linecap="round" />
+
+          <!-- Right / Front Wing (Sapphire Prism) -->
           <g class="bird-wing wing-front">
-            <path d="M46 34 C44 14, 36 -2, 30 -8 C34 4, 40 18, 44 36 Z" fill="url(#goldWingGrad)" filter="url(#goldGlowFilter)" />
+            <path d="M58 42 C54 18, 42 -2, 34 -8 C40 6, 48 24, 54 45 Z" fill="url(#sapphireWingGrad)" filter="url(#jewelGlowFilter)" />
           </g>
         </svg>
 
@@ -141,24 +173,27 @@
     nectarStraw = document.getElementById('nectarStrawLine');
   }
 
-  // Golden Stardust Particle Engine
+  // Prismatic Jewel Stardust Particle Engine
   class StardustParticle {
     constructor(x, y, vx, vy) {
-      this.x = x + (Math.random() - 0.5) * 8;
-      this.y = y + (Math.random() - 0.5) * 8;
-      this.vx = vx * 0.15 + (Math.random() - 0.5) * 0.8;
-      this.vy = vy * 0.15 + (Math.random() - 0.5) * 0.8 + 0.3; // Gentle downward drift
-      this.size = Math.random() * 2.8 + 1.2;
-      this.alpha = 0.9;
-      this.decay = Math.random() * 0.025 + 0.015;
-      this.color = Math.random() > 0.4 ? '212, 175, 55' : '255, 239, 166'; // Gold & Champagne
+      this.x = x + (Math.random() - 0.5) * 10;
+      this.y = y + (Math.random() - 0.5) * 10;
+      this.vx = vx * 0.15 + (Math.random() - 0.5) * 0.9;
+      this.vy = vy * 0.15 + (Math.random() - 0.5) * 0.9 + 0.35;
+      this.size = Math.random() * 3.2 + 1.4;
+      this.alpha = 0.95;
+      this.decay = Math.random() * 0.024 + 0.016;
+      
+      // Jewel Particle Colors: Gold, Emerald, Cyan, Ruby Magenta
+      const colors = ['212, 175, 55', '0, 229, 255', '0, 230, 118', '255, 23, 68', '255, 239, 166'];
+      this.color = colors[Math.floor(Math.random() * colors.length)];
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
       this.alpha -= this.decay;
-      this.size *= 0.96;
+      this.size *= 0.95;
     }
 
     draw(ctx) {
@@ -167,21 +202,21 @@
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-      ctx.shadowBlur = 6;
-      ctx.shadowColor = `rgba(212, 175, 55, ${this.alpha})`;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = `rgba(${this.color}, ${this.alpha})`;
       ctx.fill();
       ctx.restore();
     }
   }
 
   function emitNectarBurst(x, y) {
-    // Burst of 16-22 golden nectar particles radiating outward on click
-    for (let i = 0; i < 20; i++) {
-      const angle = (Math.PI * 2 / 20) * i + (Math.random() - 0.5);
-      const speed = Math.random() * 4.5 + 2.0;
+    // Burst of 24 multi-colored nectar sparkles on click
+    for (let i = 0; i < 24; i++) {
+      const angle = (Math.PI * 2 / 24) * i + (Math.random() - 0.5);
+      const speed = Math.random() * 5.0 + 2.2;
       const p = new StardustParticle(x, y, Math.cos(angle) * speed, Math.sin(angle) * speed);
-      p.size = Math.random() * 3.5 + 1.8;
-      p.decay = Math.random() * 0.03 + 0.02;
+      p.size = Math.random() * 4.0 + 2.0;
+      p.decay = Math.random() * 0.03 + 0.018;
       particles.push(p);
     }
   }
@@ -190,7 +225,6 @@
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    // Check if hovering over interactive element
     const target = e.target;
     const isInteractive = Boolean(
       target.closest('a') ||
@@ -223,19 +257,18 @@
     isPecking = true;
     cursorContainer.classList.add('pecking-active');
 
-    // Calculate Beak Tip Global Coordinate
-    const beakTipOffset = 42; // Distance from center to beak tip
-    const rad = birdAngle * Math.PI / 180;
-    const beakX = birdX + Math.cos(rad) * beakTipOffset;
-    const beakY = birdY + Math.sin(rad) * beakTipOffset;
+    // Beak Tip Coordinate calculation based on horizontal facing
+    const beakOffset = 58;
+    const rad = currentPitch * Math.PI / 180;
+    const beakX = birdX + (targetFacing > 0 ? Math.cos(rad) * beakOffset : -Math.cos(rad) * beakOffset);
+    const beakY = birdY + Math.sin(rad) * beakOffset;
 
-    // Trigger Nectar Particle Burst & Visual Ripple
     emitNectarBurst(e.clientX || beakX, e.clientY || beakY);
 
     const sparkle = document.getElementById('nectarBloomSparkle');
     if (sparkle) {
       sparkle.classList.remove('bloom-trigger');
-      void sparkle.offsetWidth; // Trigger reflow
+      void sparkle.offsetWidth;
       sparkle.classList.add('bloom-trigger');
     }
 
@@ -245,11 +278,11 @@
     }, 280);
   }
 
-  // Main 60FPS Physics & Render Loop
+  // Main 60FPS Physics & Aerodynamics Loop
   function animationLoop() {
     frameCount++;
 
-    // 1. Smooth Lerp Motion (Follow cursor)
+    // 1. Smooth Flight Lerp
     const dx = mouseX - birdX;
     const dy = mouseY - birdY;
 
@@ -261,41 +294,57 @@
 
     const speed = Math.hypot(birdVelocityX, birdVelocityY);
 
-    // 2. Flight Angle & Banking Calculation
-    if (speed > 0.4 && !isPecking) {
-      const targetAngle = Math.atan2(birdVelocityY, birdVelocityX) * (180 / Math.PI);
-      
-      // Smooth angle interpolation to prevent erratic spinning
-      let angleDiff = targetAngle - birdAngle;
-      while (angleDiff < -180) angleDiff += 360;
-      while (angleDiff > 180) angleDiff -= 360;
-      birdAngle += angleDiff * 0.18;
+    // 2. Pro Aerodynamics: Upright Orientation & Clamped Pitch
+    if (Math.abs(birdVelocityX) > 0.4) {
+      targetFacing = birdVelocityX >= 0 ? 1 : -1;
     }
 
-    // Dynamic Banking Tilt based on turning rate & lateral velocity
-    const banking = Math.max(-FLIGHT_BANKING_MAX, Math.min(FLIGHT_BANKING_MAX, birdVelocityX * 1.5));
+    // Smooth horizontal turn flipping
+    currentScaleX += (targetFacing - currentScaleX) * 0.22;
 
-    // 3. Update Cursor Position in DOM
+    if (speed > 0.4 && !isPecking) {
+      // Calculate vertical pitch (tilt up/down) based on flight trajectory
+      const forwardVelocity = Math.abs(birdVelocityX);
+      const rawPitch = Math.atan2(birdVelocityY, Math.max(1.0, forwardVelocity)) * (180 / Math.PI);
+      
+      // STRICT CLAMPING: Pitch is locked strictly between -35° and +35° (Head ALWAYS UP!)
+      targetPitch = Math.max(-MAX_PITCH_DEG, Math.min(MAX_PITCH_DEG, rawPitch));
+    } else if (isHovering) {
+      // Gentle hovering tilt
+      targetPitch = -12 + Math.sin(frameCount * 0.12) * 6; // Head tilted gracefully up towards element
+    } else {
+      targetPitch = Math.sin(frameCount * 0.08) * 4; // Neutral resting float
+    }
+
+    // Smooth pitch interpolation
+    currentPitch += (targetPitch - currentPitch) * 0.16;
+
+    // 3. Update Cursor Position & Upright Transforms in DOM
     if (cursorContainer) {
       cursorContainer.style.transform = `translate3d(${birdX}px, ${birdY}px, 0)`;
     }
 
     if (birdWrapper) {
-      // Offset so the beak tip aligns directly with cursor pointer
-      const hoverHoverOffset = isHovering ? Math.sin(frameCount * 0.12) * 3 : 0;
-      birdWrapper.style.transform = `translate(-35px, -24px) rotate(${birdAngle}deg) rotateX(${banking}deg) translateY(${hoverHoverOffset}px)`;
+      // Align beak tip smoothly near cursor position
+      const hoverHoverOffset = isHovering ? Math.sin(frameCount * 0.14) * 4 : 0;
+      const xOffset = targetFacing > 0 ? -48 : -40;
+      
+      birdWrapper.style.transform = `
+        translate(${xOffset}px, -32px)
+        scaleX(${currentScaleX})
+        rotate(${currentPitch}deg)
+        translateY(${hoverHoverOffset}px)
+      `;
     }
 
-    // 4. Emit Stardust Trail Particles while moving
-    if (speed > 1.2 && frameCount % PARTICLE_EMIT_INTERVAL === 0) {
-      // Emit particle near tail feathers (behind the bird)
-      const rad = birdAngle * Math.PI / 180;
-      const tailX = birdX - Math.cos(rad) * 22;
-      const tailY = birdY - Math.sin(rad) * 22;
-      particles.push(new StardustParticle(tailX, tailY, -birdVelocityX * 0.3, -birdVelocityY * 0.3));
+    // 4. Emit Prismatic Stardust Trail Particles
+    if (speed > 1.0 && frameCount % PARTICLE_EMIT_INTERVAL === 0) {
+      const tailX = birdX - targetFacing * 32;
+      const tailY = birdY + 12;
+      particles.push(new StardustParticle(tailX, tailY, -birdVelocityX * 0.35, -birdVelocityY * 0.35));
     }
 
-    // 5. Render Stardust Particles on Canvas
+    // 5. Render Stardust Particles
     if (ctx && canvas) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = particles.length - 1; i >= 0; i--) {
