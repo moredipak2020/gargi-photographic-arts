@@ -1532,3 +1532,150 @@ button {
     max-width: 120px;
   }
 }
+
+/* ==========================================================================
+   DIGITAL RIGHTS MANAGEMENT (DRM) & ANTI-THEFT PROTECTION STYLES
+   ========================================================================== */
+
+/* Global Anti-Drag and Selection Disabling on Visual Assets */
+img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Luxury DRM Alert Toast */
+.drm-toast {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(14, 12, 22, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: var(--radius-full);
+  padding: 0.85rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.25);
+  z-index: 999999;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  max-width: 90vw;
+}
+
+.drm-toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.drm-toast-icon {
+  font-size: 1.3rem;
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.drm-toast-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.drm-toast-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.drm-toast-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Anti-Snip Window Blur Protection Shield */
+.anti-snip-shield {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 4, 6, 0.88);
+  backdrop-filter: blur(40px) brightness(0.2);
+  -webkit-backdrop-filter: blur(40px) brightness(0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 999998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.anti-snip-shield.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.anti-snip-content {
+  max-width: 500px;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(18, 16, 28, 0.85);
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px var(--gold-glow);
+}
+
+.anti-snip-badge {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--border-gold);
+  color: var(--gold-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.anti-snip-content h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+}
+
+.anti-snip-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Print Media Blackout Protection */
+@media print {
+  body * {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  body::before {
+    content: "© Gargi Photographic Arts - Master Photography is Protected by International Copyright Law. Printing is Prohibited.";
+    visibility: visible !important;
+    display: block !important;
+    font-family: sans-serif;
+    font-size: 22pt;
+    text-align: center;
+    padding-top: 200px;
+    color: #000000;
+  }
+}
