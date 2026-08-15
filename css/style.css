@@ -1679,3 +1679,156 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
     color: #000000;
   }
 }
+
+/* ==========================================================================
+   GOLDEN HUMMINGBIRD ANIMATED CURSOR COMPANION STYLES
+   ========================================================================== */
+
+/* Particle Canvas */
+.hummingbird-trail-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999990;
+}
+
+/* Cursor Master Container */
+.hummingbird-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 999995;
+  will-change: transform;
+}
+
+/* Bird Articulated Wrapper */
+.hummingbird-wrapper {
+  position: relative;
+  width: 60px;
+  height: 50px;
+  pointer-events: none;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: filter 0.3s ease;
+}
+
+.hummingbird-svg {
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.45));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* High-Speed Dual-Wing 3D Flapping Flutter */
+@keyframes wingFlutterFront {
+  0%, 100% {
+    transform: rotateY(0deg) rotateZ(0deg) scaleY(1);
+  }
+  50% {
+    transform: rotateY(70deg) rotateZ(-30deg) scaleY(0.4);
+  }
+}
+
+@keyframes wingFlutterBack {
+  0%, 100% {
+    transform: rotateY(0deg) rotateZ(0deg) scaleY(1);
+  }
+  50% {
+    transform: rotateY(-70deg) rotateZ(30deg) scaleY(0.4);
+  }
+}
+
+.wing-front {
+  transform-origin: 46px 34px;
+  animation: wingFlutterFront 0.075s infinite ease-in-out alternate;
+}
+
+.wing-back {
+  transform-origin: 42px 32px;
+  animation: wingFlutterBack 0.075s infinite ease-in-out alternate;
+}
+
+/* Extendable Nectar Straw / Tongue */
+.nectar-straw {
+  transform-origin: 93px 32px;
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), stroke-width 0.15s ease;
+  opacity: 0.8;
+}
+
+/* Pecking & Click Siphon Interaction */
+.pecking-active .hummingbird-svg {
+  transform: scale(1.18) translateX(7px);
+  filter: drop-shadow(0 0 16px rgba(255, 223, 0, 0.95));
+}
+
+.pecking-active .nectar-straw {
+  transform: scaleX(2.3) scaleY(1.4);
+  opacity: 1;
+  stroke: #FFFFFF;
+}
+
+/* Hover Feeding Aura */
+.feeding-aura {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.hovering-element .feeding-aura {
+  opacity: 1;
+  animation: feedingAuraPulse 1.2s infinite ease-in-out alternate;
+}
+
+@keyframes feedingAuraPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0.85;
+  }
+}
+
+/* Radial Nectar Ripple Bloom on Click */
+.nectar-bloom-sparkle {
+  position: absolute;
+  top: 14px;
+  left: 56px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #FFEFA6;
+  box-shadow: 0 0 12px var(--gold-light), inset 0 0 6px #FFF;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.2);
+}
+
+.nectar-bloom-sparkle.bloom-trigger {
+  animation: nectarRippleBloom 0.4s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+@keyframes nectarRippleBloom {
+  0% {
+    opacity: 1;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4.2);
+  }
+}
+
+@media (max-width: 992px), (pointer: coarse) {
+  .hummingbird-trail-canvas,
+  .hummingbird-cursor-container {
+    display: none !important;
+  }
+}
