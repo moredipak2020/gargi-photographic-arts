@@ -1607,18 +1607,18 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
 .anti-snip-shield {
   position: fixed;
   inset: 0;
-  background: rgba(4, 4, 6, 0.88);
-  backdrop-filter: blur(40px) brightness(0.2);
-  -webkit-backdrop-filter: blur(40px) brightness(0.2);
+  background: rgba(7, 6, 12, 0.68);
+  backdrop-filter: blur(28px) saturate(1.2);
+  -webkit-backdrop-filter: blur(28px) saturate(1.2);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 99999999;
+  z-index: 99999990;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .anti-snip-shield.active,
@@ -1628,16 +1628,16 @@ html.drm-defocused-guard .anti-snip-shield {
   pointer-events: auto !important;
 }
 
-/* Zero out all images in DOM buffer during capture/defocus states */
+/* Frosted luxury blur on all photos during capture/defocus states */
 html.drm-defocused-guard img,
 html.drm-defocused-guard video,
 html.drm-defocused-guard .gallery-card,
 html.drm-defocused-guard .museum-frame-card,
 html.drm-defocused-guard .gallery-img-wrapper,
 html.drm-defocused-guard .category-tile {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  filter: blur(80px) brightness(0) !important;
+  filter: blur(45px) brightness(0.4) saturate(0.8) !important;
+  opacity: 0.2 !important;
+  pointer-events: none !important;
 }
 
 .anti-snip-content {
@@ -1865,7 +1865,7 @@ html.drm-defocused-guard .category-tile {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 999990;
+  z-index: 100000000;
 }
 
 /* Stardust Master Cursor Wrapper */
@@ -1874,10 +1874,10 @@ html.drm-defocused-guard .category-tile {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 999999;
+  z-index: 100000001;
   will-change: transform;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.15s ease;
 }
 
 .luxury-stardust-cursor.visible {
