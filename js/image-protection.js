@@ -8,7 +8,6 @@
 
   let toastTimeout = null;
   let blackoutTimeout = null;
-  let isCaptureAttempt = false;
 
   // 1. Luxury Gold Toast Notification Manager
   function showProtectionToast(message) {
@@ -33,7 +32,7 @@
     if (toastTimeout) clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
       toast.classList.remove('visible');
-    }, 2800);
+    }, 2500);
   }
 
   // 2. Blackout Protection Shield Manager (Triggered on PrintScreen & Snipping Tool)
@@ -47,7 +46,7 @@
         <div class="anti-snip-content">
           <div class="anti-snip-badge">🔒 GARGI PHOTOGRAPHIC ARTS</div>
           <h2>Master Visual Asset Protected</h2>
-          <p>Screen capture detected. High-resolution photography is protected under international copyright law.</p>
+          <p>Photography is protected under international copyright law. Screen captures and saving are restricted.</p>
         </div>
       `;
       document.body.appendChild(shield);
@@ -55,17 +54,15 @@
     return shield;
   }
 
-  function triggerBlackoutShield(durationMs = 2000) {
+  function activateBlackoutShield(durationMs = 0) {
     const shield = getOrCreateBlackoutShield();
     shield.classList.add('active');
     document.body.classList.add('anti-snip-active');
 
-    // Wipe clipboard memory immediately
+    // Wipe clipboard memory immediately to discard any captured bitmap
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
     }
-
-    showProtectionToast('Screen capture detected. High-resolution screen protected.');
 
     if (blackoutTimeout) clearTimeout(blackoutTimeout);
     if (durationMs > 0) {
@@ -81,7 +78,6 @@
       shield.classList.remove('active');
     }
     document.body.classList.remove('anti-snip-active');
-    isCaptureAttempt = false;
   }
 
   // 3. Global Context Menu (Right Click) Lock on all Photographic Assets
@@ -96,7 +92,10 @@
         target.closest('.lightbox-media') || 
         target.closest('.category-tile') ||
         target.closest('.hero') ||
-        target.closest('.gallery-img-wrapper');
+        target.closest('.gallery-img-wrapper') ||
+        target.closest('.gallery-grid') ||
+        target.closest('#kidsFramesGrid') ||
+        target.closest('#weddingsGrid');
 
       if (isProtectedElement) {
         e.preventDefault();
@@ -135,17 +134,18 @@
       const isCtrlOrCmd = e.ctrlKey || e.metaKey;
       const key = (e.key || '').toLowerCase();
 
-      // PrintScreen Key -> Instant Blackout
+      // PrintScreen Key -> Instant Blackout + Clipboard Wipe
       if (e.key === 'PrintScreen' || e.keyCode === 44) {
         e.preventDefault();
-        triggerBlackoutShield(2200);
+        activateBlackoutShield(2200);
+        showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
         return false;
       }
 
-      // Windows Snipping Tool (Win + Shift + S) or Browser Snipping (Ctrl + Shift + S)
-      if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta')) && key === 's') {
-        isCaptureAttempt = true;
-        triggerBlackoutShield(3000);
+      // Windows Snipping Tool (Win + Shift + S) / Browser Snipping
+      if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta')) || (isCtrlOrCmd && e.shiftKey && key === 's')) {
+        activateBlackoutShield(2500);
+        showProtectionToast('Snipping tool detected. High-resolution screen protected.');
         return false;
       }
 
@@ -183,33 +183,39 @@
 
     window.addEventListener('keyup', function(e) {
       if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        triggerBlackoutShield(2200);
+        activateBlackoutShield(2200);
+        showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
       }
     });
 
-    // B. Smart Snipping Tool Blur Detection (Only blackout if a capture key was used or active capture attempt)
+    // B. Snipping Tool Freeze Interceptor:
+    // When Snipping Tool takes focus away from the browser, activate blackout shield instantly so the snip freezes ONLY the blackout screen.
     window.addEventListener('blur', function() {
-      if (isCaptureAttempt) {
-        const shield = getOrCreateBlackoutShield();
-        shield.classList.add('active');
-        document.body.classList.add('anti-snip-active');
-      }
+      activateBlackoutShield(0); // Holds blur while Snipping Tool is open
     });
 
+    // When user returns/refocuses, dismiss blackout smoothly
     window.addEventListener('focus', function() {
-      // When user clicks back into window, dismiss blackout smoothly
       dismissBlackoutShield();
     });
 
-    // User interaction inside page clears any active blackout
+    // Mouse movement or click inside the window dismisses the shield smoothly
     window.addEventListener('mousemove', function() {
-      if (!isCaptureAttempt) {
-        const shield = document.getElementById('antiSnipShield');
-        if (shield && shield.classList.contains('active') && !blackoutTimeout) {
-          dismissBlackoutShield();
-        }
-      }
+      dismissBlackoutShield();
     }, { passive: true });
+
+    window.addEventListener('mousedown', function() {
+      dismissBlackoutShield();
+    }, { passive: true });
+
+    // Document visibility change (tab switch / screen clipping)
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        activateBlackoutShield(0);
+      } else {
+        dismissBlackoutShield();
+      }
+    });
   }
 
   // Initialize DRM Protection Suite on DOM Ready
