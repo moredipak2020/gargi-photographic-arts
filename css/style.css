@@ -703,9 +703,12 @@ button {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-glass);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @media (max-width: 992px) {
@@ -765,7 +768,10 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center 25%;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .gallery-card:hover .gallery-img {
@@ -936,8 +942,11 @@ button {
   backdrop-filter: blur(16px);
   border: 3px solid rgba(212, 175, 55, 0.4);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(0, 0, 0, 0.85);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .museum-frame-card:hover {
