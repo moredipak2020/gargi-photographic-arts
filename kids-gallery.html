@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=5.0">
+  <link rel="stylesheet" href="css/style.css?v=5.1">
 
   <!-- GSAP Animation Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -213,10 +213,9 @@
         if (item.isPlaceholder) {
           card.className = `museum-frame-card empty-frame ${aspectClass}`;
           card.innerHTML = `
-            <span class="frame-number-badge">FRAME #${frameStr}</span>
             <div class="empty-frame-inner">
               <div class="empty-frame-icon">📷</div>
-              <div class="empty-frame-slot-title">Frame Container #${frameStr}</div>
+              <div class="empty-frame-slot-title">Frame Slot #${frameStr}</div>
               <div class="empty-frame-tag">Ready for Dipak's Click (${item.aspectRatio})</div>
               <div style="font-size: 0.72rem; color: var(--gold-light); margin-top: 0.5rem; opacity: 0.85;">Click to view EXIF & Upload Specs</div>
             </div>
@@ -224,7 +223,6 @@
         } else {
           card.className = `museum-frame-card ${aspectClass}`;
           card.innerHTML = `
-            <span class="frame-number-badge">FRAME #${frameStr}</span>
             <div class="gallery-img-wrapper">
               <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy" />
               <div class="gallery-card-overlay" style="opacity: 1; background: linear-gradient(to top, rgba(7,7,10,0.95) 0%, transparent 60%);">
