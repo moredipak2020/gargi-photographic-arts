@@ -1,14 +1,16 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - DIGITAL RIGHTS MANAGEMENT (DRM) & PROTECTION SUITE
-// Protects photography against right-click, drag, PrintScreen, snipping, & shortcuts
+// Advanced Screenshot/Snipping Lock, PrintScreen Blackout, Clipboard Eraser & DRM
 // ==========================================================================
 
 (function() {
   'use strict';
 
-  // 1. Toast Notification Manager for Protected Actions
   let toastTimeout = null;
+  let blackoutTimeout = null;
+  let isCaptureAttempt = false;
 
+  // 1. Luxury Gold Toast Notification Manager
   function showProtectionToast(message) {
     let toast = document.getElementById('drmProtectionToast');
     if (!toast) {
@@ -34,7 +36,55 @@
     }, 2800);
   }
 
-  // 2. Lock Context Menu (Right Click) on Images & Visual Canvas
+  // 2. Blackout Protection Shield Manager (Triggered on PrintScreen & Snipping Tool)
+  function getOrCreateBlackoutShield() {
+    let shield = document.getElementById('antiSnipShield');
+    if (!shield) {
+      shield = document.createElement('div');
+      shield.id = 'antiSnipShield';
+      shield.className = 'anti-snip-shield';
+      shield.innerHTML = `
+        <div class="anti-snip-content">
+          <div class="anti-snip-badge">🔒 GARGI PHOTOGRAPHIC ARTS</div>
+          <h2>Master Visual Asset Protected</h2>
+          <p>Screen capture detected. High-resolution photography is protected under international copyright law.</p>
+        </div>
+      `;
+      document.body.appendChild(shield);
+    }
+    return shield;
+  }
+
+  function triggerBlackoutShield(durationMs = 2000) {
+    const shield = getOrCreateBlackoutShield();
+    shield.classList.add('active');
+    document.body.classList.add('anti-snip-active');
+
+    // Wipe clipboard memory immediately
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
+    }
+
+    showProtectionToast('Screen capture detected. High-resolution screen protected.');
+
+    if (blackoutTimeout) clearTimeout(blackoutTimeout);
+    if (durationMs > 0) {
+      blackoutTimeout = setTimeout(() => {
+        dismissBlackoutShield();
+      }, durationMs);
+    }
+  }
+
+  function dismissBlackoutShield() {
+    const shield = document.getElementById('antiSnipShield');
+    if (shield) {
+      shield.classList.remove('active');
+    }
+    document.body.classList.remove('anti-snip-active');
+    isCaptureAttempt = false;
+  }
+
+  // 3. Global Context Menu (Right Click) Lock on all Photographic Assets
   function initContextMenuGuard() {
     document.addEventListener('contextmenu', function(e) {
       const target = e.target;
@@ -42,10 +92,11 @@
         target.tagName === 'IMG' || 
         target.tagName === 'VIDEO' ||
         target.closest('.gallery-card') || 
+        target.closest('.museum-frame-card') ||
         target.closest('.lightbox-media') || 
         target.closest('.category-tile') ||
-        target.closest('.museum-frame-card') ||
-        target.closest('.hero');
+        target.closest('.hero') ||
+        target.closest('.gallery-img-wrapper');
 
       if (isProtectedElement) {
         e.preventDefault();
@@ -56,20 +107,19 @@
     }, { capture: true });
   }
 
-  // 3. Lock Image Drag & Drop
+  // 4. Global Drag & Drop Lock
   function initDragDropGuard() {
     document.addEventListener('dragstart', function(e) {
-      if (e.target.tagName === 'IMG' || e.target.closest('.gallery-card') || e.target.closest('.lightbox-media')) {
+      if (e.target.tagName === 'IMG' || e.target.closest('.gallery-card') || e.target.closest('.museum-frame-card') || e.target.closest('.lightbox-media')) {
         e.preventDefault();
         return false;
       }
     }, { capture: true });
 
-    // Set draggable=false on all existing and dynamically inserted images
     const applyNoDrag = () => {
-      document.querySelectorAll('img').forEach(img => {
-        img.setAttribute('draggable', 'false');
-        img.setAttribute('oncontextmenu', 'return false;');
+      document.querySelectorAll('img, video, .gallery-card, .museum-frame-card').forEach(el => {
+        el.setAttribute('draggable', 'false');
+        el.setAttribute('oncontextmenu', 'return false;');
       });
     };
 
@@ -78,16 +128,30 @@
     observer.observe(document.body, { childList: true, subtree: true });
   }
 
-  // 4. Keyboard Shortcut Interceptor (Ctrl+S, Ctrl+P, Ctrl+U, F12, DevTools)
-  function initKeyboardGuard() {
-    document.addEventListener('keydown', function(e) {
+  // 5. Intelligent Keyboard & Snipping Tool Interceptor
+  function initKeyboardAndSnippingGuard() {
+    // A. Detect PrintScreen Key (keydown & keyup)
+    window.addEventListener('keydown', function(e) {
       const isCtrlOrCmd = e.ctrlKey || e.metaKey;
       const key = (e.key || '').toLowerCase();
 
-      // Block Ctrl+S (Save Page)
+      // PrintScreen Key -> Instant Blackout
+      if (e.key === 'PrintScreen' || e.keyCode === 44) {
+        e.preventDefault();
+        triggerBlackoutShield(2200);
+        return false;
+      }
+
+      // Windows Snipping Tool (Win + Shift + S) or Browser Snipping (Ctrl + Shift + S)
+      if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta')) && key === 's') {
+        isCaptureAttempt = true;
+        triggerBlackoutShield(3000);
+        return false;
+      }
+
+      // Block Ctrl+S (Save Page / Asset)
       if (isCtrlOrCmd && key === 's') {
         e.preventDefault();
-        e.stopPropagation();
         showProtectionToast('Page and asset saving is disabled.');
         return false;
       }
@@ -95,7 +159,6 @@
       // Block Ctrl+P (Print to PDF / Paper)
       if (isCtrlOrCmd && key === 'p') {
         e.preventDefault();
-        e.stopPropagation();
         showProtectionToast('Printing and PDF export are disabled for photographic assets.');
         return false;
       }
@@ -103,82 +166,63 @@
       // Block Ctrl+U (View Source)
       if (isCtrlOrCmd && key === 'u') {
         e.preventDefault();
-        e.stopPropagation();
         showProtectionToast('Source inspection is restricted.');
         return false;
       }
 
-      // Block F12 and Ctrl+Shift+I / J / C (Developer Tools)
+      // Block F12 and Ctrl+Shift+I / J / C (DevTools)
       if (
-        e.keyCode === 123 || // F12
+        e.keyCode === 123 ||
         (isCtrlOrCmd && e.shiftKey && (key === 'i' || key === 'j' || key === 'c'))
       ) {
         e.preventDefault();
-        e.stopPropagation();
         showProtectionToast('Developer Tools inspection is restricted on master gallery pages.');
         return false;
       }
     }, { capture: true });
-  }
 
-  // 5. Snipping Tool & Screenshot Mitigation (Window Blur Shield)
-  function initSnippingShield() {
-    let shield = document.getElementById('antiSnipShield');
-    if (!shield) {
-      shield = document.createElement('div');
-      shield.id = 'antiSnipShield';
-      shield.className = 'anti-snip-shield';
-      shield.innerHTML = `
-        <div class="anti-snip-content">
-          <div class="anti-snip-badge">🔒 GARGI PHOTOGRAPHIC ARTS</div>
-          <h2>Master Visual Asset Protected</h2>
-          <p>Click back onto the window to resume viewing high-resolution gallery collections.</p>
-        </div>
-      `;
-      document.body.appendChild(shield);
-    }
-
-    // When OS window loses focus (e.g. Snipping tool, Win+Shift+S, Alt-Tab), activate blur shield
-    window.addEventListener('blur', function() {
-      shield.classList.add('active');
-      document.body.classList.add('anti-snip-active');
-    });
-
-    // When user refocuses the window, dismiss shield
-    window.addEventListener('focus', function() {
-      shield.classList.remove('active');
-      document.body.classList.remove('anti-snip-active');
-    });
-  }
-
-  // 6. PrintScreen Key Clipboard Eraser Guard
-  function initPrintScreenGuard() {
     window.addEventListener('keyup', function(e) {
       if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        // Overwrite system clipboard to invalidate captured image data
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
-        }
-        showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
+        triggerBlackoutShield(2200);
       }
     });
+
+    // B. Smart Snipping Tool Blur Detection (Only blackout if a capture key was used or active capture attempt)
+    window.addEventListener('blur', function() {
+      if (isCaptureAttempt) {
+        const shield = getOrCreateBlackoutShield();
+        shield.classList.add('active');
+        document.body.classList.add('anti-snip-active');
+      }
+    });
+
+    window.addEventListener('focus', function() {
+      // When user clicks back into window, dismiss blackout smoothly
+      dismissBlackoutShield();
+    });
+
+    // User interaction inside page clears any active blackout
+    window.addEventListener('mousemove', function() {
+      if (!isCaptureAttempt) {
+        const shield = document.getElementById('antiSnipShield');
+        if (shield && shield.classList.contains('active') && !blackoutTimeout) {
+          dismissBlackoutShield();
+        }
+      }
+    }, { passive: true });
   }
 
-  // Initialize Protection Suite on DOM Ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      initContextMenuGuard();
-      initDragDropGuard();
-      initKeyboardGuard();
-      initSnippingShield();
-      initPrintScreenGuard();
-    });
-  } else {
+  // Initialize DRM Protection Suite on DOM Ready
+  function init() {
     initContextMenuGuard();
     initDragDropGuard();
-    initKeyboardGuard();
-    initSnippingShield();
-    initPrintScreenGuard();
+    initKeyboardAndSnippingGuard();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 
 })();

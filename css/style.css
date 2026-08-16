@@ -1840,15 +1840,9 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
 /* Global Default OS Mouse Pointer Replacement */
 @media (min-width: 993px) and (pointer: fine) {
   html.custom-luxury-cursor-active,
-  html.custom-luxury-cursor-active body,
-  html.custom-luxury-cursor-active a,
-  html.custom-luxury-cursor-active button,
-  html.custom-luxury-cursor-active input,
-  html.custom-luxury-cursor-active textarea,
-  html.custom-luxury-cursor-active select,
-  html.custom-luxury-cursor-active [role="button"],
-  html.custom-luxury-cursor-active .gallery-card,
-  html.custom-luxury-cursor-active .category-tile {
+  html.custom-luxury-cursor-active *,
+  html.custom-luxury-cursor-active *::before,
+  html.custom-luxury-cursor-active *::after {
     cursor: none !important;
   }
 }
