@@ -110,7 +110,6 @@ function renderGallery(filterCategory = 'all', filterOrientation = 'all') {
     card.innerHTML = `
       <div class="gallery-img-wrapper">
         <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy" />
-        <span class="gallery-card-badge">${badgeCategory}${ratioBadge}</span>
         <div class="gallery-card-overlay">
           <h3 class="gallery-card-title">${item.title}</h3>
           <div class="gallery-card-meta">
