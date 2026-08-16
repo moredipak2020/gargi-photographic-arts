@@ -1,6 +1,7 @@
 // ==========================================================================
-// GARGI PHOTOGRAPHIC ARTS - HARDWARE-ACCELERATED ZERO-LAG LUXURY CURSOR ENGINE
-// 100% Zero-Latency Direct Pointer Sync + Lightweight Asynchronous Stardust Stream
+// GARGI PHOTOGRAPHIC ARTS - CINEMATIC GOLDEN FAIRY STARDUST CURSOR ENGINE
+// Dense, glistening champagne glitter ribbon & 4-point diamond sparkle stars
+// Hardware-accelerated 120fps direct pointer sync (Zero Lag)
 // ==========================================================================
 
 (function() {
@@ -33,10 +34,10 @@
   let canvas = null;
   let ctx = null;
   let particles = [];
-  const MAX_PARTICLES = 30; // Optimized particle budget
+  const MAX_PARTICLES = 130; // Rich, dense cinematic glitter ribbon budget
 
   function createCursorDOM() {
-    // 1. Hardware Accelerated Canvas for Stardust Stream
+    // 1. Fullscreen Hardware-Accelerated Canvas for Stardust Stream
     canvas = document.createElement('canvas');
     canvas.id = 'luxuryStardustCanvas';
     canvas.className = 'luxury-stardust-canvas';
@@ -87,39 +88,48 @@
     ringElement = cursorWrapper.querySelector('.cursor-aperture-ring');
   }
 
-  // Lightweight 60-120FPS Particle Class
+  // Cinematic Sparkling Stardust Fairy Particle Class
   class StardustFairyParticle {
     constructor(x, y, vx, vy, isBurst = false) {
-      this.x = x + (Math.random() - 0.5) * 4;
-      this.y = y + (Math.random() - 0.5) * 4;
+      // Subtle organic scatter around cursor
+      this.x = x + (Math.random() - 0.5) * (isBurst ? 8 : 7);
+      this.y = y + (Math.random() - 0.5) * (isBurst ? 8 : 7);
       
-      const speedMult = isBurst ? 3.2 : 0.7;
-      this.vx = vx * 0.1 + (Math.random() - 0.5) * 1.2 * speedMult;
-      this.vy = vy * 0.1 + (Math.random() - 0.5) * 1.2 * speedMult + (isBurst ? 0 : 0.15);
+      const speedMult = isBurst ? 3.8 : 0.9;
+      this.vx = vx * 0.12 + (Math.random() - 0.5) * 1.4 * speedMult;
+      this.vy = vy * 0.12 + (Math.random() - 0.5) * 1.4 * speedMult + (isBurst ? 0 : 0.22); // Elegant downward drift
       
-      this.size = Math.random() * (isBurst ? 2.8 : 2.0) + 0.8;
-      this.maxLife = Math.random() * (isBurst ? 24 : 18) + 12;
+      this.size = Math.random() * (isBurst ? 3.2 : 2.5) + 0.9;
+      this.maxLife = Math.random() * (isBurst ? 30 : 28) + 18;
       this.life = this.maxLife;
       this.alpha = 1.0;
+      this.twinklePhase = Math.random() * Math.PI * 2;
+      this.twinkleSpeed = Math.random() * 0.25 + 0.15;
       
+      // Luxury Golden & Champagne Palette
       const colors = [
-        '255, 239, 166',
-        '255, 215, 0',
-        '212, 175, 55',
-        '255, 255, 255'
+        '255, 239, 166', // Champagne Gold
+        '255, 215, 0',   // Pure 24K Gold
+        '212, 175, 55',   // Rich Metallic Gold
+        '255, 255, 255', // Diamond White Sparkle
+        '255, 248, 220'  // Warm Cornsilk Glow
       ];
       this.color = colors[Math.floor(Math.random() * colors.length)];
-      this.isStar = Math.random() > 0.65;
+      this.isStar = Math.random() > 0.52; // 48% sparkling 4-point micro-stars!
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.vx *= 0.94;
-      this.vy *= 0.94;
+      this.vx *= 0.93;
+      this.vy *= 0.93;
       this.life--;
-      this.alpha = Math.max(0, this.life / this.maxLife);
-      this.size *= 0.95;
+      this.twinklePhase += this.twinkleSpeed;
+      
+      const lifeRatio = this.life / this.maxLife;
+      const shimmer = 0.75 + 0.25 * Math.sin(this.twinklePhase);
+      this.alpha = Math.max(0, lifeRatio * shimmer);
+      this.size *= 0.96;
     }
 
     draw(ctx) {
@@ -129,10 +139,18 @@
       const rgb = this.color;
 
       if (this.isStar && this.size > 0.9) {
+        // High-Performance Diamond 4-Point Sparkle Star
         const cx = this.x;
         const cy = this.y;
-        const s = this.size * 1.5;
+        const s = this.size * 1.7;
         
+        // Soft outer ambient star flare
+        ctx.fillStyle = `rgba(${rgb}, ${a * 0.35})`;
+        ctx.beginPath();
+        ctx.arc(cx, cy, s * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Sharp diamond 4-point star core
         ctx.fillStyle = `rgba(${rgb}, ${a})`;
         ctx.beginPath();
         ctx.moveTo(cx, cy - s);
@@ -143,11 +161,14 @@
         ctx.closePath();
         ctx.fill();
       } else {
-        ctx.fillStyle = `rgba(${rgb}, ${a * 0.3})`;
+        // Glowing Circular Stardust Ember (2-Pass Glow)
+        // Outer soft halo
+        ctx.fillStyle = `rgba(${rgb}, ${a * 0.32})`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * 1.8, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size * 2.2, 0, Math.PI * 2);
         ctx.fill();
 
+        // Inner radiant ember
         ctx.fillStyle = `rgba(${rgb}, ${a})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -156,11 +177,13 @@
     }
   }
 
+  // Emit Dense, Unbroken Cinematic Glitter Stream
   function emitStardustStream(x0, y0, x1, y1) {
     if (particles.length >= MAX_PARTICLES) return;
     
     const dist = Math.hypot(x1 - x0, y1 - y0);
-    const count = Math.min(3, Math.max(1, Math.floor(dist / 8)));
+    // Dynamic emission density creates an unbroken, continuous fairy streamer
+    const count = Math.min(8, Math.max(2, Math.floor(dist / 4.2)));
     const vx = x1 - x0;
     const vy = y1 - y0;
 
@@ -174,10 +197,10 @@
   }
 
   function emitClickSupernova(x, y) {
-    const burstCount = 16;
+    const burstCount = 28;
     for (let i = 0; i < burstCount; i++) {
-      const angle = (Math.PI * 2 / burstCount) * i + (Math.random() - 0.5) * 0.3;
-      const speed = Math.random() * 3.2 + 1.2;
+      const angle = (Math.PI * 2 / burstCount) * i + (Math.random() - 0.5) * 0.35;
+      const speed = Math.random() * 4.2 + 1.5;
       const vx = Math.cos(angle) * speed;
       const vy = Math.sin(angle) * speed;
       particles.push(new StardustFairyParticle(x, y, vx, vy, true));
@@ -203,7 +226,7 @@
 
     if (lastX > 0 && lastY > 0) {
       const speed = Math.hypot(mouseX - lastX, mouseY - lastY);
-      if (speed > 1.5) {
+      if (speed > 1.2) {
         emitStardustStream(lastX, lastY, mouseX, mouseY);
       }
     }
@@ -288,7 +311,7 @@
     }
   }
 
-  // 3. Independent Asynchronous Render Loop for Particles & Aperture Rotation
+  // 3. Independent Asynchronous Render Loop for Particles & Aperture Rotation (120FPS)
   function animationLoop() {
     // Continuous Aperture Rotation
     rotationAngle += isHovering ? 1.8 : 0.5;
