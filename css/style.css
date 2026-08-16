@@ -1614,17 +1614,30 @@ img, video, .gallery-card, .lightbox-media, .category-tile, .museum-frame-card {
   align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 999998;
+  z-index: 99999999;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.anti-snip-shield.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+.anti-snip-shield.active,
+html.drm-defocused-guard .anti-snip-shield {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+/* Zero out all images in DOM buffer during capture/defocus states */
+html.drm-defocused-guard img,
+html.drm-defocused-guard video,
+html.drm-defocused-guard .gallery-card,
+html.drm-defocused-guard .museum-frame-card,
+html.drm-defocused-guard .gallery-img-wrapper,
+html.drm-defocused-guard .category-tile {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  filter: blur(80px) brightness(0) !important;
 }
 
 .anti-snip-content {

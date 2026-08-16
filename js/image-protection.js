@@ -7,7 +7,7 @@
   'use strict';
 
   let toastTimeout = null;
-  let blackoutTimeout = null;
+  let blackoutTimer = null;
 
   // 1. Luxury Gold Toast Notification Manager
   function showProtectionToast(message) {
@@ -35,7 +35,7 @@
     }, 2500);
   }
 
-  // 2. Blackout Protection Shield Manager (Triggered on PrintScreen & Snipping Tool)
+  // 2. Blackout Protection Shield Manager
   function getOrCreateBlackoutShield() {
     let shield = document.getElementById('antiSnipShield');
     if (!shield) {
@@ -57,6 +57,7 @@
   function activateBlackoutShield(durationMs = 0) {
     const shield = getOrCreateBlackoutShield();
     shield.classList.add('active');
+    document.documentElement.classList.add('drm-defocused-guard');
     document.body.classList.add('anti-snip-active');
 
     // Wipe clipboard memory immediately to discard any captured bitmap
@@ -64,19 +65,25 @@
       navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
     }
 
-    if (blackoutTimeout) clearTimeout(blackoutTimeout);
+    if (blackoutTimer) clearTimeout(blackoutTimer);
     if (durationMs > 0) {
-      blackoutTimeout = setTimeout(() => {
+      blackoutTimer = setTimeout(() => {
         dismissBlackoutShield();
       }, durationMs);
     }
   }
 
   function dismissBlackoutShield() {
+    // CRITICAL: DO NOT DISMISS if the window does not have OS focus (Snipping tool active)
+    if (!document.hasFocus() || document.hidden) {
+      return;
+    }
+
     const shield = document.getElementById('antiSnipShield');
     if (shield) {
       shield.classList.remove('active');
     }
+    document.documentElement.classList.remove('drm-defocused-guard');
     document.body.classList.remove('anti-snip-active');
   }
 
@@ -137,12 +144,12 @@
       // PrintScreen Key -> Instant Blackout + Clipboard Wipe
       if (e.key === 'PrintScreen' || e.keyCode === 44) {
         e.preventDefault();
-        activateBlackoutShield(2200);
+        activateBlackoutShield(2500);
         showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
         return false;
       }
 
-      // Windows Snipping Tool (Win + Shift + S) / Browser Snipping
+      // Windows Snipping Tool (Win + Shift + S) or Browser Snipping
       if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta')) || (isCtrlOrCmd && e.shiftKey && key === 's')) {
         activateBlackoutShield(2500);
         showProtectionToast('Snipping tool detected. High-resolution screen protected.');
@@ -183,34 +190,41 @@
 
     window.addEventListener('keyup', function(e) {
       if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        activateBlackoutShield(2200);
+        activateBlackoutShield(2500);
         showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
       }
     });
 
-    // B. Snipping Tool Freeze Interceptor:
-    // When Snipping Tool takes focus away from the browser, activate blackout shield instantly so the snip freezes ONLY the blackout screen.
+    // B. Airtight Snipping Tool Interception:
+    // When Snipping Tool takes focus away from the browser (Win+Shift+S or Start Menu snip),
+    // activate blackout shield. It CANNOT be dismissed until document.hasFocus() is true!
     window.addEventListener('blur', function() {
-      activateBlackoutShield(0); // Holds blur while Snipping Tool is open
+      activateBlackoutShield(0);
     });
 
-    // When user returns/refocuses, dismiss blackout smoothly
+    // When user returns/refocuses, dismiss blackout smoothly only if document has focus
     window.addEventListener('focus', function() {
-      dismissBlackoutShield();
+      if (document.hasFocus()) {
+        dismissBlackoutShield();
+      }
     });
 
-    // Mouse movement or click inside the window dismisses the shield smoothly
+    // Mouse movement or click inside the window dismisses the shield ONLY if window is focused
     window.addEventListener('mousemove', function() {
-      dismissBlackoutShield();
+      if (document.hasFocus()) {
+        dismissBlackoutShield();
+      }
     }, { passive: true });
 
     window.addEventListener('mousedown', function() {
-      dismissBlackoutShield();
+      if (document.hasFocus()) {
+        dismissBlackoutShield();
+      }
     }, { passive: true });
 
     // Document visibility change (tab switch / screen clipping)
     document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
+      if (document.hidden || !document.hasFocus()) {
         activateBlackoutShield(0);
       } else {
         dismissBlackoutShield();
