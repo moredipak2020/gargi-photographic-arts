@@ -406,23 +406,23 @@ const galleryData = [
   },
   {
     id: "vid-3",
-    title: "Lord Narasimha Cosmic Avatar Motion",
+    title: "॥ श्री षोडशबाहु नरसिंहाष्टकम् ॥ Powerful Narasimha Stotram | AI Animated 4K | Sri Vijayeendra Tirtha",
     category: "ai-video",
-    videoSubtype: "motion",
+    videoSubtype: "song",
     type: "video",
     src: "assets/images/ai_video_thumb.png",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "AF3Ojhw9nV8",
     aspectRatio: "16:9",
     orientation: "landscape",
-    pipelineBadges: ["Motion Cinema", "ComfyUI", "Veo Pipeline"],
+    pipelineBadges: ["Devotional Stotram", "AI Animated 4K", "Veo & ComfyUI"],
     exif: {
-      camera: "Veo & ComfyUI Pipeline",
-      lens: "Cosmic Motion Interpolation",
-      aperture: "Motion Lock",
-      shutter: "1/1000s Render",
-      iso: "HDR Master",
+      camera: "Veo, ComfyUI & WAN 2.2 Pipeline",
+      lens: "4K Cinematic Motion Interpolation",
+      aperture: "Motion Lock / 60fps",
+      shutter: "Audio Chanting Synchronized",
+      iso: "HDR 4K Master",
       location: "Mythological AI Cinema",
-      story: "Dynamic motion animation generated from static concept art, maintaining facial identity and cosmic energy glows."
+      story: "Powerful Sri Shodashabahu Narasimha Ashtakam stotram composed by Sri Vijayeendra Tirtha, rendered in AI Animated 4K motion cinema with facial identity preservation and cosmic energy dynamics."
     }
   }
 ];

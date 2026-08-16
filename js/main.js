@@ -219,7 +219,7 @@ function renderVideoShowcase(videoFilter = 'all') {
       : '';
 
     card.innerHTML = `
-      <div class="video-thumb-container" onclick="openVideoModal('${item.youtubeId}', '${item.title}')">
+      <div class="video-thumb-container">
         <img src="${item.src}" alt="${item.title}" class="video-thumb" />
         <div class="play-btn-overlay">
           <div class="play-icon">▶</div>
@@ -231,6 +231,13 @@ function renderVideoShowcase(videoFilter = 'all') {
         <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.4rem;">${item.exif.story}</p>
       </div>
     `;
+
+    const thumbContainer = card.querySelector('.video-thumb-container');
+    if (thumbContainer) {
+      thumbContainer.addEventListener('click', () => {
+        openVideoModal(item.youtubeId, item.title);
+      });
+    }
 
     videoGrid.appendChild(card);
   });
