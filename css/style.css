@@ -29,7 +29,8 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
-  --gallery-gap: 1.5rem;
+  --gallery-gap-x: 1.15rem;
+  --gallery-gap-y: 1.6rem;
 
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -776,7 +777,7 @@ button {
 /* MASONRY GALLERY GRID (PERFECTLY UNIFORM HORIZONTAL & VERTICAL GAPS) */
 .gallery-grid {
   column-count: 3;
-  column-gap: var(--gallery-gap, 1.5rem);
+  column-gap: var(--gallery-gap-x, 1.15rem);
   width: 100%;
 }
 
@@ -784,7 +785,7 @@ button {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  margin-bottom: var(--gallery-gap, 1.5rem);
+  margin-bottom: var(--gallery-gap-y, 1.6rem);
   display: inline-block;
   width: 100%;
   position: relative;
@@ -805,11 +806,11 @@ button {
 @media (max-width: 992px) {
   .gallery-grid {
     column-count: 2;
-    column-gap: 1.25rem;
+    column-gap: 1.05rem;
   }
   .gallery-card,
   .museum-frame-card {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.35rem;
   }
 }
 
@@ -819,7 +820,7 @@ button {
   }
   .gallery-card,
   .museum-frame-card {
-    margin-bottom: 1rem;
+    margin-bottom: 1.15rem;
   }
 }
 
@@ -1043,7 +1044,7 @@ button {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  margin-bottom: var(--gallery-gap, 1.5rem);
+  margin-bottom: var(--gallery-gap-y, 1.6rem);
   display: inline-block;
   width: 100%;
   position: relative;
@@ -1865,6 +1866,7 @@ html.drm-defocused-guard .anti-snip-shield {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
+  transition: none !important;
 }
 
 /* Frosted luxury blur on all photos, modals, and zoomed lightbox images during capture/defocus states */

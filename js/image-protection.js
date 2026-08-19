@@ -8,6 +8,7 @@
 
   let toastTimeout = null;
   let blackoutTimer = null;
+  let isCaptureLocked = false;
 
   // 1. Luxury Gold Toast Notification Manager
   function showProtectionToast(message) {
@@ -54,6 +55,14 @@
     return shield;
   }
 
+  function wipeClipboard() {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
+      }
+    } catch (e) {}
+  }
+
   function activateBlackoutShield(durationMs = 0) {
     const shield = getOrCreateBlackoutShield();
     shield.classList.add('active');
@@ -61,23 +70,27 @@
     document.body.classList.add('anti-snip-active');
 
     // Wipe clipboard memory immediately to discard any captured bitmap
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText('© Gargi Photographic Arts (Dipak More). All master photography is protected under international copyright law. Unauthorized copying is prohibited.').catch(() => {});
-    }
+    wipeClipboard();
 
-    if (blackoutTimer) clearTimeout(blackoutTimer);
     if (durationMs > 0) {
+      isCaptureLocked = true;
+      if (blackoutTimer) clearTimeout(blackoutTimer);
+      
+      // Sanitizer interval to repeatedly overwrite clipboard if OS is asynchronous
+      const clipboardSanitizer = setInterval(wipeClipboard, 150);
+      
       blackoutTimer = setTimeout(() => {
+        clearInterval(clipboardSanitizer);
+        isCaptureLocked = false;
         dismissBlackoutShield();
       }, durationMs);
     }
   }
 
   function dismissBlackoutShield() {
-    // CRITICAL: DO NOT DISMISS if the window does not have OS focus (Snipping tool active)
-    if (!document.hasFocus() || document.hidden) {
-      return;
-    }
+    // CRITICAL: DO NOT DISMISS if capture lock is active or window is blurred/defocused
+    if (isCaptureLocked) return;
+    if (!document.hasFocus() || document.hidden) return;
 
     const shield = document.getElementById('antiSnipShield');
     if (shield) {
@@ -140,18 +153,18 @@
     window.addEventListener('keydown', function(e) {
       const isCtrlOrCmd = e.ctrlKey || e.metaKey;
       const key = (e.key || '').toLowerCase();
+      const code = e.code || '';
 
       // PrintScreen Key -> Instant Blackout + Clipboard Wipe
-      if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        e.preventDefault();
-        activateBlackoutShield(2500);
-        showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
+      if (e.key === 'PrintScreen' || code === 'PrintScreen' || e.keyCode === 44) {
+        activateBlackoutShield(3000);
+        showProtectionToast('Screen capture locked. Clipboard asset has been protected.');
         return false;
       }
 
       // Windows Snipping Tool (Win + Shift + S) or Browser Snipping
-      if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta')) || (isCtrlOrCmd && e.shiftKey && key === 's')) {
-        activateBlackoutShield(2500);
+      if ((e.shiftKey && (isCtrlOrCmd || e.key === 'Meta' || code.includes('Meta'))) || (isCtrlOrCmd && e.shiftKey && key === 's')) {
+        activateBlackoutShield(3000);
         showProtectionToast('Snipping tool detected. High-resolution screen protected.');
         return false;
       }
@@ -166,6 +179,7 @@
       // Block Ctrl+P (Print to PDF / Paper)
       if (isCtrlOrCmd && key === 'p') {
         e.preventDefault();
+        activateBlackoutShield(3000);
         showProtectionToast('Printing and PDF export are disabled for photographic assets.');
         return false;
       }
@@ -189,11 +203,12 @@
     }, { capture: true });
 
     window.addEventListener('keyup', function(e) {
-      if (e.key === 'PrintScreen' || e.keyCode === 44) {
-        activateBlackoutShield(2500);
-        showProtectionToast('Screen capture detected. Clipboard asset has been protected.');
+      const code = e.code || '';
+      if (e.key === 'PrintScreen' || code === 'PrintScreen' || e.keyCode === 44) {
+        activateBlackoutShield(3000);
+        showProtectionToast('Screen capture locked. Clipboard asset has been protected.');
       }
-    });
+    }, { capture: true });
 
     // B. Airtight Snipping Tool Interception:
     // When Snipping Tool takes focus away from the browser (Win+Shift+S or Start Menu snip),
@@ -202,22 +217,24 @@
       activateBlackoutShield(0);
     });
 
-    // When user returns/refocuses, dismiss blackout smoothly only if document has focus
+    // When user returns/refocuses, dismiss blackout smoothly only if document has focus and no active lock
     window.addEventListener('focus', function() {
-      if (document.hasFocus()) {
-        dismissBlackoutShield();
-      }
+      setTimeout(() => {
+        if (!isCaptureLocked && document.hasFocus() && !document.hidden) {
+          dismissBlackoutShield();
+        }
+      }, 300);
     });
 
-    // Mouse movement or click inside the window dismisses the shield ONLY if window is focused
+    // Mouse movement or click inside the window dismisses the shield ONLY if window is focused and no active lock
     window.addEventListener('mousemove', function() {
-      if (document.hasFocus()) {
+      if (!isCaptureLocked && document.hasFocus() && !document.hidden) {
         dismissBlackoutShield();
       }
     }, { passive: true });
 
     window.addEventListener('mousedown', function() {
-      if (document.hasFocus()) {
+      if (!isCaptureLocked && document.hasFocus() && !document.hidden) {
         dismissBlackoutShield();
       }
     }, { passive: true });
@@ -226,7 +243,7 @@
     document.addEventListener('visibilitychange', function() {
       if (document.hidden || !document.hasFocus()) {
         activateBlackoutShield(0);
-      } else {
+      } else if (!isCaptureLocked) {
         dismissBlackoutShield();
       }
     });
