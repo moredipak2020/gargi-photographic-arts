@@ -29,6 +29,7 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-full: 9999px;
+  --gallery-gap: 1.5rem;
 
   --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -772,10 +773,10 @@ button {
   font-weight: 600;
 }
 
-/* MASONRY GALLERY GRID (ELIMINATES ALL VERTICAL GAPS) */
+/* MASONRY GALLERY GRID (PERFECTLY UNIFORM HORIZONTAL & VERTICAL GAPS) */
 .gallery-grid {
   column-count: 3;
-  column-gap: 1.75rem;
+  column-gap: var(--gallery-gap, 1.5rem);
   width: 100%;
 }
 
@@ -783,7 +784,7 @@ button {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  margin-bottom: 1.75rem;
+  margin-bottom: var(--gallery-gap, 1.5rem);
   display: inline-block;
   width: 100%;
   position: relative;
@@ -1042,7 +1043,7 @@ button {
   break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
-  margin-bottom: 1.75rem;
+  margin-bottom: var(--gallery-gap, 1.5rem);
   display: inline-block;
   width: 100%;
   position: relative;
