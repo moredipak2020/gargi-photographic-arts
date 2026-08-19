@@ -84,7 +84,7 @@ class AmbientAudioEngine {
     this.audio = new Audio();
     this.isPlaying = false;
     this.isMuted = false;
-    this.targetVolume = 0.85;
+    this.targetVolume = this.getStoredVolume();
 
     this.currentIndex = this.calculateInitialTrackIndex();
 
@@ -96,6 +96,19 @@ class AmbientAudioEngine {
     this.audio.onended = () => {
       this.nextTrack();
     };
+  }
+
+  getStoredVolume() {
+    try {
+      const stored = localStorage.getItem('gargi_audio_volume');
+      if (stored !== null) {
+        const val = parseFloat(stored);
+        if (!isNaN(val) && val >= 0 && val <= 1) {
+          return val;
+        }
+      }
+    } catch (e) {}
+    return 0.30; // Industry standard 30% calm ambient level
   }
 
   /* Calculate IST date & day of year */
@@ -170,10 +183,51 @@ class AmbientAudioEngine {
     this.nextBtn = document.getElementById('audioNextBtn');
     this.muteBtn = document.getElementById('audioMuteBtn');
     this.eqContainer = document.getElementById('audioEqContainer');
+    this.volumeSlider = document.getElementById('audioVolumeSlider');
+    this.volumePercent = document.getElementById('audioVolumePercent');
 
     if (this.playBtn) this.playBtn.addEventListener('click', (e) => { e.stopPropagation(); this.togglePlay(); });
     if (this.nextBtn) this.nextBtn.addEventListener('click', (e) => { e.stopPropagation(); this.nextTrack(); });
     if (this.muteBtn) this.muteBtn.addEventListener('click', (e) => { e.stopPropagation(); this.toggleMute(); });
+
+    if (this.volumeSlider) {
+      this.volumeSlider.value = this.targetVolume;
+      this.updateVolumePercentUI();
+      this.volumeSlider.addEventListener('input', (e) => {
+        e.stopPropagation();
+        this.setVolume(parseFloat(e.target.value));
+      });
+    }
+  }
+
+  setVolume(volume) {
+    this.targetVolume = Math.max(0, Math.min(1, volume));
+    this.audio.volume = this.targetVolume;
+    
+    if (this.targetVolume > 0 && this.isMuted) {
+      this.isMuted = false;
+      this.audio.muted = false;
+      if (this.muteBtn) this.muteBtn.innerHTML = '🔊';
+    } else if (this.targetVolume === 0 && !this.isMuted) {
+      this.isMuted = true;
+      this.audio.muted = true;
+      if (this.muteBtn) this.muteBtn.innerHTML = '🔇';
+    }
+
+    try {
+      localStorage.setItem('gargi_audio_volume', this.targetVolume.toString());
+    } catch (e) {}
+
+    this.updateVolumePercentUI();
+  }
+
+  updateVolumePercentUI() {
+    if (this.volumePercent) {
+      this.volumePercent.textContent = `${Math.round(this.targetVolume * 100)}%`;
+    }
+    if (this.volumeSlider) {
+      this.volumeSlider.value = this.targetVolume;
+    }
   }
 
   loadTrack(index) {
@@ -269,6 +323,11 @@ class AmbientAudioEngine {
     this.audio.muted = this.isMuted;
     if (this.muteBtn) {
       this.muteBtn.innerHTML = this.isMuted ? '🔇' : '🔊';
+    }
+    if (this.isMuted) {
+      if (this.volumePercent) this.volumePercent.textContent = '0%';
+    } else {
+      if (this.volumePercent) this.volumePercent.textContent = `${Math.round(this.targetVolume * 100)}%`;
     }
   }
 

@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css?v=10.5">
+  <link rel="stylesheet" href="css/style.css?v=11.0">
 
   <!-- GSAP Animation Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -118,7 +118,13 @@
     <div class="audio-controls">
       <button class="audio-btn" id="audioPlayBtn" aria-label="Play Ambient Music">▶️</button>
       <button class="audio-btn" id="audioNextBtn" aria-label="Next Track">⏭️</button>
-      <button class="audio-btn" id="audioMuteBtn" aria-label="Mute Audio">🔊</button>
+      <div class="audio-volume-wrapper" id="audioVolumeWrapper">
+        <button class="audio-btn" id="audioMuteBtn" aria-label="Mute / Adjust Volume">🔊</button>
+        <div class="audio-volume-popover" id="audioVolumePopover">
+          <input type="range" class="audio-volume-slider" id="audioVolumeSlider" min="0" max="1" step="0.01" value="0.30" aria-label="Volume Slider" />
+          <span class="audio-volume-percent" id="audioVolumePercent">30%</span>
+        </div>
+      </div>
     </div>
   </div>
 
