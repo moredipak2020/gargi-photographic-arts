@@ -63,6 +63,14 @@ function selectCategory(categoryName) {
     }
   }
 
+  if (window.cursorEngine) {
+    if (categoryName === 'kids' || categoryName === 'devotional') {
+      window.cursorEngine.setTheme('peacock');
+    } else {
+      window.cursorEngine.setTheme('default');
+    }
+  }
+
   // Smooth Scroll to Visual Gallery Section
   const workSection = document.getElementById('work');
   if (workSection) {
@@ -167,6 +175,14 @@ function initFilterControls() {
           window.ambientAudio.setTheme('janmashtami', 0);
         } else {
           window.ambientAudio.setTheme('default', 0);
+        }
+      }
+
+      if (window.cursorEngine) {
+        if (currentCategoryFilter === 'kids' || currentCategoryFilter === 'devotional') {
+          window.cursorEngine.setTheme('peacock');
+        } else {
+          window.cursorEngine.setTheme('default');
         }
       }
     });

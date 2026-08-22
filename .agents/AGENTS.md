@@ -52,7 +52,11 @@
 
 ---
 
-## 6. Stardust Cursor Engine (`js/luxury-stardust-cursor.js`)
+## 6. Stardust & Sacred Peacock Feather Cursor Engine (`js/luxury-stardust-cursor.js` & `js/peacock-feather-cursor.js`)
 - **Performance**: Decoupled 120fps `requestAnimationFrame` hardware tracking (`translate3d`) with zero synchronous DOM writes inside raw mousemove events.
 - **Single-Pass Event Delegation**: Uses unified `INTERACTIVE_SELECTOR` check on `mouseover` instead of repetitive DOM queries.
-- **Interactivity**: Rotating aperture expansion over interactive elements, click supernova bursts, and lightweight champagne stardust particle trails.
+- **Thematic Visual Modes**:
+  - `DEFAULT_THEME`: 24K Gold Diamond Sparkle Star & rotating aperture ring with warm champagne stardust trails.
+  - `JANMASHTAMI_PEACOCK_THEME`: Sacred Golden Peacock Feather (Mor Pankh) with midnight sapphire & radiant teal ocellus, extended iridescent peacock-teal and 24K gold stardust trails, and divine supernova click bursts.
+  - Dedicated full-time activation on `kids-gallery.html` and dynamic context switching on `index.html` via `window.cursorEngine.setTheme('peacock')`.
+- **Interactivity**: Dynamic feather sway based on horizontal pointer velocity, alert expansion & pulsing teal-gold aura on interactive hover, and spring recoil on click.
