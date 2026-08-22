@@ -64,8 +64,8 @@
     [0, 230, 118],   // Emerald Shimmer
     [41, 121, 255],  // Royal Sapphire
     [255, 215, 0],   // 24K Gold
-    [255, 239, 166],  // Champagne Gold
-    [255, 255, 255]   // Diamond White
+    [255, 239, 166], // Champagne Gold
+    [255, 255, 255]  // Diamond White
   ];
 
   function createCursorDOM() {
@@ -112,107 +112,19 @@
         </svg>
       </div>
 
-      <!-- THEME 2: DIVINE GOLDEN PEACOCK FEATHER (Janmashtami / Kids) -->
+      <!-- THEME 2: AUTHENTIC GOLDEN PEACOCK FEATHER (Janmashtami / Kids) -->
       <div class="peacock-cursor-node" id="peacockCursorNode" style="display: none;">
         <div class="peacock-feather-inner" id="peacockFeatherInner">
           <div class="peacock-divine-aura" id="peacockDivineAura"></div>
 
-          <svg class="peacock-svg" id="peacockSvg" viewBox="0 0 120 120" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="goldQuillGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="25%" stop-color="#FFEFA6" />
-                <stop offset="60%" stop-color="#FFD700" />
-                <stop offset="85%" stop-color="#D4AF37" />
-                <stop offset="100%" stop-color="#996515" />
-              </linearGradient>
-
-              <linearGradient id="barbIridescentGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00F5D4" />
-                <stop offset="35%" stop-color="#00E5FF" />
-                <stop offset="70%" stop-color="#00E676" />
-                <stop offset="100%" stop-color="#FFD700" />
-              </linearGradient>
-
-              <radialGradient id="ocellusEmeraldHalo2" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#00F5D4" />
-                <stop offset="40%" stop-color="#00B0FF" />
-                <stop offset="75%" stop-color="#00796B" />
-                <stop offset="95%" stop-color="#FFD700" />
-                <stop offset="100%" stop-color="transparent" />
-              </radialGradient>
-
-              <radialGradient id="ocellusTealRing2" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="30%" stop-color="#A7FFEB" />
-                <stop offset="65%" stop-color="#00E5FF" />
-                <stop offset="100%" stop-color="#0091EA" />
-              </radialGradient>
-
-              <radialGradient id="ocellusSapphireCore2" cx="45%" cy="38%" r="60%">
-                <stop offset="0%" stop-color="#7C4DFF" />
-                <stop offset="45%" stop-color="#304FFE" />
-                <stop offset="80%" stop-color="#1A237E" />
-                <stop offset="100%" stop-color="#0A0914" />
-              </radialGradient>
-
-              <filter id="peacockGlowFilter2" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="2.2" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- Golden Radial Flukes / Sunburst Filaments -->
-            <g class="peacock-flukes" stroke="url(#goldQuillGrad2)" stroke-width="1.1" stroke-linecap="round" opacity="0.85">
-              <line x1="76" y1="74" x2="60" y2="48" />
-              <line x1="76" y1="74" x2="72" y2="44" />
-              <line x1="76" y1="74" x2="88" y2="46" />
-              <line x1="76" y1="74" x2="102" y2="56" />
-              <line x1="76" y1="74" x2="110" y2="70" />
-              <line x1="76" y1="74" x2="108" y2="88" />
-              <line x1="76" y1="74" x2="98" y2="102" />
-              <line x1="76" y1="74" x2="82" y2="106" />
-              <line x1="76" y1="74" x2="66" y2="98" />
-              <line x1="76" y1="74" x2="54" y2="84" />
-            </g>
-
-            <!-- Delicate Flowing Barbs / Vanes -->
-            <g class="peacock-barbs" stroke="url(#barbIridescentGrad2)" stroke-width="1.15" stroke-linecap="round" opacity="0.82">
-              <path d="M12 12 Q8 26 10 38" fill="none" />
-              <path d="M22 22 Q16 38 20 52" fill="none" />
-              <path d="M34 34 Q28 52 34 68" fill="none" />
-              <path d="M46 46 Q40 66 48 80" fill="none" />
-              
-              <path d="M12 12 Q26 10 38 14" fill="none" />
-              <path d="M22 22 Q38 18 52 24" fill="none" />
-              <path d="M34 34 Q52 28 68 36" fill="none" />
-              <path d="M46 46 Q66 40 82 50" fill="none" />
-            </g>
-
-            <!-- Central 24K Golden Rachis (Shaft) -->
-            <path d="M4 4 Q38 34 76 74 Q86 84 96 96" fill="none" stroke="url(#goldQuillGrad2)" stroke-width="2.6" stroke-linecap="round" filter="url(#peacockGlowFilter2)" />
-            <path d="M4 4 Q38 34 76 74" fill="none" stroke="#FFFFFF" stroke-width="0.9" stroke-linecap="round" opacity="0.9" />
-
-            <!-- Golden Pointer Nib at Exact Hotspot (4, 4) -->
-            <polygon points="1,1 7,2 2,7" fill="#FFFFFF" />
-            <circle cx="3.5" cy="3.5" r="1.8" fill="#FFEFA6" />
-
-            <!-- Outer Emerald-Gold Ocellus Oval -->
-            <ellipse cx="76" cy="74" rx="22" ry="17" transform="rotate(40 76 74)" fill="url(#ocellusEmeraldHalo2)" stroke="url(#goldQuillGrad2)" stroke-width="1.2" />
-
-            <!-- Middle Electric Peacock Teal Ocellus Ring -->
-            <ellipse cx="76" cy="74" rx="15" ry="11" transform="rotate(40 76 74)" fill="url(#ocellusTealRing2)" />
-
-            <!-- Central Sacred Sapphire Heart / Pupil -->
-            <path d="M76 66 C81 66, 86 70, 83 77 C80 82, 76 85, 76 85 C76 85, 72 82, 69 77 C66 70, 71 66, 76 66 Z" transform="rotate(40 76 74)" fill="url(#ocellusSapphireCore2)" />
-
-            <!-- Diamond Catchlight & Golden Bindu Starlet -->
-            <circle cx="74.5" cy="72" r="1.8" fill="#FFFFFF" opacity="0.95" />
-            <circle cx="78.5" cy="70" r="1.1" fill="#FFEFA6" opacity="0.85" />
-          </svg>
+          <img 
+            src="assets/images/cursor/peacock-feather.png" 
+            srcset="assets/images/cursor/peacock-feather.webp 1x, assets/images/cursor/peacock-feather.png 1x"
+            alt="Shri Krishna Golden Peacock Feather (Mor Pankh)" 
+            class="peacock-feather-img" 
+            id="peacockFeatherImg"
+            draggable="false"
+          />
         </div>
       </div>
 
@@ -255,10 +167,10 @@
   class StardustFairyParticle {
     constructor(x, y, vx, vy, isBurst = false) {
       const isPeacock = currentTheme === 'peacock';
-      this.x = x + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 16 : 10) : (isPeacock ? 8 : 4));
-      this.y = y + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 16 : 10) : (isPeacock ? 8 : 4));
+      this.x = x + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 18 : 10) : (isPeacock ? 8 : 4));
+      this.y = y + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 18 : 10) : (isPeacock ? 8 : 4));
       
-      const speedMult = isBurst ? (isPeacock ? 4.2 : 3.5) : (isPeacock ? 1.0 : 0.8);
+      const speedMult = isBurst ? (isPeacock ? 4.4 : 3.5) : (isPeacock ? 1.0 : 0.8);
       this.vx = vx * 0.12 + (Math.random() - 0.5) * 1.3 * speedMult;
       this.vy = vy * 0.12 + (Math.random() - 0.5) * 1.3 * speedMult - (isBurst ? 0 : (isPeacock ? 0.22 : 0));
       
@@ -342,21 +254,20 @@
     for (let i = 0; i < count; i++) {
       if (particles.length >= MAX_PARTICLES) break;
       const t = (i + 1) / (count + 1);
-      const spawnX = isPeacock ? (x0 + vx * t + 22) : (x0 + vx * t);
-      const spawnY = isPeacock ? (y0 + vy * t + 22) : (y0 + vy * t);
+      // Spawn trail offset from ocellus eye & plume when peacock
+      const spawnX = isPeacock ? (x0 + vx * t + 32) : (x0 + vx * t);
+      const spawnY = isPeacock ? (y0 + vy * t - 46) : (y0 + vy * t);
       particles.push(new StardustFairyParticle(spawnX, spawnY, vx, vy, false));
     }
   }
 
   function emitClickSupernova(x, y) {
     const isPeacock = currentTheme === 'peacock';
-    const burstCount = isPeacock ? 28 : 18;
+    const burstCount = isPeacock ? 30 : 18;
     for (let i = 0; i < burstCount; i++) {
       const angle = (Math.PI * 2 / burstCount) * i + (Math.random() - 0.5) * 0.2;
-      const speed = Math.random() * 4.2 + 1.5;
-      const originX = isPeacock ? x + 16 : x;
-      const originY = isPeacock ? y + 16 : y;
-      particles.push(new StardustFairyParticle(originX, originY, Math.cos(angle) * speed, Math.sin(angle) * speed, true));
+      const speed = Math.random() * 4.4 + 1.6;
+      particles.push(new StardustFairyParticle(x, y, Math.cos(angle) * speed, Math.sin(angle) * speed, true));
     }
   }
 
@@ -461,17 +372,17 @@
       if (currentTheme === 'peacock') {
         const speed = Math.hypot(velocityX, velocityY);
         if (speed > 0.5) {
-          targetTilt = Math.max(-18, Math.min(18, velocityX * 1.8));
+          targetTilt = Math.max(-14, Math.min(14, velocityX * 1.4));
         } else if (isHovering) {
-          targetTilt = -8 + Math.sin(frameCount * 0.08) * 4;
+          targetTilt = -5 + Math.sin(frameCount * 0.08) * 3;
         } else {
-          targetTilt = Math.sin(frameCount * 0.05) * 3;
+          targetTilt = Math.sin(frameCount * 0.05) * 2;
         }
         currentTilt += (targetTilt - currentTilt) * 0.15;
 
         const innerFeather = document.getElementById('peacockFeatherInner');
         if (innerFeather) {
-          const hoverScale = isHovering ? 1.25 : (isClicking ? 0.9 : 1.0);
+          const hoverScale = isHovering ? 1.15 : (isClicking ? 0.92 : 1.0);
           innerFeather.style.transform = `rotate(${currentTilt}deg) scale(${hoverScale})`;
         }
       }
