@@ -324,6 +324,14 @@
           btn.classList.add('active');
           const filterVal = btn.getAttribute('data-kids-filter');
           renderKidsGrid(filterVal);
+
+          if (window.ambientAudio) {
+            if (filterVal === 'milestones') {
+              window.ambientAudio.setTheme('default', 0);
+            } else {
+              window.ambientAudio.setTheme('janmashtami', 0);
+            }
+          }
         });
       });
     }
@@ -339,8 +347,10 @@
       const isJanmashtami = item.collection === 'janmashtami2024';
       if (isJanmashtami) {
         modal.classList.add('peacock-theme-active');
+        if (window.ambientAudio) window.ambientAudio.setTheme('janmashtami', 0);
       } else {
         modal.classList.remove('peacock-theme-active');
+        if (window.ambientAudio) window.ambientAudio.setTheme('default', 0);
       }
 
       const isMulti = item.variants && item.variants.length > 1;

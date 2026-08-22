@@ -55,6 +55,14 @@ function selectCategory(categoryName) {
   // Re-render Gallery
   renderGallery(currentCategoryFilter, currentOrientationFilter);
 
+  if (window.ambientAudio) {
+    if (categoryName === 'kids' || categoryName === 'devotional') {
+      window.ambientAudio.setTheme('janmashtami', 0);
+    } else {
+      window.ambientAudio.setTheme('default', 0);
+    }
+  }
+
   // Smooth Scroll to Visual Gallery Section
   const workSection = document.getElementById('work');
   if (workSection) {
@@ -153,6 +161,14 @@ function initFilterControls() {
       btn.classList.add('active');
       currentCategoryFilter = btn.getAttribute('data-filter');
       renderGallery(currentCategoryFilter, currentOrientationFilter);
+
+      if (window.ambientAudio) {
+        if (currentCategoryFilter === 'kids' || currentCategoryFilter === 'devotional') {
+          window.ambientAudio.setTheme('janmashtami', 0);
+        } else {
+          window.ambientAudio.setTheme('default', 0);
+        }
+      }
     });
   });
 }

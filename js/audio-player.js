@@ -78,21 +78,53 @@ const AMBIENT_PLAYLIST = [
   }
 ];
 
+const KRISHNA_JANMASHTAMI_PLAYLIST = [
+  {
+    id: "krishna-flute-1",
+    title: "Divine Flute of Vrindavan (Part 1)",
+    artist: "Lord Krishna Sacred Flute Melodies",
+    src: "assets/audio/krishna/flute_1.mp3"
+  },
+  {
+    id: "krishna-flute-2",
+    title: "Divine Flute of Vrindavan (Part 2)",
+    artist: "Lord Krishna Sacred Flute Melodies",
+    src: "assets/audio/krishna/flute_2.mp3"
+  },
+  {
+    id: "krishna-flute-3",
+    title: "Divine Flute of Vrindavan (Part 3)",
+    artist: "Lord Krishna Sacred Flute Melodies",
+    src: "assets/audio/krishna/flute_3.mp3"
+  }
+];
+
 class AmbientAudioEngine {
   constructor() {
-    this.playlist = AMBIENT_PLAYLIST;
     this.audio = new Audio();
     this.isPlaying = false;
     this.isMuted = false;
     this.targetVolume = this.getStoredVolume();
+    this.isCrossfading = false;
 
-    this.currentIndex = this.calculateInitialTrackIndex();
+    // Detect initial theme context based on page route
+    const isKidsPage = window.location.pathname.includes('kids-gallery') || window.location.href.includes('kids-gallery');
+    if (isKidsPage) {
+      this.currentTheme = 'janmashtami';
+      this.playlist = KRISHNA_JANMASHTAMI_PLAYLIST;
+      this.currentIndex = 0; // Starts immediately on Flute 1
+    } else {
+      this.currentTheme = 'default';
+      this.playlist = AMBIENT_PLAYLIST;
+      this.currentIndex = this.calculateInitialTrackIndex();
+    }
 
     this.initUI();
     this.loadTrack(this.currentIndex);
     this.setupDirectUserActivationUnlock();
     this.setupISTDateMonitor();
 
+    // Continuous loop across current playlist
     this.audio.onended = () => {
       this.nextTrack();
     };
@@ -233,6 +265,7 @@ class AmbientAudioEngine {
   loadTrack(index) {
     this.currentIndex = index;
     const track = this.playlist[index];
+    if (!track) return;
     
     if (this.titleEl) this.titleEl.textContent = track.title;
     if (this.artistEl) this.artistEl.textContent = track.artist;
@@ -242,6 +275,71 @@ class AmbientAudioEngine {
     this.audio.loop = false;
     this.audio.volume = this.targetVolume;
     this.audio.load();
+  }
+
+  /* Switch Theme (janmashtami / default) with Luxury Crossfade */
+  setTheme(themeName, startTrackIndex = 0) {
+    if (this.currentTheme === themeName) return;
+    this.currentTheme = themeName;
+    this.playlist = themeName === 'janmashtami' ? KRISHNA_JANMASHTAMI_PLAYLIST : AMBIENT_PLAYLIST;
+    this.currentIndex = startTrackIndex;
+
+    console.log(`[GARGI AMBIENT AUDIO] Switched context theme to: "${themeName}" | Track #${startTrackIndex + 1}: "${this.playlist[startTrackIndex].title}"`);
+
+    const wasPlaying = this.isPlaying && !this.audio.paused;
+
+    if (wasPlaying) {
+      this.crossfadeToTrack(startTrackIndex);
+    } else {
+      this.loadTrack(startTrackIndex);
+    }
+  }
+
+  crossfadeToTrack(index) {
+    if (this.isCrossfading) {
+      this.loadTrack(index);
+      this.audio.play();
+      return;
+    }
+    this.isCrossfading = true;
+
+    const initialVol = this.targetVolume;
+    const stepTime = 30;
+    const fadeSteps = 8;
+    let step = 0;
+
+    // Fade Out
+    const fadeOutInterval = setInterval(() => {
+      step++;
+      const factor = Math.max(0, 1 - (step / fadeSteps));
+      this.audio.volume = initialVol * factor;
+
+      if (step >= fadeSteps) {
+        clearInterval(fadeOutInterval);
+        this.loadTrack(index);
+        
+        // Play new track and Fade In
+        this.audio.play().then(() => {
+          this.isPlaying = true;
+          this.updateUIState();
+          let inStep = 0;
+          const fadeInInterval = setInterval(() => {
+            inStep++;
+            const inFactor = Math.min(1, inStep / fadeSteps);
+            this.audio.volume = initialVol * inFactor;
+            if (inStep >= fadeSteps) {
+              clearInterval(fadeInInterval);
+              this.audio.volume = initialVol;
+              this.isCrossfading = false;
+            }
+          }, stepTime);
+        }).catch(err => {
+          console.warn("Audio autoplay blocked during theme crossfade:", err);
+          this.audio.volume = initialVol;
+          this.isCrossfading = false;
+        });
+      }
+    }, stepTime);
   }
 
   /* Direct User Activation Call: Invokes audio.play() DIRECTLY inside Chrome/Edge active event stack */
