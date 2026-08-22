@@ -1,7 +1,8 @@
 # Project Rules & Architectural Safeguards - Gargi Photographic Arts
 
 ## 1. Core Project Information & Deployment
-- **Website**: https://gargi-photographic-arts.pages.dev
+- **Production Domain**: `https://gargi-photographic-arts.in` (and `https://www.gargi-photographic-arts.in`)
+- **Cloudflare Pages Mirror**: `https://gargi-photographic-arts.pages.dev`
 - **Owner**: Dipak More (gargi.photographic.arts@gmail.com)
 - **Deployment**: `npx wrangler pages deploy . --project-name=gargi-photographic-arts --commit-dirty=true`
 - **Git Remote**: `https://github.com/moredipak2020/gargi-photographic-arts.git` (`main` branch)
@@ -25,24 +26,33 @@
   - Vertical bottom margin: `--gallery-gap-y: 1.6rem;` (25.6px) on all `.gallery-card` and `.museum-frame-card` items.
   - Responsive scale: `--gallery-gap-x: 1.05rem; --gallery-gap-y: 1.35rem;` on tablets ($\le 992\text{px}$) and `--gallery-gap-y: 1.15rem;` on mobile ($\le 576\text{px}$).
 - **Column Integrity**: Every card MUST include `break-inside: avoid; page-break-inside: avoid; -webkit-column-break-inside: avoid; display: inline-block; width: 100%;`.
+- **GPU Layer Containment**: Cards MUST include `isolation: isolate; contain: paint; transform: translate3d(0, 0, 0); backface-visibility: hidden;` to eliminate repaint jank across multi-column masonry during hover scaling.
 
 ---
 
-## 4. Visual Identity, Glassmorphism & Typography Standards
+## 4. Visual Identity, Glassmorphism & Lightbox Standards
 - **Lightbox Modal Theme**: Pure Luminous White Translucent Morphic Glass (`background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(35px) saturate(1.8) brightness(1.12); border: 1px solid rgba(255, 255, 255, 0.45);`).
 - **Lightbox Typography**: High-contrast Obsidian Black (`#0A0914`) and rich metallic gold (`#8C6207`) with Slate labels (`#58536E`) inside `.lightbox-details` and `.exif-list`.
+- **Lightbox Header Clearance Buffer**: All modal headers MUST use `.lightbox-header` with `padding-right: 3.5rem;` to prevent collision with `.modal-close-btn` (`✕`).
+- **Badge & Title Sizing**: Category tags use `.lightbox-tag-badge` pill styling (`0.72rem`, `border-radius: 20px`), and `h2` titles are capped at `1.65rem` with `line-height: 1.22`.
 - **Card Overlays**: Hidden by default (`opacity: 0; visibility: hidden; transform: translateY(15px);`). Text overlays must ONLY appear on `:hover`.
 - **Floating Island Museum Frames**: Cards must feature 3D depth elevation (`border: 1.5px solid rgba(255, 255, 255, 0.16); box-shadow: 0 15px 35px rgba(0,0,0,0.65);`) with upward hover lift (`transform: translateY(-10px) scale(1.025);`).
+- **Site Favicon Brand Package**: Official royal gold G icon assets located in `assets/favicon/` (`favicon.svg`, `favicon.ico`, Apple touch, Android icons) linked across all HTML heads.
 
 ---
 
-## 5. Ambient Audio Engine (`js/audio-player.js`)
+## 5. Context-Aware Ambient Audio Engine (`js/audio-player.js`)
 - **Default Sound Level**: Fixed at **`0.30` (30%)** for a calm, non-intrusive sensory bed.
 - **User Volume Persistence**: Read and write user volume adjustments to `localStorage ('gargi_audio_volume')`.
+- **Thematic Playlists**:
+  - `DEFAULT_PLAYLIST`: 12 serene ambient tracks with daily IST date rollover.
+  - `KRISHNA_JANMASHTAMI_PLAYLIST`: 3 sacred Bansuri flute ragas (`assets/audio/krishna/flute_1.mp3`, `flute_2.mp3`, `flute_3.mp3`).
+  - Auto-switches to Krishna Flute mode starting on **Flute 1** with continuous looping ($\text{Flute 1} \to 2 \to 3 \to 1$) on `kids-gallery.html` or Janmashtami filter selection, featuring 400ms volume crossfades.
 - **Interactive UI**: Preserve the vertical gold micro-volume slider popover above the speaker button (`🔊`).
 
 ---
 
 ## 6. Stardust Cursor Engine (`js/luxury-stardust-cursor.js`)
-- **Performance**: 120fps direct hardware-accelerated pointer tracking with sub-pixel interpolation.
-- **Interactivity**: Rotating aperture expansion over clickable elements and golden stardust particle trails.
+- **Performance**: Decoupled 120fps `requestAnimationFrame` hardware tracking (`translate3d`) with zero synchronous DOM writes inside raw mousemove events.
+- **Single-Pass Event Delegation**: Uses unified `INTERACTIVE_SELECTOR` check on `mouseover` instead of repetitive DOM queries.
+- **Interactivity**: Rotating aperture expansion over interactive elements, click supernova bursts, and lightweight champagne stardust particle trails.
