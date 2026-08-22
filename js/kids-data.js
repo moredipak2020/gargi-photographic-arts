@@ -10,7 +10,7 @@ const kidsGalleryData = [
     "frameNumber": 1,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Krishna's Playful Gaze (Slot #01)",
+    "title": "Divine Melody of Vrindavan - Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -28,7 +28,7 @@ const kidsGalleryData = [
       "shutter": "1/200s",
       "iso": "ISO 160",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 16:9 landscape framing (5469x3076 px). EXIF: NIKON D5600, 18-55mm @ 40mm, f/5.6 @ 1/200s, ISO 160."
+      "story": "Bal Krishna seated in quiet contemplation, playing his divine bansuri. Photographed in warm cinematic tones capturing the serene spirit of Janmashtami. EXIF: NIKON D5600, 18-55mm @ 40mm, f/5."
     }
   },
   {
@@ -36,7 +36,7 @@ const kidsGalleryData = [
     "frameNumber": 2,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Peacock Crown & Sacred Flute (Slot #02)",
+    "title": "Sibling Bond - Bal Krishna & Little Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -54,7 +54,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4442x2903 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Bal Krishna sharing an affectionate moment with his baby sister dressed in traditional Paithani silk parkar polka, capturing pure sibling innocence. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -62,7 +62,7 @@ const kidsGalleryData = [
     "frameNumber": 3,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Divine Childhood Innocence (Slot #03)",
+    "title": "Tender Sibling Wonder - Krishna & Little Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -80,7 +80,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4592x3053 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "A candid moment between elder brother dressed as Bal Krishna and his baby sister, mesmerized by the festive attire and peacock feather. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -88,7 +88,7 @@ const kidsGalleryData = [
     "frameNumber": 4,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha's Festive Smile (Slot #04)",
+    "title": "Sweet Whispers - Bal Krishna & Baby Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -106,7 +106,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 16:9 landscape framing (4454x2505 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Krishna and baby sister in an unscripted moment of childhood joy, nestled together on the sofa during Janmashtami celebrations. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -114,7 +114,7 @@ const kidsGalleryData = [
     "frameNumber": 5,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Makhanchor Spirit & Laughter (Slot #05)",
+    "title": "Guiding Hand - Bal Krishna & Baby Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -132,7 +132,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4153x2834 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Elder brother holding his baby sister's tiny hand with protective tenderness, capturing timeless sibling affection. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -140,7 +140,7 @@ const kidsGalleryData = [
     "frameNumber": 6,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Celestial Morpankh Grace (Slot #06)",
+    "title": "Festive Sparkle - Little Sister & Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -158,7 +158,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4015x3030 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Baby sister marvels at her golden festive jewelry while Bal Krishna gently holds her hand in this heartwarming candid shot. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -166,7 +166,7 @@ const kidsGalleryData = [
     "frameNumber": 7,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Vrindavan Memories in Pune (Slot #07)",
+    "title": "A Brother's Affection - Bal Krishna & Little Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -184,7 +184,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4318x3078 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Bal Krishna looking down at his little sister with gentle love, highlighting the pure bond shared across childhood. EXIF: NIKON D5600, 18-55mm @ 18mm, f/5."
     }
   },
   {
@@ -192,7 +192,7 @@ const kidsGalleryData = [
     "frameNumber": 8,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Traditional Festive Splendor (Slot #08)",
+    "title": "Timeless Sibling Laughter (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -210,7 +210,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4780x3667 px). EXIF: NIKON D5600, 18-55mm @ 23mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Fine art monochrome study of Bal Krishna and baby sister bursting into pure, uninhibited festive laughter. EXIF: NIKON D5600, 18-55mm @ 23mm, f/5."
     }
   },
   {
@@ -218,7 +218,7 @@ const kidsGalleryData = [
     "frameNumber": 9,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Krishna with Flute (Slot #09)",
+    "title": "Joyful Resonance - Bal Krishna & Little Sister",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -236,7 +236,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (4719x3561 px). EXIF: NIKON D5600, 18-55mm @ 23mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Richly saturated portrait of Krishna and his baby sister sharing a delightful smile, illuminated with natural ambient lighting. EXIF: NIKON D5600, 18-55mm @ 23mm, f/5."
     }
   },
   {
@@ -244,7 +244,7 @@ const kidsGalleryData = [
     "frameNumber": 10,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Shri Krishna Avatara Portrait (Slot #10)",
+    "title": "The Little Flute Player - Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -262,7 +262,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 34mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Bal Krishna seated on a traditional wooden chowki with his bansuri in hand, captured in a warm nostalgic palette. EXIF: NIKON D5600, 18-55mm @ 34mm, f/5."
     }
   },
   {
@@ -270,7 +270,7 @@ const kidsGalleryData = [
     "frameNumber": 11,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Joyful Janmashtami Celebration (Slot #11)",
+    "title": "Makhan Chor's Secret - Bal Krishna with Handi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -288,7 +288,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 34mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Little Krishna seated beside his hand-painted butter pot, looking to the side as if planning his next playful prank in Gokul. EXIF: NIKON D5600, 18-55mm @ 34mm, f/5."
     }
   },
   {
@@ -296,7 +296,7 @@ const kidsGalleryData = [
     "frameNumber": 12,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Golden Aura of Bal Gopal (Slot #12)",
+    "title": "Radha & Krishna - Sibling Grace",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -314,7 +314,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (3945x5918 px). EXIF: NIKON D5600, 18-55mm @ 25mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "Bal Krishna playing his melodious flute while Radha Rani kneels gracefully beside him in her embroidered silk lehenga. EXIF: NIKON D5600, 18-55mm @ 25mm, f/5."
     }
   },
   {
@@ -322,7 +322,7 @@ const kidsGalleryData = [
     "frameNumber": 13,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Yellow Dhoti Portrait (Slot #13)",
+    "title": "Melody in Gokul - Radha & Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -340,7 +340,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 25mm, f/5.6 @ 1/125s, ISO 100."
+      "story": "A captivating portrait of Radha and Krishna, celebrating the festive spirit and harmony of sibling companionship. EXIF: NIKON D5600, 18-55mm @ 25mm, f/5."
     }
   },
   {
@@ -348,7 +348,7 @@ const kidsGalleryData = [
     "frameNumber": 14,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Sacred Tilak & Radiant Eyes (Slot #14)",
+    "title": "Festive Harmony - Radha Rani & Kanha",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -366,7 +366,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 31mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Radha Rani looking into the camera with regal elegance while Bal Krishna holds his flute ready to play. EXIF: NIKON D5600, 18-55mm @ 31mm, f/6."
     }
   },
   {
@@ -374,7 +374,7 @@ const kidsGalleryData = [
     "frameNumber": 15,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Charming Gopala Moment (Slot #15)",
+    "title": "The Divine Trio - Radha, Krishna & Gopi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -392,7 +392,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5467x3645 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Bal Krishna centered with his bansuri, flanked symmetrically by Radha Rani and young Gopi in matching festive lehengas with the makhan handi. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -400,7 +400,7 @@ const kidsGalleryData = [
     "frameNumber": 16,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Divine Flute Melodies (Slot #16)",
+    "title": "Festive Joy of Gokul - Sibling Trio",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -418,7 +418,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5964x3976 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "All three siblings united in festive attire, radiating joy and celebration on the auspicious occasion of Janmashtami. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -426,7 +426,7 @@ const kidsGalleryData = [
     "frameNumber": 17,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Childhood Grace of Lord Krishna (Slot #17)",
+    "title": "Colors of Vrindavan - Sibling Celebration",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -444,7 +444,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5675x3783 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A vibrant family memory captured with rich colors, traditional finery, and authentic festive emotions. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -452,7 +452,7 @@ const kidsGalleryData = [
     "frameNumber": 18,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Morpankh Crown Portrait (Slot #18)",
+    "title": "Harmony & Grace - Sibling Trio",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -470,7 +470,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Trio portrait immortalizing the timeless bond of childhood siblings adorned in traditional mythological splendor. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -478,7 +478,7 @@ const kidsGalleryData = [
     "frameNumber": 19,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Joy & Giggles (Slot #19)",
+    "title": "Laughter in the Court of Kanha - Sibling Trio",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -496,7 +496,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "An unposed, spontaneous moment between Krishna and the two sisters during the portrait session. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -504,7 +504,7 @@ const kidsGalleryData = [
     "frameNumber": 20,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha's Sacred Charm (Slot #20)",
+    "title": "Treasures of Gokul - Trio with Makhan Handi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -522,7 +522,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 21mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "The three siblings pose proudly with the hand-painted yellow butter handi, radiating festive warmth. EXIF: NIKON D5600, 18-55mm @ 21mm, f/6."
     }
   },
   {
@@ -530,7 +530,7 @@ const kidsGalleryData = [
     "frameNumber": 21,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Gopal in Morning Light (Slot #21)",
+    "title": "Auspicious Kinship - Radha, Krishna & Little Gopi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -548,7 +548,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 21mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Framed tightly to highlight their expressive eyes, intricate jewelry, and delicate silk textures. EXIF: NIKON D5600, 18-55mm @ 21mm, f/6."
     }
   },
   {
@@ -556,7 +556,7 @@ const kidsGalleryData = [
     "frameNumber": 22,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Vibrant Festive Heritage (Slot #22)",
+    "title": "Grand Festive Tableau - Sibling Trio",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -574,7 +574,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 21mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A grand tableau celebrating the eternal stories of Krishna, Radha, and the Gopis through childhood innocence. EXIF: NIKON D5600, 18-55mm @ 21mm, f/6."
     }
   },
   {
@@ -582,7 +582,7 @@ const kidsGalleryData = [
     "frameNumber": 23,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Krishna's Blessing (Slot #23)",
+    "title": "Adoring Glance - Little Gopi & Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -600,7 +600,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Younger sister looks up with heartfelt devotion and affection as Bal Krishna plays his bansuri. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -608,7 +608,7 @@ const kidsGalleryData = [
     "frameNumber": 24,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Janmashtami Devotional Portrait (Slot #24)",
+    "title": "A Mother's Touch - Behind the Scenes",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -626,7 +626,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A tender behind-the-scenes candid as mother gently adjusts Radha Rani's sheer dupatta veil before the shoot. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -634,7 +634,7 @@ const kidsGalleryData = [
     "frameNumber": 25,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Curious Young Eyes of Kanha (Slot #25)",
+    "title": "Radha's Gentle Devotion",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -652,7 +652,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Radha Rani looking skyward in quiet grace, holding the sacred butter pot adorned in gold and pearl necklaces. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -660,7 +660,7 @@ const kidsGalleryData = [
     "frameNumber": 26,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Traditional Regalia (Slot #26)",
+    "title": "Serene Radiance - Radha Rani Portrait",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -678,7 +678,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x5203 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A classic direct portrait of Radha Rani with delicate maang tikka, nose ring, and embroidered veil. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -686,7 +686,7 @@ const kidsGalleryData = [
     "frameNumber": 27,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Shri Krishna's Sweet Smile (Slot #27)",
+    "title": "Glow of Devotion - Radha Rani (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -704,7 +704,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Monochrome fine art portrait emphasizing the delicate light falling upon Radha Rani's serene face and veil. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -712,7 +712,7 @@ const kidsGalleryData = [
     "frameNumber": 28,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Golden Crown & Peacock Feather (Slot #28)",
+    "title": "Graceful Poise - Radha Rani (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -730,7 +730,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Striking black and white study highlighting the intricate embroidery of the silk lehenga and hand-painted handi. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -738,7 +738,7 @@ const kidsGalleryData = [
     "frameNumber": 29,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Innocent Divine Expression (Slot #29)",
+    "title": "The Handi Bearer - Radha Rani in Crimson Silk",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -756,7 +756,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 34mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Full color portrait showcasing the vibrant magenta and crimson tones of Radha Rani's traditional festive lehenga. EXIF: NIKON D5600, 18-55mm @ 34mm, f/6."
     }
   },
   {
@@ -764,7 +764,7 @@ const kidsGalleryData = [
     "frameNumber": 30,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Joy of Vrindavan Festivities (Slot #30)",
+    "title": "Golden Makhan Handi - Radha Rani Close-Up",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -782,7 +782,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Tight portrait capturing the warm, welcoming smile and sparkling eyes of Radha Rani holding the butter pot. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -790,7 +790,7 @@ const kidsGalleryData = [
     "frameNumber": 31,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha Sitting in Grace (Slot #31)",
+    "title": "Tender Modesty - Radha Rani",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -808,7 +808,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Radha Rani casts a demure glance downward, capturing classical poise and traditional grace. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -816,7 +816,7 @@ const kidsGalleryData = [
     "frameNumber": 32,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Janmashtami Milestone Memory (Slot #32)",
+    "title": "Playful Glance - Radha Rani",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -834,7 +834,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A spirited side glance from Radha Rani holding her handi, evoking the playful leelas of Vrindavan. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -842,7 +842,7 @@ const kidsGalleryData = [
     "frameNumber": 33,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Sacred Flute & Royal Attire (Slot #33)",
+    "title": "Sparkling Joy - Radha Rani's Laughter",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -860,7 +860,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A bright, joyful expression of pure festive celebration and childhood laughter. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -868,7 +868,7 @@ const kidsGalleryData = [
     "frameNumber": 34,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Childhood Radiance (Slot #34)",
+    "title": "Festive Splendor - Radha Rani",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -886,7 +886,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Radha Rani caught mid-smile in vibrant festive finery with traditional Maharashtrian green glass bangles. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -894,7 +894,7 @@ const kidsGalleryData = [
     "frameNumber": 35,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Krishna Candid Moment (Slot #35)",
+    "title": "The Royal Step - Radha Rani (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -912,7 +912,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5505x3670 px). EXIF: NIKON D5600, 18-55mm @ 20mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Dramatic fine art monochrome showing Radha Rani gracefully elevating her veil, stepping forward on the wooden chowki. EXIF: NIKON D5600, 18-55mm @ 20mm, f/6."
     }
   },
   {
@@ -920,7 +920,7 @@ const kidsGalleryData = [
     "frameNumber": 36,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Traditional Indian Festivity (Slot #36)",
+    "title": "The Queen of Barsana - Radha Rani's Joy",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -938,7 +938,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 22mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Radha Rani laughing joyfully while lifting her embroidered dupatta veil, holding the sacred butter pot with regal festive pride. EXIF: NIKON D5600, 18-55mm @ 22mm, f/6."
     }
   },
   {
@@ -946,7 +946,7 @@ const kidsGalleryData = [
     "frameNumber": 37,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha's Gentle Glow (Slot #37)",
+    "title": "Poised Majesty - Radha Rani",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -964,7 +964,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 42mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A regal, beautifully composed portrait of Radha Rani presenting her festive handi with poised confidence. EXIF: NIKON D5600, 18-55mm @ 42mm, f/6."
     }
   },
   {
@@ -972,7 +972,7 @@ const kidsGalleryData = [
     "frameNumber": 38,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Vrindavan Bliss & Charm (Slot #38)",
+    "title": "Guarding the Makhan - Radha's Vigil",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -990,7 +990,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 42mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A dramatic expression as Radha Rani guards the golden butter handi from Kanha's mischievous grasp. EXIF: NIKON D5600, 18-55mm @ 42mm, f/6."
     }
   },
   {
@@ -998,7 +998,7 @@ const kidsGalleryData = [
     "frameNumber": 39,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Divine Childhood Wonder (Slot #39)",
+    "title": "Balancing the Handi - Little Gopi (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1016,7 +1016,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (3858x5787 px). EXIF: NIKON D5600, 18-55mm @ 38mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Little sister skillfully balances the painted butter handi upon her head in this delightful monochrome capture. EXIF: NIKON D5600, 18-55mm @ 38mm, f/6."
     }
   },
   {
@@ -1024,7 +1024,7 @@ const kidsGalleryData = [
     "frameNumber": 40,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Garland & Crown (Slot #40)",
+    "title": "Golden Handi & Sweet Smiles - Little Gopi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1042,7 +1042,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 36mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Full-color vibrancy as the little sister beams with pride, balancing the festive pot on her head. EXIF: NIKON D5600, 18-55mm @ 36mm, f/6."
     }
   },
   {
@@ -1050,7 +1050,7 @@ const kidsGalleryData = [
     "frameNumber": 41,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Krishna in Thought (Slot #41)",
+    "title": "Little Gopi's Procession",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1068,7 +1068,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (3844x4796 px). EXIF: NIKON D5600, 18-55mm @ 24mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Little sister proudly strides forward with the butter handi balanced atop her head, glancing to the side with childish glee. EXIF: NIKON D5600, 18-55mm @ 24mm, f/6."
     }
   },
   {
@@ -1076,7 +1076,7 @@ const kidsGalleryData = [
     "frameNumber": 42,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Janmashtami Royal Portrait (2 Color Edits)",
+    "title": "Crown of Gokul - Little Gopi (2 Color Edits)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1095,7 +1095,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A portrait of little sister balancing the sacred handi, rendered in dual artistic color treatments. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -1103,7 +1103,7 @@ const kidsGalleryData = [
     "frameNumber": 43,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Gopal's Cheerful Spirit (Slot #43)",
+    "title": "Pure Innocence - Little Gopi's Cheerful Smile",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1121,7 +1121,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Frontal portrait capturing the infectious smile and youthful charm of the little sister in traditional lehenga. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -1129,7 +1129,7 @@ const kidsGalleryData = [
     "frameNumber": 44,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Peacock Plume Radiance (Slot #44)",
+    "title": "Shy Gopi with Handi (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1147,7 +1147,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (4000x6000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Delicate black and white study of little sister hugging the butter pot to her chest with a shy, sweet smile. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -1155,7 +1155,7 @@ const kidsGalleryData = [
     "frameNumber": 45,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Sacred Melody of the Flute (Slot #45)",
+    "title": "Little Gopi's Mischief",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1173,7 +1173,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 42mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Vibrant portrait of little sister holding the makhan handi close, with a twinkle of mischief in her eyes. EXIF: NIKON D5600, 18-55mm @ 42mm, f/6."
     }
   },
   {
@@ -1181,7 +1181,7 @@ const kidsGalleryData = [
     "frameNumber": 46,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Laughter & Play (Slot #46)",
+    "title": "Determined Guardian - Little Gopi with Handi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1199,7 +1199,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 45mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Playful expression as little sister holds her butter pot securely with both hands, ready to protect her treasure. EXIF: NIKON D5600, 18-55mm @ 45mm, f/6."
     }
   },
   {
@@ -1207,7 +1207,7 @@ const kidsGalleryData = [
     "frameNumber": 47,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha's Tender Smile (Slot #47)",
+    "title": "Sweet Embrace - Little Gopi & Makhan Handi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1225,7 +1225,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 31mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A charming three-quarter portrait of little sister holding the decorated handi with tender warmth. EXIF: NIKON D5600, 18-55mm @ 31mm, f/6."
     }
   },
   {
@@ -1233,7 +1233,7 @@ const kidsGalleryData = [
     "frameNumber": 48,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Shri Krishna Heritage Story (Slot #48)",
+    "title": "Golden Accent - Little Gopi (Fine Art Edit)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1251,7 +1251,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 16:9 landscape framing (6000x3375 px). EXIF: NIKON D5600, 18-55mm @ 24mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Fine art selective color composition accentuating the golden luster of the handi and jewelry against cool background tones. EXIF: NIKON D5600, 18-55mm @ 24mm, f/6."
     }
   },
   {
@@ -1259,7 +1259,7 @@ const kidsGalleryData = [
     "frameNumber": 49,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Krishna Outdoor Glow (Slot #49)",
+    "title": "Sisterly Bond - Two Radhas of Gokul",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1277,7 +1277,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 22mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Two sisters hand-in-hand in matching pink lehengas, elder sister balancing the handi atop her head with graceful poise. EXIF: NIKON D5600, 18-55mm @ 22mm, f/6."
     }
   },
   {
@@ -1285,7 +1285,7 @@ const kidsGalleryData = [
     "frameNumber": 50,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Costume Fine Art (Slot #50)",
+    "title": "Eternal Sisterhood - Hand in Hand (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1303,7 +1303,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 34mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Timeless monochrome portrait capturing the unbreakable bond and shared laughter between the two sisters. EXIF: NIKON D5600, 18-55mm @ 34mm, f/6."
     }
   },
   {
@@ -1311,7 +1311,7 @@ const kidsGalleryData = [
     "frameNumber": 51,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Traditional Janmashtami Story (Slot #51)",
+    "title": "The Legend of Gokul - Sibling Theatrics",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1329,7 +1329,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 29mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A dynamic theatrical frame: Radha Rani poses thoughtfully in the center while Bal Krishna creeps in from the left and little Gopi peeks playfully. EXIF: NIKON D5600, 18-55mm @ 29mm, f/6."
     }
   },
   {
@@ -1337,7 +1337,7 @@ const kidsGalleryData = [
     "frameNumber": 52,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha with Butter Pot Spirit (Slot #52)",
+    "title": "The Playful Sovereign - Radha, Krishna & Gopi",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1355,7 +1355,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5053x3553 px). EXIF: NIKON D5600, 18-55mm @ 30mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A vibrant close-up portrait of the three siblings in theatrical character, radiating festive delight. EXIF: NIKON D5600, 18-55mm @ 30mm, f/6."
     }
   },
   {
@@ -1363,7 +1363,7 @@ const kidsGalleryData = [
     "frameNumber": 53,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Divine Festive Portrait (Slot #53)",
+    "title": "Auspicious Sibling Harmony - Radha, Gopi & Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1381,7 +1381,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 2:3 portrait framing (2919x5189 px). EXIF: NIKON D5600, 18-55mm @ 21mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Two sisters seated together holding the sacred bansuri while elder brother Bal Krishna watches over them from behind. EXIF: NIKON D5600, 18-55mm @ 21mm, f/6."
     }
   },
   {
@@ -1389,7 +1389,7 @@ const kidsGalleryData = [
     "frameNumber": 54,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Vrindavan Garden Inspiration (Slot #54)",
+    "title": "Lathmar Leela - Radha & Krishna's Theatrical Duel (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1407,7 +1407,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5664x3731 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Dramatic monochrome capture depicting the traditional Lathmar Holi / Janmashtami playful duel between Radha and Krishna. EXIF: NIKON D5600, 18-55mm @ 18mm, f/6."
     }
   },
   {
@@ -1415,7 +1415,7 @@ const kidsGalleryData = [
     "frameNumber": 55,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Gopal's Bright Day (Slot #55)",
+    "title": "Catching the Butter Thief - Radha's Playful Chase",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1433,7 +1433,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 20mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Bal Krishna caught red-handed as Radha Rani playfully raises her stick to scold the beloved butter thief. EXIF: NIKON D5600, 18-55mm @ 20mm, f/6."
     }
   },
   {
@@ -1441,7 +1441,7 @@ const kidsGalleryData = [
     "frameNumber": 56,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Sacred Flute Harmony (Slot #56)",
+    "title": "A Glance of Mischief - Bal Krishna & Radha",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1459,7 +1459,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Bal Krishna looks back over his shoulder with an irresistible playful smirk during their festive sibling dance. EXIF: NIKON D5600, 18-55mm @ 18mm, f/6."
     }
   },
   {
@@ -1467,7 +1467,7 @@ const kidsGalleryData = [
     "frameNumber": 57,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Krishna in Sunshine (Slot #57)",
+    "title": "The Elusive Kanha - Raas Leela Dance",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1485,7 +1485,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5214x3902 px). EXIF: NIKON D5600, 18-55mm @ 18mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Bal Krishna dances forward with joyous energy, playfully slipping away from Radha Rani in this lively festive action frame. EXIF: NIKON D5600, 18-55mm @ 18mm, f/6."
     }
   },
   {
@@ -1493,7 +1493,7 @@ const kidsGalleryData = [
     "frameNumber": 58,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Festive Blessing & Warmth (Slot #58)",
+    "title": "Radha's Melody - Sibling Leela (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1511,7 +1511,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 36mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Fine art monochrome tableau as Radha Rani pretends to play the bansuri while Bal Krishna dances joyfully beside her. EXIF: NIKON D5600, 18-55mm @ 36mm, f/6."
     }
   },
   {
@@ -1519,7 +1519,7 @@ const kidsGalleryData = [
     "frameNumber": 59,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Janmashtami Candid Grace (Slot #59)",
+    "title": "Veiled Reverie - Little Gopi Framed in Gold",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1537,7 +1537,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Artistic framing through golden sheer fabric creating dreamy depth around the serene portrait of little sister. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -1545,7 +1545,7 @@ const kidsGalleryData = [
     "frameNumber": 60,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Kanha's Pure Heart (Slot #60)",
+    "title": "Little Gopi's Joyous Smile",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1563,7 +1563,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 55mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Beaming with pure delight, little sister poses happily on the chowki holding the flute, illuminated by warm festive light. EXIF: NIKON D5600, 18-55mm @ 55mm, f/6."
     }
   },
   {
@@ -1571,7 +1571,7 @@ const kidsGalleryData = [
     "frameNumber": 61,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Bal Krishna Celebration Frame (Slot #61)",
+    "title": "A Tale of Two Souls - Krishna & Little Gopi (Vintage Vignette)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1589,7 +1589,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 42mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A nostalgic vintage film treatment capturing a contemplative Bal Krishna seated beside his smiling younger sister. EXIF: NIKON D5600, 18-55mm @ 42mm, f/6."
     }
   },
   {
@@ -1597,7 +1597,7 @@ const kidsGalleryData = [
     "frameNumber": 62,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Golden Memories of Janmashtami (Slot #62)",
+    "title": "Whispers of Vrindavan - Krishna & Little Gopi (Fine Art Duo)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1615,7 +1615,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 38mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "Fine art split-tone study of Bal Krishna whispering playfully to his younger sister during their sacred portrait session. EXIF: NIKON D5600, 18-55mm @ 38mm, f/6."
     }
   },
   {
@@ -1623,7 +1623,7 @@ const kidsGalleryData = [
     "frameNumber": 63,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Traditional Childhood Heritage (Slot #63)",
+    "title": "Joy in Gokul - Auspicious Sibling Trio (Monochrome)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1641,7 +1641,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 21mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A wide monochrome frame capturing all three siblings in spontaneous harmony and laughter. EXIF: NIKON D5600, 18-55mm @ 21mm, f/6."
     }
   },
   {
@@ -1649,7 +1649,7 @@ const kidsGalleryData = [
     "frameNumber": 64,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Little Krishna's Loving Smile (Slot #64)",
+    "title": "Back-to-Back Radiance - Radha & Bal Krishna",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1667,7 +1667,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (5977x3985 px). EXIF: NIKON D5600, 18-55mm @ 35mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A regal back-to-back composition of Radha and Bal Krishna seated on the wooden chowki, radiating poise and mutual strength. EXIF: NIKON D5600, 18-55mm @ 35mm, f/6."
     }
   },
   {
@@ -1675,7 +1675,7 @@ const kidsGalleryData = [
     "frameNumber": 65,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Eternal Vrindavan Childhood (Slot #65)",
+    "title": "Radha's Enchantment - The Flute of Vrindavan",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
@@ -1693,7 +1693,7 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click during Shri Krishna Janmashtami 2024 festive photo session. Captured in native 3:2 landscape framing (6000x4000 px). EXIF: NIKON D5600, 18-55mm @ 48mm, f/6.3 @ 1/125s, ISO 100."
+      "story": "A striking, intense close-up portrait of Radha Rani gazing through the lens while holding the sacred bansuri to her lips. EXIF: NIKON D5600, 18-55mm @ 48mm, f/6."
     }
   },
   {
