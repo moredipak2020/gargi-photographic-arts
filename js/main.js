@@ -56,7 +56,7 @@ function selectCategory(categoryName) {
   renderGallery(currentCategoryFilter, currentOrientationFilter);
 
   if (window.ambientAudio) {
-    if (categoryName === 'kids' || categoryName === 'devotional') {
+    if (categoryName === 'devotional') {
       window.ambientAudio.setTheme('janmashtami', 0);
     } else {
       window.ambientAudio.setTheme('default', 0);
@@ -64,7 +64,7 @@ function selectCategory(categoryName) {
   }
 
   if (window.cursorEngine) {
-    if (categoryName === 'kids' || categoryName === 'devotional') {
+    if (categoryName === 'devotional') {
       window.cursorEngine.setTheme('peacock');
     } else {
       window.cursorEngine.setTheme('default');
@@ -137,6 +137,26 @@ function renderGallery(filterCategory = 'all', filterOrientation = 'all') {
     `;
 
     card.addEventListener('click', () => openLightbox(item.id));
+
+    // Contextual Hover: Peacock Feather on Devotional / Krishna frames, Star on all others
+    const isJanmashtami = item.category === 'devotional' || (item.title && item.title.toLowerCase().includes('krishna')) || (item.id && (item.id.includes('krishna') || item.id.includes('janmashtami')));
+    if (isJanmashtami) {
+      card.addEventListener('mouseenter', () => {
+        if (window.cursorEngine) window.cursorEngine.setTheme('peacock');
+      });
+      card.addEventListener('mouseleave', () => {
+        if (window.cursorEngine && currentCategoryFilter !== 'devotional') {
+          window.cursorEngine.setTheme('default');
+        }
+      });
+    } else {
+      card.addEventListener('mouseenter', () => {
+        if (window.cursorEngine && currentCategoryFilter !== 'devotional') {
+          window.cursorEngine.setTheme('default');
+        }
+      });
+    }
+
     galleryGrid.appendChild(card);
   });
 
@@ -171,7 +191,7 @@ function initFilterControls() {
       renderGallery(currentCategoryFilter, currentOrientationFilter);
 
       if (window.ambientAudio) {
-        if (currentCategoryFilter === 'kids' || currentCategoryFilter === 'devotional') {
+        if (currentCategoryFilter === 'devotional') {
           window.ambientAudio.setTheme('janmashtami', 0);
         } else {
           window.ambientAudio.setTheme('default', 0);
@@ -179,7 +199,7 @@ function initFilterControls() {
       }
 
       if (window.cursorEngine) {
-        if (currentCategoryFilter === 'kids' || currentCategoryFilter === 'devotional') {
+        if (currentCategoryFilter === 'devotional') {
           window.cursorEngine.setTheme('peacock');
         } else {
           window.cursorEngine.setTheme('default');
@@ -358,6 +378,17 @@ function openLightbox(itemId) {
     </div>
   `;
 
+  const isJanmashtami = item.category === 'devotional' || (item.title && item.title.toLowerCase().includes('krishna')) || (item.id && (item.id.includes('krishna') || item.id.includes('janmashtami')));
+  if (isJanmashtami) {
+    modal.classList.add('peacock-theme-active');
+    if (window.cursorEngine) window.cursorEngine.setTheme('peacock');
+    if (window.ambientAudio) window.ambientAudio.setTheme('janmashtami', 0);
+  } else {
+    modal.classList.remove('peacock-theme-active');
+    if (window.cursorEngine && currentCategoryFilter !== 'devotional') window.cursorEngine.setTheme('default');
+    if (window.ambientAudio && currentCategoryFilter !== 'devotional') window.ambientAudio.setTheme('default', 0);
+  }
+
   modal.classList.add('active');
 }
 
@@ -428,11 +459,20 @@ function initModals() {
 function closeModals() {
   document.querySelectorAll('.modal-backdrop').forEach(m => {
     m.classList.remove('active');
+    m.classList.remove('peacock-theme-active');
   });
   const videoContainer = document.getElementById('videoModalContainer');
   if (videoContainer) videoContainer.innerHTML = '';
   const flipbookContainer = document.getElementById('flipbookModalContainer');
   if (flipbookContainer) flipbookContainer.innerHTML = '';
+
+  if (window.cursorEngine) {
+    if (currentCategoryFilter === 'devotional') {
+      window.cursorEngine.setTheme('peacock');
+    } else {
+      window.cursorEngine.setTheme('default');
+    }
+  }
 }
 
 // GSAP Animations

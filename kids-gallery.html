@@ -206,15 +206,17 @@
   <!-- Scripts -->
   <script src="js/kids-data.js"></script>
   <script src="js/image-protection.js?v=12.0" defer></script>
-  <script src="js/peacock-feather-cursor.js" defer></script>
+  <script src="js/luxury-stardust-cursor.js" defer></script>
   <script src="js/audio-player.js" defer></script>
   <script>
+    let currentKidsFilter = 'all';
     const activeKidsVariantMap = {};
 
     document.addEventListener('DOMContentLoaded', () => {
       renderKidsGrid('all');
       initKidsFilterControls();
       initModals();
+      if (window.cursorEngine) window.cursorEngine.setTheme('default');
     });
 
     function renderKidsGrid(filter = 'all') {
@@ -285,6 +287,25 @@
         `;
 
         card.addEventListener('click', () => openKidsLightbox(item.id));
+
+        // Contextual Cursor Switching: Peacock Feather on Janmashtami frames, Star on Milestones
+        if (isJanmashtami) {
+          card.addEventListener('mouseenter', () => {
+            if (window.cursorEngine) window.cursorEngine.setTheme('peacock');
+          });
+          card.addEventListener('mouseleave', () => {
+            if (window.cursorEngine && currentKidsFilter !== 'janmashtami2024') {
+              window.cursorEngine.setTheme('default');
+            }
+          });
+        } else {
+          card.addEventListener('mouseenter', () => {
+            if (window.cursorEngine && currentKidsFilter !== 'janmashtami2024') {
+              window.cursorEngine.setTheme('default');
+            }
+          });
+        }
+
         grid.appendChild(card);
       });
 
@@ -331,7 +352,17 @@
           filterBtns.forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           const filterVal = btn.getAttribute('data-kids-filter');
+          currentKidsFilter = filterVal;
           renderKidsGrid(filterVal);
+
+          // Cursor Theme: Peacock exclusively on Janmashtami tab, Star on Milestones & others
+          if (window.cursorEngine) {
+            if (filterVal === 'janmashtami2024') {
+              window.cursorEngine.setTheme('peacock');
+            } else {
+              window.cursorEngine.setTheme('default');
+            }
+          }
 
           if (window.ambientAudio) {
             if (filterVal === 'milestones') {
@@ -355,9 +386,11 @@
       const isJanmashtami = item.collection === 'janmashtami2024';
       if (isJanmashtami) {
         modal.classList.add('peacock-theme-active');
+        if (window.cursorEngine) window.cursorEngine.setTheme('peacock');
         if (window.ambientAudio) window.ambientAudio.setTheme('janmashtami', 0);
       } else {
         modal.classList.remove('peacock-theme-active');
+        if (window.cursorEngine) window.cursorEngine.setTheme('default');
         if (window.ambientAudio) window.ambientAudio.setTheme('default', 0);
       }
 
@@ -521,6 +554,20 @@
         m.classList.remove('active');
         m.classList.remove('peacock-theme-active');
       });
+      if (window.cursorEngine) {
+        if (currentKidsFilter === 'janmashtami2024') {
+          window.cursorEngine.setTheme('peacock');
+        } else {
+          window.cursorEngine.setTheme('default');
+        }
+      }
+      if (window.ambientAudio) {
+        if (currentKidsFilter === 'janmashtami2024') {
+          window.ambientAudio.setTheme('janmashtami', 0);
+        } else {
+          window.ambientAudio.setTheme('default', 0);
+        }
+      }
     }
   </script>
 </body>
