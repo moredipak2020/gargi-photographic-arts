@@ -1,0 +1,16 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="gargiGold" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFDF0"/>
+      <stop offset="25%" stop-color="#F3E5AB"/>
+      <stop offset="60%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#7A5600"/>
+    </radialGradient>
+    <filter id="goldShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#D4AF37" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#gargiGold)" stroke="#FFF8DC" stroke-width="1.5" filter="url(#goldShadow)"/>
+  <circle cx="32" cy="32" r="26.5" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.6"/>
+  <text x="32" y="43" font-family="'Cormorant Garamond', 'Cinzel', 'Georgia', 'Times New Roman', serif" font-size="34" font-weight="700" text-anchor="middle" fill="#0A0914">G</text>
+</svg>
