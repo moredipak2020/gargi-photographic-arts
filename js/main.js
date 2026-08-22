@@ -295,9 +295,11 @@ function openLightbox(itemId) {
 
   detailsContainer.innerHTML = `
     <div>
-      <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">${item.category} Collection (${item.aspectRatio})</span>
-      <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
-      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+      <div class="lightbox-header">
+        <span class="lightbox-tag-badge">✨ ${item.category ? item.category.toUpperCase() : 'GALLERY'} • ${item.aspectRatio}</span>
+        <h2>${item.title}</h2>
+      </div>
+      <p style="color: #1E1B2E; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">${item.exif.story}</p>
       
       <div class="exif-list">
         <div class="exif-item">

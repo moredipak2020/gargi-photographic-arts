@@ -1582,7 +1582,7 @@ button {
 
 .lightbox-container {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr 420px;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -1614,7 +1614,7 @@ button {
 
 /* White Morphic Glass Details & EXIF Panel - High-Contrast Luxury Dark Typography */
 .lightbox-details {
-  padding: 2.5rem 2rem;
+  padding: 2rem 2.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1627,7 +1627,48 @@ button {
   color: #0A0914;
 }
 
-.lightbox-details h2,
+/* Dedicated Lightbox Header Wrapper with Right Clearance for Close Button */
+.lightbox-header {
+  position: relative;
+  padding-right: 3.5rem; /* Generous clearance preventing collision with close button */
+  margin-bottom: 0.75rem;
+}
+
+/* Luxury Category & Aspect Ratio Pill Badge */
+.lightbox-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(140, 98, 7, 0.1);
+  color: #8C6207;
+  border: 1px solid rgba(140, 98, 7, 0.28);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  max-width: 100%;
+}
+
+.lightbox-tag-badge.peacock {
+  background: rgba(0, 168, 150, 0.12);
+  color: #00796B;
+  border: 1px solid rgba(0, 168, 150, 0.35);
+}
+
+.lightbox-details h2 {
+  color: #0A0914 !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem !important;
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 0.25rem 0 0.65rem 0 !important;
+  letter-spacing: -0.01em;
+}
+
 .lightbox-details h3 {
   color: #0A0914 !important;
   font-family: 'Cormorant Garamond', serif;

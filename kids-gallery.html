@@ -392,8 +392,8 @@
       }
 
       const collectionTagHTML = isJanmashtami
-        ? `<span style="color: #008779; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;">🦚 Shri Krishna Janmashtami 2024 (${item.aspectRatio})</span>`
-        : `<span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">Childhood Milestone (${item.aspectRatio})</span>`;
+        ? `<span class="lightbox-tag-badge peacock">🦚 Janmashtami 2024 • ${item.aspectRatio}</span>`
+        : `<span class="lightbox-tag-badge">🌻 Childhood Milestone • ${item.aspectRatio}</span>`;
 
       const ctaBtnHTML = isJanmashtami
         ? `<button class="btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #00A896 0%, #07070A 100%) !important;" onclick="openBookingModalWithService('festive_kids')">Inquire Festive Costume Shoot</button>`
@@ -401,9 +401,11 @@
 
       detailsContainer.innerHTML = `
         <div>
-          ${collectionTagHTML}
-          <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+          <div class="lightbox-header">
+            ${collectionTagHTML}
+            <h2>${item.title}</h2>
+          </div>
+          <p style="color: #1E1B2E; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.25rem;">${item.exif.story}</p>
           
           ${variantSelectorHTML}
 
