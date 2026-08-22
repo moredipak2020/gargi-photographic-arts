@@ -188,6 +188,8 @@
   <script src="js/luxury-stardust-cursor.js" defer></script>
   <script src="js/audio-player.js" defer></script>
   <script>
+    const activeKidsVariantMap = {};
+
     document.addEventListener('DOMContentLoaded', () => {
       renderKidsGrid('all');
       initKidsFilterControls();
@@ -215,6 +217,7 @@
         const card = document.createElement('div');
         const aspectClass = item.aspectRatio ? `aspect-${item.aspectRatio.replace(':', '-')}` : 'aspect-2-3';
         const frameStr = String(item.frameNumber).padStart(2, '0');
+        card.setAttribute('data-id', item.id);
 
         if (item.isPlaceholder) {
           card.className = `museum-frame-card empty-frame ${aspectClass}`;
@@ -228,9 +231,34 @@
           `;
         } else {
           card.className = `museum-frame-card ${aspectClass}`;
+
+          if (!(item.id in activeKidsVariantMap)) {
+            activeKidsVariantMap[item.id] = 0;
+          }
+
+          const isMulti = item.variants && item.variants.length > 1;
+          const totalVars = isMulti ? item.variants.length : 1;
+          const currentVarIdx = activeKidsVariantMap[item.id] || 0;
+          const currentSrc = isMulti ? item.variants[currentVarIdx] : item.src;
+
+          const multiTag = isMulti ? `<span class="variant-badge-tag">🎨 ${currentVarIdx + 1}/${totalVars} COLOR EDITS</span>` : '';
+
+          const sliderControlsHTML = isMulti ? `
+            <div class="variant-slider-controls">
+              <button class="variant-nav-btn prev-btn" onclick="event.stopPropagation(); changeKidsVariant('${item.id}', -1, ${totalVars})" aria-label="Previous Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              <button class="variant-nav-btn next-btn" onclick="event.stopPropagation(); changeKidsVariant('${item.id}', 1, ${totalVars})" aria-label="Next Edit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          ` : '';
+
           card.innerHTML = `
-            <div class="gallery-img-wrapper">
-              <img src="${item.src}" alt="${item.title}" class="gallery-img" loading="lazy" />
+            ${multiTag}
+            <div class="gallery-img-wrapper" id="img-wrapper-${item.id}">
+              <img src="${currentSrc}" alt="${item.title}" class="gallery-img" id="img-element-${item.id}" loading="lazy" />
+              ${sliderControlsHTML}
               <div class="gallery-card-overlay">
                 <h3 class="gallery-card-title">${item.title}</h3>
                 <div class="gallery-card-meta">
@@ -252,6 +280,34 @@
           { opacity: 0, y: 30, scale: 0.95 },
           { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.04, ease: 'power2.out' }
         );
+      }
+    }
+
+    function changeKidsVariant(itemId, delta, totalVariants) {
+      if (!(itemId in activeKidsVariantMap)) activeKidsVariantMap[itemId] = 0;
+      let newIdx = (activeKidsVariantMap[itemId] + delta) % totalVariants;
+      if (newIdx < 0) newIdx = totalVariants - 1;
+      activeKidsVariantMap[itemId] = newIdx;
+
+      const item = kidsGalleryData.find(i => i.id === itemId);
+      if (!item) return;
+
+      const imgEl = document.getElementById(`img-element-${itemId}`);
+      if (imgEl && item.variants) {
+        imgEl.style.opacity = '0.3';
+        setTimeout(() => {
+          imgEl.src = item.variants[newIdx];
+          imgEl.style.opacity = '1';
+        }, 150);
+      }
+
+      // Update badge tag
+      const card = document.querySelector(`.museum-frame-card[data-id="${itemId}"]`);
+      if (card) {
+        const badgeTag = card.querySelector('.variant-badge-tag');
+        if (badgeTag) {
+          badgeTag.innerHTML = `🎨 ${newIdx + 1}/${totalVariants} COLOR EDITS`;
+        }
       }
     }
 
@@ -285,41 +341,141 @@
             </p>
           </div>
         `;
-      } else {
-        mediaContainer.innerHTML = `<img src="${item.src}" alt="${item.title}" />`;
-      }
 
-      detailsContainer.innerHTML = `
-        <div>
-          <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">Frame Container #${String(item.frameNumber).padStart(2, '0')} (${item.aspectRatio})</span>
-          <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
-          
-          <div class="exif-list">
-            <div class="exif-item">
-              <label>Camera Body</label>
-              <span>${item.exif.camera}</span>
-            </div>
-            <div class="exif-item">
-              <label>Optics / Lens</label>
-              <span>${item.exif.lens}</span>
-            </div>
-            <div class="exif-item">
-              <label>Aperture & Shutter</label>
-              <span>${item.exif.aperture} @ ${item.exif.shutter}</span>
-            </div>
-            <div class="exif-item">
-              <label>ISO & Location</label>
-              <span>${item.exif.iso} | ${item.exif.location.split(',')[0]}</span>
+        detailsContainer.innerHTML = `
+          <div>
+            <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">Frame Container #${String(item.frameNumber).padStart(2, '0')} (${item.aspectRatio})</span>
+            <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+            
+            <div class="exif-list">
+              <div class="exif-item">
+                <label>Camera Body</label>
+                <span>${item.exif.camera}</span>
+              </div>
+              <div class="exif-item">
+                <label>Optics / Lens</label>
+                <span>${item.exif.lens}</span>
+              </div>
+              <div class="exif-item">
+                <label>Target Ratio</label>
+                <span>${item.aspectRatio} (${item.orientation})</span>
+              </div>
+              <div class="exif-item">
+                <label>Location</label>
+                <span>${item.exif.location}</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
-          <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openBookingModalWithService('kids')">Inquire Kids Shoot Session</button>
-        </div>
-      `;
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
+            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openBookingModalWithService('kids')">Inquire Kids Shoot Session</button>
+          </div>
+        `;
+      } else {
+        const isMulti = item.variants && item.variants.length > 1;
+        const totalVars = isMulti ? item.variants.length : 1;
+        const currentVarIdx = activeKidsVariantMap[itemId] || 0;
+        const currentSrc = isMulti ? item.variants[currentVarIdx] : item.src;
+
+        const currentItemIdx = kidsGalleryData.findIndex(i => i.id === itemId);
+        const prevItem = kidsGalleryData[(currentItemIdx - 1 + kidsGalleryData.length) % kidsGalleryData.length];
+        const nextItem = kidsGalleryData[(currentItemIdx + 1) % kidsGalleryData.length];
+
+        const svgPrev = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>`;
+        const svgNext = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>`;
+
+        let navArrowsHTML = '';
+        if (isMulti) {
+          const prevVarIdx = (currentVarIdx - 1 + totalVars) % totalVars;
+          const nextVarIdx = (currentVarIdx + 1) % totalVars;
+          navArrowsHTML = `
+            <button class="lightbox-nav-arrow prev" onclick="switchKidsLightboxVariant('${item.id}', ${prevVarIdx})" title="Previous Color Edit">${svgPrev}</button>
+            <button class="lightbox-nav-arrow next" onclick="switchKidsLightboxVariant('${item.id}', ${nextVarIdx})" title="Next Color Edit">${svgNext}</button>
+          `;
+        } else {
+          navArrowsHTML = `
+            <button class="lightbox-nav-arrow prev" onclick="openKidsLightbox('${prevItem.id}')" title="Previous Photo">${svgPrev}</button>
+            <button class="lightbox-nav-arrow next" onclick="openKidsLightbox('${nextItem.id}')" title="Next Photo">${svgNext}</button>
+          `;
+        }
+
+        mediaContainer.innerHTML = `
+          ${navArrowsHTML}
+          <img src="${currentSrc}" id="lightboxMainImg" alt="${item.title}" />
+        `;
+
+        let variantSelectorHTML = '';
+        if (isMulti) {
+          variantSelectorHTML = `
+            <div style="margin-top: 1rem; margin-bottom: 1rem;">
+              <label style="font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; display: block; margin-bottom: 0.4rem;">Select Color Grade / Edit Variant:</label>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                ${item.variants.map((v, idx) => `
+                  <button class="filter-btn ${idx === currentVarIdx ? 'active' : ''}" style="padding: 0.35rem 0.85rem; font-size: 0.75rem;" onclick="switchKidsLightboxVariant('${item.id}', ${idx})">
+                    Edit #${idx + 1}
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        }
+
+        detailsContainer.innerHTML = `
+          <div>
+            <span style="color: var(--gold-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em;">Frame Container #${String(item.frameNumber).padStart(2, '0')} (${item.aspectRatio})</span>
+            <h2 style="font-size: 2.2rem; margin: 0.3rem 0 1rem 0;">${item.title}</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">${item.exif.story}</p>
+            
+            ${variantSelectorHTML}
+
+            <div class="exif-list">
+              <div class="exif-item">
+                <label>Camera Body</label>
+                <span>${item.exif.camera}</span>
+              </div>
+              <div class="exif-item">
+                <label>Optics / Lens</label>
+                <span>${item.exif.lens}</span>
+              </div>
+              <div class="exif-item">
+                <label>Aperture & Shutter</label>
+                <span>${item.exif.aperture} @ ${item.exif.shutter}</span>
+              </div>
+              <div class="exif-item">
+                <label>ISO & Location</label>
+                <span>${item.exif.iso} | ${item.exif.location.split(',')[0]}</span>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
+            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="openBookingModalWithService('kids')">Inquire Kids Shoot Session</button>
+          </div>
+        `;
+      }
 
       modal.classList.add('active');
+    }
+
+    function switchKidsLightboxVariant(itemId, variantIdx) {
+      activeKidsVariantMap[itemId] = variantIdx;
+
+      // Update card image and badge on grid as well
+      const item = kidsGalleryData.find(i => i.id === itemId);
+      if (item) {
+        const imgEl = document.getElementById(`img-element-${itemId}`);
+        if (imgEl && item.variants && item.variants[variantIdx]) {
+          imgEl.src = item.variants[variantIdx];
+        }
+        const card = document.querySelector(`.museum-frame-card[data-id="${itemId}"]`);
+        if (card && item.variants) {
+          const badgeTag = card.querySelector('.variant-badge-tag');
+          if (badgeTag) {
+            badgeTag.innerHTML = `🎨 ${variantIdx + 1}/${item.variants.length} COLOR EDITS`;
+          }
+        }
+      }
+
+      openKidsLightbox(itemId);
     }
 
     function openBookingModalWithService(serviceCategory = 'kids') {

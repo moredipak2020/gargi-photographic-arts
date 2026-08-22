@@ -1,6 +1,6 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - KIDS SUB-GALLERY DATA (50 FRAMES)
-// Built with real EXIF metadata from Nikon Z6III files
+// Built with real EXIF metadata from Nikon Z6III & Nikon D5600 files
 // ==========================================================================
 
 const kidsGalleryData = [
@@ -12,6 +12,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (1).jpg",
+    "variants": [
+      "assets/images/kids/kid (1).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -32,6 +36,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (2).jpg",
+    "variants": [
+      "assets/images/kids/kid (2).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -52,6 +60,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (3).jpg",
+    "variants": [
+      "assets/images/kids/kid (3).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -72,16 +84,20 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (4).JPG",
+    "variants": [
+      "assets/images/kids/kid (4).JPG"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm",
+      "lens": "SIRUI Z 85mm f/1.4S @ 85mm",
       "aperture": "f/1.4",
       "shutter": "1/8000s",
       "iso": "ISO 10000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #04 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm, f/1.4 @ 1/8000s, ISO 10000."
+      "story": "Dipak More original click #04 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S @ 85mm, f/1.4 @ 1/8000s, ISO 10000."
     }
   },
   {
@@ -92,16 +108,20 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (5).JPG",
+    "variants": [
+      "assets/images/kids/kid (5).JPG"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm",
+      "lens": "SIRUI Z 85mm f/1.4S @ 85mm",
       "aperture": "f/1.4",
       "shutter": "1/8000s",
       "iso": "ISO 11400",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #05 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 @ 85mm, f/1.4 @ 1/8000s, ISO 11400."
+      "story": "Dipak More original click #05 (6048x4032 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S @ 85mm, f/1.4 @ 1/8000s, ISO 11400."
     }
   },
   {
@@ -112,6 +132,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (6).jpg",
+    "variants": [
+      "assets/images/kids/kid (6).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -132,6 +156,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (7).jpg",
+    "variants": [
+      "assets/images/kids/kid (7).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -152,6 +180,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (8).jpg",
+    "variants": [
+      "assets/images/kids/kid (8).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -159,7 +191,7 @@ const kidsGalleryData = [
       "lens": "SIRUI Z 85mm f/1.4S @ 85mm",
       "aperture": "f/1.4",
       "shutter": "1/125s",
-      "iso": "ISO 6400",
+      "iso": "ISO 640",
       "location": "Pune, Maharashtra",
       "story": "Dipak More original click #08 (3343x4773 px). EXIF: Nikon Z6III, SIRUI Z 85mm f/1.4S @ 85mm, f/1.4 @ 1/125s, ISO 6400."
     }
@@ -172,6 +204,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (9).jpg",
+    "variants": [
+      "assets/images/kids/kid (9).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -192,6 +228,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (10).jpg",
+    "variants": [
+      "assets/images/kids/kid (10).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -212,6 +252,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (11).jpg",
+    "variants": [
+      "assets/images/kids/kid (11).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -232,6 +276,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (12).jpg",
+    "variants": [
+      "assets/images/kids/kid (12).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -247,31 +295,15 @@ const kidsGalleryData = [
   {
     "id": "kids-slot-13",
     "frameNumber": 13,
-    "title": "Outdoor Meadow Happiness (Slot #13)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (13).jpg",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
-    "exif": {
-      "camera": "NIKON D5600",
-      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
-      "aperture": "f/5.6",
-      "shutter": "1/60s",
-      "iso": "ISO 100",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #13 (4000x6000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/5.6 @ 1/60s, ISO 100."
-    }
-  },
-  {
-    "id": "kids-slot-14",
-    "frameNumber": 14,
-    "title": "Precious Childhood Memory (Slot #14)",
+    "title": "Precious Childhood Memory (Slot #13)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (14).jpg",
+    "variants": [
+      "assets/images/kids/kid (14).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -285,13 +317,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-15",
-    "frameNumber": 15,
-    "title": "Gentle Smiles & Warmth (Slot #15)",
+    "id": "kids-slot-14",
+    "frameNumber": 14,
+    "title": "Gentle Smiles & Warmth (Slot #14)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (15).jpg",
+    "variants": [
+      "assets/images/kids/kid (15).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -305,13 +341,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-16",
-    "frameNumber": 16,
-    "title": "Charming Portrait (Slot #16)",
+    "id": "kids-slot-15",
+    "frameNumber": 15,
+    "title": "Charming Portrait (Slot #15)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (16).jpg",
+    "variants": [
+      "assets/images/kids/kid (16).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -325,13 +365,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-17",
-    "frameNumber": 17,
-    "title": "Sweet Laughter (Slot #17)",
+    "id": "kids-slot-16",
+    "frameNumber": 16,
+    "title": "Sweet Laughter (Slot #16)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (17).jpg",
+    "variants": [
+      "assets/images/kids/kid (17).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -345,13 +389,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-18",
-    "frameNumber": 18,
-    "title": "Joyful Garden Adventure (Slot #18)",
+    "id": "kids-slot-17",
+    "frameNumber": 17,
+    "title": "Joyful Garden Adventure (Slot #17)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (18).jpg",
+    "variants": [
+      "assets/images/kids/kid (18).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -365,13 +413,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-19",
-    "frameNumber": 19,
-    "title": "Little Explorer (Slot #19)",
+    "id": "kids-slot-18",
+    "frameNumber": 18,
+    "title": "Little Explorer (Slot #18)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (19).jpg",
+    "variants": [
+      "assets/images/kids/kid (19).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -385,13 +437,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-20",
-    "frameNumber": 20,
-    "title": "Cherished Milestone (Slot #20)",
+    "id": "kids-slot-19",
+    "frameNumber": 19,
+    "title": "Cherished Milestone (Slot #19)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (20).jpg",
+    "variants": [
+      "assets/images/kids/kid (20).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -405,13 +461,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-21",
-    "frameNumber": 21,
-    "title": "Warm Childhood Glow (Slot #21)",
+    "id": "kids-slot-20",
+    "frameNumber": 20,
+    "title": "Warm Childhood Glow (Slot #20)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (21).jpg",
+    "variants": [
+      "assets/images/kids/kid (21).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -425,13 +485,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-22",
-    "frameNumber": 22,
-    "title": "Pure Joy (Slot #22)",
+    "id": "kids-slot-21",
+    "frameNumber": 21,
+    "title": "Pure Joy (Slot #21)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (22).jpg",
+    "variants": [
+      "assets/images/kids/kid (22).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -445,13 +509,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-23",
-    "frameNumber": 23,
-    "title": "Bright Childhood Day (Slot #23)",
+    "id": "kids-slot-22",
+    "frameNumber": 22,
+    "title": "Bright Childhood Day (Slot #22)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (23).jpg",
+    "variants": [
+      "assets/images/kids/kid (23).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -465,13 +533,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-24",
-    "frameNumber": 24,
-    "title": "Sweet Smile (Slot #24)",
+    "id": "kids-slot-23",
+    "frameNumber": 23,
+    "title": "Sweet Smile (Slot #23)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (24).jpg",
+    "variants": [
+      "assets/images/kids/kid (24).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -485,13 +557,17 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-25",
-    "frameNumber": 25,
-    "title": "Playful Spirit (Slot #25)",
+    "id": "kids-slot-24",
+    "frameNumber": 24,
+    "title": "Playful Spirit (Slot #24)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (25).jpg",
+    "variants": [
+      "assets/images/kids/kid (25).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -505,13 +581,19 @@ const kidsGalleryData = [
     }
   },
   {
-    "id": "kids-slot-26",
-    "frameNumber": 26,
-    "title": "Golden Sunshine Memory (Slot #26)",
+    "id": "kids-slot-25",
+    "frameNumber": 25,
+    "title": "Golden Sunshine Memory (Slot #25 - 3 Color Edits)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (26).jpg",
+    "variants": [
+      "assets/images/kids/kid (26).jpg",
+      "assets/images/kids/kid (27).jpg",
+      "assets/images/kids/kid (28).jpg"
+    ],
+    "isMultiEdit": true,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -521,17 +603,45 @@ const kidsGalleryData = [
       "shutter": "1/80s",
       "iso": "ISO 1000",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #26 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
+      "story": "Dipak More original click in native 3:2 landscape framing. Featuring 3 color grade variations (Golden Sunshine, Fine-Art Portrait, Outdoor Discovery). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
+    }
+  },
+  {
+    "id": "kids-slot-26",
+    "frameNumber": 26,
+    "title": "Magical Smile (Slot #26)",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": false,
+    "src": "assets/images/kids/kid (29).jpg",
+    "variants": [
+      "assets/images/kids/kid (29).jpg"
+    ],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
+    "exif": {
+      "camera": "Nikon Z6III",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
+      "aperture": "f/4.0",
+      "shutter": "1/80s",
+      "iso": "ISO 1100",
+      "location": "Pune, Maharashtra",
+      "story": "Dipak More original click #26 (3250x1919 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
     }
   },
   {
     "id": "kids-slot-27",
     "frameNumber": 27,
-    "title": "Endearing Portrait (Slot #27)",
+    "title": "Innocent Laughter (Slot #27)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
-    "src": "assets/images/kids/kid (27).jpg",
+    "src": "assets/images/kids/kid (30).jpg",
+    "variants": [
+      "assets/images/kids/kid (30).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -539,119 +649,48 @@ const kidsGalleryData = [
       "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
       "aperture": "f/4.0",
       "shutter": "1/80s",
-      "iso": "ISO 1000",
+      "iso": "ISO 1100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #27 (3449x2469 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
+      "story": "Dipak More original click #27 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
     }
   },
   {
     "id": "kids-slot-28",
     "frameNumber": 28,
-    "title": "Outdoor Discovery (Slot #28)",
+    "title": "Childhood Bliss & Happy Days (Slot #28 - 2 Color Edits)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
-    "src": "assets/images/kids/kid (28).jpg",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "src": "assets/images/kids/kid (31).jpg",
+    "variants": [
+      "assets/images/kids/kid (31).jpg",
+      "assets/images/kids/kid (32).jpg"
+    ],
+    "isMultiEdit": true,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
-      "aperture": "f/4.0",
-      "shutter": "1/80s",
-      "iso": "ISO 1000",
+      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
+      "aperture": "f/2.8",
+      "shutter": "1/60s",
+      "iso": "ISO 3200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #28 (3449x2469 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1000."
+      "story": "Dipak More original click in native 2:3 vertical portrait perspective. Featuring 2 color grade variations (Childhood Bliss & Happy Days). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/2.8 @ 1/60s, ISO 3200."
     }
   },
   {
     "id": "kids-slot-29",
     "frameNumber": 29,
-    "title": "Magical Smile (Slot #29)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (29).jpg",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
-    "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
-      "aperture": "f/4.0",
-      "shutter": "1/80s",
-      "iso": "ISO 1100",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #29 (3250x1919 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
-    }
-  },
-  {
-    "id": "kids-slot-30",
-    "frameNumber": 30,
-    "title": "Innocent Laughter (Slot #30)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (30).jpg",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
-    "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm",
-      "aperture": "f/4.0",
-      "shutter": "1/80s",
-      "iso": "ISO 1100",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #30 (3984x2656 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 45mm, f/4.0 @ 1/80s, ISO 1100."
-    }
-  },
-  {
-    "id": "kids-slot-31",
-    "frameNumber": 31,
-    "title": "Childhood Bliss (Slot #31)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (31).jpg",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
-    "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
-      "aperture": "f/2.8",
-      "shutter": "1/60s",
-      "iso": "ISO 3200",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #31 (2527x3870 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/2.8 @ 1/60s, ISO 3200."
-    }
-  },
-  {
-    "id": "kids-slot-32",
-    "frameNumber": 32,
-    "title": "Happy Days (Slot #32)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (32).jpg",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
-    "exif": {
-      "camera": "Nikon Z6III",
-      "lens": "Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm",
-      "aperture": "f/2.8",
-      "shutter": "1/60s",
-      "iso": "ISO 3200",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #32 (2527x3870 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 36mm, f/2.8 @ 1/60s, ISO 3200."
-    }
-  },
-  {
-    "id": "kids-slot-33",
-    "frameNumber": 33,
-    "title": "Sparkling Eyes (Slot #33)",
+    "title": "Sparkling Eyes (Slot #29)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (33).jpg",
+    "variants": [
+      "assets/images/kids/kid (33).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -661,17 +700,21 @@ const kidsGalleryData = [
       "shutter": "1/200s",
       "iso": "ISO 2500",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #33 (2993x4181 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 2500."
+      "story": "Dipak More original click #29 (2993x4181 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 2500."
     }
   },
   {
-    "id": "kids-slot-34",
-    "frameNumber": 34,
-    "title": "Festive Delight (Slot #34)",
+    "id": "kids-slot-30",
+    "frameNumber": 30,
+    "title": "Festive Delight (Slot #30)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (34).jpg",
+    "variants": [
+      "assets/images/kids/kid (34).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -681,17 +724,21 @@ const kidsGalleryData = [
       "shutter": "1/200s",
       "iso": "ISO 1800",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #34 (2692x3808 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 1800."
+      "story": "Dipak More original click #30 (2692x3808 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/2.8 @ 1/200s, ISO 1800."
     }
   },
   {
-    "id": "kids-slot-35",
-    "frameNumber": 35,
-    "title": "Garden Playtime (Slot #35)",
+    "id": "kids-slot-31",
+    "frameNumber": 31,
+    "title": "Garden Playtime (Slot #31)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (35).jpg",
+    "variants": [
+      "assets/images/kids/kid (35).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -701,17 +748,21 @@ const kidsGalleryData = [
       "shutter": "1/125s",
       "iso": "ISO 200",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #35 (4032x6048 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/5.6 @ 1/125s, ISO 200."
+      "story": "Dipak More original click #31 (4032x6048 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 75mm, f/5.6 @ 1/125s, ISO 200."
     }
   },
   {
-    "id": "kids-slot-36",
-    "frameNumber": 36,
-    "title": "Loving Memory (Slot #36)",
+    "id": "kids-slot-32",
+    "frameNumber": 32,
+    "title": "Loving Memory (Slot #32)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (36).jpg",
+    "variants": [
+      "assets/images/kids/kid (36).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -721,17 +772,21 @@ const kidsGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #36 (3184x5661 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click #32 (3184x5661 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 47mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
-    "id": "kids-slot-37",
-    "frameNumber": 37,
-    "title": "Sweet Childhood Glow (Slot #37)",
+    "id": "kids-slot-33",
+    "frameNumber": 33,
+    "title": "Sweet Childhood Glow (Slot #33)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (37).jpg",
+    "variants": [
+      "assets/images/kids/kid (37).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -741,17 +796,21 @@ const kidsGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #37 (3869x5803 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 39mm, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click #33 (3869x5803 px). EXIF: Nikon Z6III, Tamron 28-75mm F/2.8 f/2.8 G2 @ 39mm, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
-    "id": "kids-slot-38",
-    "frameNumber": 38,
-    "title": "Innocent Curiosity (Slot #38)",
+    "id": "kids-slot-34",
+    "frameNumber": 34,
+    "title": "Innocent Curiosity (Slot #34)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (38).jpg",
+    "variants": [
+      "assets/images/kids/kid (38).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -761,37 +820,21 @@ const kidsGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #38 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click #34 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
-    "id": "kids-slot-39",
-    "frameNumber": 39,
-    "title": "Radiant Happiness (Slot #39)",
-    "category": "kids",
-    "type": "image",
-    "isPlaceholder": false,
-    "src": "assets/images/kids/kid (39).jpg",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
-    "exif": {
-      "camera": "NIKON D5600",
-      "lens": "Tamron 28-75mm f/2.8 G2 @ 50mm",
-      "aperture": "f/3.5",
-      "shutter": "1/80s",
-      "iso": "ISO 640",
-      "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #39 (4496x3000 px). EXIF: NIKON D5600, Tamron 28-75mm f/2.8 G2 @ 50mm, f/3.5 @ 1/80s, ISO 640."
-    }
-  },
-  {
-    "id": "kids-slot-40",
-    "frameNumber": 40,
-    "title": "Unfiltered Joy (Slot #40)",
+    "id": "kids-slot-35",
+    "frameNumber": 35,
+    "title": "Unfiltered Joy (Slot #35)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (40).jpg",
+    "variants": [
+      "assets/images/kids/kid (40).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "3:2",
     "orientation": "landscape",
     "exif": {
@@ -801,17 +844,21 @@ const kidsGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #40 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click #35 (4496x3000 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
     }
   },
   {
-    "id": "kids-slot-41",
-    "frameNumber": 41,
-    "title": "Cherished Moment (Slot #41)",
+    "id": "kids-slot-36",
+    "frameNumber": 36,
+    "title": "Cherished Moment (Slot #36)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
     "src": "assets/images/kids/kid (41).jpg",
+    "variants": [
+      "assets/images/kids/kid (41).jpg"
+    ],
+    "isMultiEdit": false,
     "aspectRatio": "2:3",
     "orientation": "portrait",
     "exif": {
@@ -821,7 +868,117 @@ const kidsGalleryData = [
       "shutter": "1/400s",
       "iso": "ISO 100",
       "location": "Pune, Maharashtra",
-      "story": "Dipak More original click #41 (1836x3264 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+      "story": "Dipak More original click #36 (1836x3264 px). EXIF: Nikon Z6III, Tamron 28-75mm f/2.8 G2, f/2.8 @ 1/400s, ISO 100."
+    }
+  },
+  {
+    "id": "kids-slot-37",
+    "frameNumber": 37,
+    "title": "Kids Photo Frame Slot #37",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": true,
+    "src": "",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
+    "exif": {
+      "camera": "Nikon Z6III Preset",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/1.8",
+      "shutter": "1/800s",
+      "iso": "ISO 100",
+      "location": "Pune, Maharashtra",
+      "story": "Frame Slot #37 is ready for Dipak More's next click."
+    }
+  },
+  {
+    "id": "kids-slot-38",
+    "frameNumber": 38,
+    "title": "Kids Photo Frame Slot #38",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": true,
+    "src": "",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
+    "exif": {
+      "camera": "Nikon Z6III Preset",
+      "lens": "Sirui Aurora 85mm f/1.4",
+      "aperture": "f/1.8",
+      "shutter": "1/800s",
+      "iso": "ISO 100",
+      "location": "Pune, Maharashtra",
+      "story": "Frame Slot #38 is ready for Dipak More's next click."
+    }
+  },
+  {
+    "id": "kids-slot-39",
+    "frameNumber": 39,
+    "title": "Kids Photo Frame Slot #39",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": true,
+    "src": "",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
+    "exif": {
+      "camera": "Nikon Z6III Preset",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/1.8",
+      "shutter": "1/800s",
+      "iso": "ISO 100",
+      "location": "Pune, Maharashtra",
+      "story": "Frame Slot #39 is ready for Dipak More's next click."
+    }
+  },
+  {
+    "id": "kids-slot-40",
+    "frameNumber": 40,
+    "title": "Kids Photo Frame Slot #40",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": true,
+    "src": "",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
+    "exif": {
+      "camera": "Nikon Z6III Preset",
+      "lens": "Sirui Aurora 85mm f/1.4",
+      "aperture": "f/1.8",
+      "shutter": "1/800s",
+      "iso": "ISO 100",
+      "location": "Pune, Maharashtra",
+      "story": "Frame Slot #40 is ready for Dipak More's next click."
+    }
+  },
+  {
+    "id": "kids-slot-41",
+    "frameNumber": 41,
+    "title": "Kids Photo Frame Slot #41",
+    "category": "kids",
+    "type": "image",
+    "isPlaceholder": true,
+    "src": "",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
+    "exif": {
+      "camera": "Nikon Z6III Preset",
+      "lens": "Tamron 28-75mm f/2.8 G2",
+      "aperture": "f/1.8",
+      "shutter": "1/800s",
+      "iso": "ISO 100",
+      "location": "Pune, Maharashtra",
+      "story": "Frame Slot #41 is ready for Dipak More's next click."
     }
   },
   {
@@ -832,11 +989,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Sirui Aurora 85mm f/1.4",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -852,11 +1011,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Sirui Aurora 85mm f/1.4",
+      "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -872,11 +1033,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Sirui Aurora 85mm f/1.4",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -892,11 +1055,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Sirui Aurora 85mm f/1.4",
+      "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -912,11 +1077,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Sirui Aurora 85mm f/1.4",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -932,11 +1099,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Sirui Aurora 85mm f/1.4",
+      "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -952,11 +1121,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Tamron 28-75mm f/2.8 G2",
+      "lens": "Sirui Aurora 85mm f/1.4",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -972,11 +1143,13 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "2:3",
-    "orientation": "portrait",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "3:2",
+    "orientation": "landscape",
     "exif": {
       "camera": "Nikon Z6III Preset",
-      "lens": "Sirui Aurora 85mm f/1.4",
+      "lens": "Tamron 28-75mm f/2.8 G2",
       "aperture": "f/1.8",
       "shutter": "1/800s",
       "iso": "ISO 100",
@@ -992,8 +1165,10 @@ const kidsGalleryData = [
     "type": "image",
     "isPlaceholder": true,
     "src": "",
-    "aspectRatio": "3:2",
-    "orientation": "landscape",
+    "variants": [],
+    "isMultiEdit": false,
+    "aspectRatio": "2:3",
+    "orientation": "portrait",
     "exif": {
       "camera": "Nikon Z6III Preset",
       "lens": "Tamron 28-75mm f/2.8 G2",
