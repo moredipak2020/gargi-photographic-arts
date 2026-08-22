@@ -55,8 +55,13 @@
 ## 6. Stardust & Sacred Peacock Feather Cursor Engine (`js/luxury-stardust-cursor.js` & `js/peacock-feather-cursor.js`)
 - **Performance**: Decoupled 120fps `requestAnimationFrame` hardware tracking (`translate3d`) with zero synchronous DOM writes inside raw mousemove events.
 - **Single-Pass Event Delegation**: Uses unified `INTERACTIVE_SELECTOR` check on `mouseover` instead of repetitive DOM queries.
-- **Thematic Visual Modes**:
-  - `DEFAULT_THEME`: 24K Gold Diamond Sparkle Star & rotating aperture ring with warm champagne stardust trails.
-  - `JANMASHTAMI_PEACOCK_THEME`: Sacred Golden Peacock Feather (Mor Pankh) with midnight sapphire & radiant teal ocellus, extended iridescent peacock-teal and 24K gold stardust trails, and divine supernova click bursts.
-  - Dedicated full-time activation on `kids-gallery.html` and dynamic context switching on `index.html` via `window.cursorEngine.setTheme('peacock')`.
-- **Interactivity**: Dynamic feather sway based on horizontal pointer velocity, alert expansion & pulsing teal-gold aura on interactive hover, and spring recoil on click.
+- **Quill Tip Hotspot Precision**: The bottom-left quill nib sits locked at `(0, 0)` (`transform-origin: 0px 0px`), ensuring pixel-perfect click accuracy without displacement during motion sway or hover scaling.
+- **Dimensional Protection**: `.peacock-feather-img` uses `max-width: none !important; min-width: 50px !important; min-height: 75px !important;` with explicit boundaries to prevent parent layout resets or global `img` constraints from collapsing the image.
+- **Thematic Visual Modes & Contextual Activation Rules**:
+  - `DEFAULT_THEME` (Star Cursor): 24K Gold Diamond Sparkle Star & rotating aperture ring with warm champagne stardust trails. Default active cursor across the entire website (Childhood Milestones, Weddings, Portraits, Wildlife, Landscape, Main Portfolio).
+  - `JANMASHTAMI_PEACOCK_THEME` (Mor Pankh Cursor): Authentic high-resolution Shri Krishna Golden Peacock Feather (`assets/images/cursor/peacock-feather.png` & `.webp`) with radiant cyan/sapphire ocellus aura, long peacock-teal stardust trail streaming directly from the quill tip, and 30-particle celestial supernova click bursts.
+  - **Dynamic Routing Triggers**:
+    - **Filter Tabs**: Selecting `🦚 Krishna Janmashtami 2024` on `kids-gallery.html` or `Devotional` on `index.html` activates Peacock mode. Selecting `🌻 Childhood Milestones` or other categories restores Star mode.
+    - **Hovering Master Frames**: Hovering over any Krishna Janmashtami card in the grid dynamically morphs the cursor into the Peacock Feather; mouseleave restores the Star cursor.
+    - **Lightbox Modal**: Opening any Krishna Janmashtami photo renders the Peacock Feather cursor; opening Milestones or closing the modal restores the Star cursor.
+- **Interactivity**: Dynamic feather sway based on pointer velocity ($\pm 14^\circ$), alert expansion ($1.15\times$) & pulsing teal-gold aura on interactive hover, and spring recoil on click.
