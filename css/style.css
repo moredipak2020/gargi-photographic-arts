@@ -969,6 +969,73 @@ button {
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
 }
 
+/* ==========================================================================
+   PEACOCK FEATHER (*MAYUR PANKH*) LUMINOUS GLASS THEME (KRISHNA JANMASHTAMI)
+   ========================================================================== */
+.peacock-card-glow {
+  border: 1.5px solid rgba(0, 168, 150, 0.32) !important;
+}
+
+.peacock-card-glow:hover {
+  border-color: rgba(0, 168, 150, 0.85) !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 168, 150, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+}
+
+.peacock-tag-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.85rem;
+  background: linear-gradient(135deg, rgba(0, 168, 150, 0.92) 0%, rgba(13, 94, 85, 0.92) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 235, 150, 0.6);
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 168, 150, 0.5);
+  pointer-events: none;
+}
+
+.milestone-tag-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(7, 7, 10, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* Lightbox Peacock Feather Theme Active */
+.modal-backdrop.peacock-theme-active {
+  background: radial-gradient(circle at 50% 30%, rgba(0, 168, 150, 0.32) 0%, rgba(15, 12, 35, 0.92) 55%, rgba(6, 6, 10, 0.96) 100%) !important;
+}
+
+.modal-backdrop.peacock-theme-active .modal-content {
+  border: 1.5px solid rgba(0, 168, 150, 0.5) !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 50px rgba(0, 168, 150, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+}
+
+.modal-backdrop.peacock-theme-active .modal-close-btn:hover {
+  background: #00A896 !important;
+  border-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 20px rgba(0, 168, 150, 0.9) !important;
+}
+
 /* 3x3 VISUAL CATEGORY HUB GRID (Inspired by Reference Design) */
 .category-hub-grid {
   display: grid;
