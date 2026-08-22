@@ -799,8 +799,10 @@ button {
   cursor: pointer;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.65), 0 2px 10px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
   will-change: transform, box-shadow;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  isolation: isolate;
+  contain: paint;
 }
 
 @media (max-width: 992px) {
@@ -1064,8 +1066,13 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  isolation: isolate;
+  contain: paint;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .category-tile:hover {
@@ -1193,8 +1200,10 @@ button {
   transition: transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
   cursor: pointer;
   will-change: transform, box-shadow;
-  transform: translateZ(0);
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
+  isolation: isolate;
+  contain: paint;
 }
 
 .museum-frame-card:hover {

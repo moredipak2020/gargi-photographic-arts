@@ -1,7 +1,6 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - CINEMATIC GOLDEN FAIRY STARDUST CURSOR ENGINE
-// Dense, glistening champagne glitter ribbon & 4-point diamond sparkle stars
-// Hardware-accelerated 120fps direct pointer sync (Zero Lag)
+// High-Performance Hardware-Accelerated 120FPS Direct Pointer Sync (Zero Stutter)
 // ==========================================================================
 
 (function() {
@@ -19,10 +18,12 @@
   // Global desktop cursor replacement
   document.documentElement.classList.add('custom-luxury-cursor-active');
 
-  let mouseX = -200;
-  let mouseY = -200;
-  let lastX = -200;
-  let lastY = -200;
+  let targetX = -200;
+  let targetY = -200;
+  let currentX = -200;
+  let currentY = -200;
+  let prevX = -200;
+  let prevY = -200;
   let isHovering = false;
   let isClicking = false;
   let isVisible = false;
@@ -34,10 +35,9 @@
   let canvas = null;
   let ctx = null;
   let particles = [];
-  const MAX_PARTICLES = 130; // Rich, dense cinematic glitter ribbon budget
+  const MAX_PARTICLES = 45; // Lean particle budget to eliminate any GC lag
 
   function createCursorDOM() {
-    // 1. Fullscreen Hardware-Accelerated Canvas for Stardust Stream
     canvas = document.createElement('canvas');
     canvas.id = 'luxuryStardustCanvas';
     canvas.className = 'luxury-stardust-canvas';
@@ -47,11 +47,11 @@
     document.body.appendChild(canvas);
 
     window.addEventListener('resize', () => {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }, { passive: true });
 
-    // 2. Custom Gold Diamond Star & Camera Aperture Element
     cursorWrapper = document.createElement('div');
     cursorWrapper.id = 'luxuryStardustCursor';
     cursorWrapper.className = 'luxury-stardust-cursor';
@@ -88,175 +88,125 @@
     ringElement = cursorWrapper.querySelector('.cursor-aperture-ring');
   }
 
-  // Cinematic Sparkling Stardust Fairy Particle Class
+  // Predefined color RGBA triples for zero string concatenation overhead
+  const PALETTE = [
+    [255, 239, 166], // Champagne Gold
+    [255, 215, 0],   // 24K Gold
+    [212, 175, 55],  // Metallic Gold
+    [255, 255, 255], // Diamond White
+    [255, 248, 220]  // Warm Glow
+  ];
+
   class StardustFairyParticle {
     constructor(x, y, vx, vy, isBurst = false) {
-      // Subtle organic scatter around cursor
-      this.x = x + (Math.random() - 0.5) * (isBurst ? 8 : 7);
-      this.y = y + (Math.random() - 0.5) * (isBurst ? 8 : 7);
+      this.x = x + (Math.random() - 0.5) * (isBurst ? 8 : 4);
+      this.y = y + (Math.random() - 0.5) * (isBurst ? 8 : 4);
       
-      const speedMult = isBurst ? 3.8 : 0.9;
-      this.vx = vx * 0.12 + (Math.random() - 0.5) * 1.4 * speedMult;
-      this.vy = vy * 0.12 + (Math.random() - 0.5) * 1.4 * speedMult + (isBurst ? 0 : 0.22); // Elegant downward drift
+      const speedMult = isBurst ? 3.5 : 0.8;
+      this.vx = vx * 0.1 + (Math.random() - 0.5) * 1.2 * speedMult;
+      this.vy = vy * 0.1 + (Math.random() - 0.5) * 1.2 * speedMult + (isBurst ? 0 : 0.18);
       
-      this.size = Math.random() * (isBurst ? 3.2 : 2.5) + 0.9;
-      this.maxLife = Math.random() * (isBurst ? 30 : 28) + 18;
+      this.size = Math.random() * (isBurst ? 2.8 : 2.0) + 0.8;
+      this.maxLife = Math.random() * (isBurst ? 24 : 20) + 14;
       this.life = this.maxLife;
       this.alpha = 1.0;
-      this.twinklePhase = Math.random() * Math.PI * 2;
-      this.twinkleSpeed = Math.random() * 0.25 + 0.15;
       
-      // Luxury Golden & Champagne Palette
-      const colors = [
-        '255, 239, 166', // Champagne Gold
-        '255, 215, 0',   // Pure 24K Gold
-        '212, 175, 55',   // Rich Metallic Gold
-        '255, 255, 255', // Diamond White Sparkle
-        '255, 248, 220'  // Warm Cornsilk Glow
-      ];
-      this.color = colors[Math.floor(Math.random() * colors.length)];
-      this.isStar = Math.random() > 0.52; // 48% sparkling 4-point micro-stars!
+      const c = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+      this.r = c[0];
+      this.g = c[1];
+      this.b = c[2];
+      this.isStar = Math.random() > 0.6;
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.vx *= 0.93;
-      this.vy *= 0.93;
+      this.vx *= 0.94;
+      this.vy *= 0.94;
       this.life--;
-      this.twinklePhase += this.twinkleSpeed;
-      
-      const lifeRatio = this.life / this.maxLife;
-      const shimmer = 0.75 + 0.25 * Math.sin(this.twinklePhase);
-      this.alpha = Math.max(0, lifeRatio * shimmer);
-      this.size *= 0.96;
+      this.alpha = Math.max(0, this.life / this.maxLife);
+      this.size *= 0.97;
     }
 
     draw(ctx) {
-      if (this.alpha <= 0.02) return;
-      
+      if (this.alpha <= 0.03) return;
       const a = this.alpha;
-      const rgb = this.color;
 
-      if (this.isStar && this.size > 0.9) {
-        // High-Performance Diamond 4-Point Sparkle Star
+      if (this.isStar && this.size > 1.0) {
         const cx = this.x;
         const cy = this.y;
-        const s = this.size * 1.7;
+        const s = this.size * 1.5;
         
-        // Soft outer ambient star flare
-        ctx.fillStyle = `rgba(${rgb}, ${a * 0.35})`;
-        ctx.beginPath();
-        ctx.arc(cx, cy, s * 0.8, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Sharp diamond 4-point star core
-        ctx.fillStyle = `rgba(${rgb}, ${a})`;
+        ctx.fillStyle = `rgba(${this.r}, ${this.g}, ${this.b}, ${a})`;
         ctx.beginPath();
         ctx.moveTo(cx, cy - s);
-        ctx.quadraticCurveTo(cx, cy, cx - s, cy);
-        ctx.quadraticCurveTo(cx, cy, cx, cy + s);
-        ctx.quadraticCurveTo(cx, cy, cx + s, cy);
-        ctx.quadraticCurveTo(cx, cy, cx, cy - s);
+        ctx.lineTo(cx + s * 0.3, cy - s * 0.3);
+        ctx.lineTo(cx + s, cy);
+        ctx.lineTo(cx + s * 0.3, cy + s * 0.3);
+        ctx.lineTo(cx, cy + s);
+        ctx.lineTo(cx - s * 0.3, cy + s * 0.3);
+        ctx.lineTo(cx - s, cy);
+        ctx.lineTo(cx - s * 0.3, cy - s * 0.3);
         ctx.closePath();
         ctx.fill();
       } else {
-        // Glowing Circular Stardust Ember (2-Pass Glow)
-        // Outer soft halo
-        ctx.fillStyle = `rgba(${rgb}, ${a * 0.32})`;
+        ctx.fillStyle = `rgba(${this.r}, ${this.g}, ${this.b}, ${a * 0.85})`;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * 2.2, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Inner radiant ember
-        ctx.fillStyle = `rgba(${rgb}, ${a})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size, 0, 6.28318);
         ctx.fill();
       }
     }
   }
 
-  // Emit Dense, Unbroken Cinematic Glitter Stream
-  function emitStardustStream(x0, y0, x1, y1) {
+  function emitStardust(x0, y0, x1, y1) {
     if (particles.length >= MAX_PARTICLES) return;
-    
     const dist = Math.hypot(x1 - x0, y1 - y0);
-    // Dynamic emission density creates an unbroken, continuous fairy streamer
-    const count = Math.min(8, Math.max(2, Math.floor(dist / 4.2)));
+    if (dist < 2) return;
+
+    const count = Math.min(3, Math.max(1, Math.floor(dist / 6)));
     const vx = x1 - x0;
     const vy = y1 - y0;
 
     for (let i = 0; i < count; i++) {
       if (particles.length >= MAX_PARTICLES) break;
-      const t = i / count;
-      const interpX = x0 + vx * t;
-      const interpY = y0 + vy * t;
-      particles.push(new StardustFairyParticle(interpX, interpY, vx, vy, false));
+      const t = (i + 1) / (count + 1);
+      particles.push(new StardustFairyParticle(x0 + vx * t, y0 + vy * t, vx, vy, false));
     }
   }
 
   function emitClickSupernova(x, y) {
-    const burstCount = 28;
+    const burstCount = 18;
     for (let i = 0; i < burstCount; i++) {
-      const angle = (Math.PI * 2 / burstCount) * i + (Math.random() - 0.5) * 0.35;
-      const speed = Math.random() * 4.2 + 1.5;
-      const vx = Math.cos(angle) * speed;
-      const vy = Math.sin(angle) * speed;
-      particles.push(new StardustFairyParticle(x, y, vx, vy, true));
+      const angle = (Math.PI * 2 / burstCount) * i;
+      const speed = Math.random() * 3.5 + 1.2;
+      particles.push(new StardustFairyParticle(x, y, Math.cos(angle) * speed, Math.sin(angle) * speed, true));
     }
   }
 
-  // 1. Direct Synchronous Hardware Mouse Tracking (0ms Latency)
+  // Pure data input handler (0 DOM writes, <0.01ms CPU cost)
   function handleMouseMove(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    targetX = e.clientX;
+    targetY = e.clientY;
 
     if (!isVisible) {
       isVisible = true;
-      lastX = mouseX;
-      lastY = mouseY;
+      currentX = targetX;
+      currentY = targetY;
+      prevX = targetX;
+      prevY = targetY;
       if (cursorWrapper) cursorWrapper.classList.add('visible');
     }
-
-    // Direct GPU transform update on mouse event (instantaneous 1:1 motion)
-    if (cursorWrapper) {
-      cursorWrapper.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    }
-
-    if (lastX > 0 && lastY > 0) {
-      const speed = Math.hypot(mouseX - lastX, mouseY - lastY);
-      if (speed > 1.2) {
-        emitStardustStream(lastX, lastY, mouseX, mouseY);
-      }
-    }
-
-    lastX = mouseX;
-    lastY = mouseY;
   }
 
-  // 2. High-Performance Event Delegation for Hover (Fires only on element boundary crossing)
+  // Unified single-pass interactive element check
+  const INTERACTIVE_SELECTOR = 'a, button, .gallery-card, .museum-frame-card, .category-tile, .filter-btn, .sub-filter-btn, .modal-close-btn, .lightbox-nav-arrow, .multi-edit-btn, .audio-control-btn, input, select, textarea, [role="button"]';
+
   function handleMouseOver(e) {
     const target = e.target;
     if (!target) return;
 
-    const isInteractive = Boolean(
-      target.tagName === 'A' ||
-      target.tagName === 'BUTTON' ||
-      target.closest('a') ||
-      target.closest('button') ||
-      target.closest('.gallery-card') ||
-      target.closest('.museum-frame-card') ||
-      target.closest('.category-tile') ||
-      target.closest('.filter-btn') ||
-      target.closest('.sub-filter-btn') ||
-      target.closest('.modal-close-btn') ||
-      target.closest('.lightbox-nav-arrow') ||
-      target.closest('.multi-edit-btn') ||
-      target.closest('.audio-control-btn') ||
-      target.closest('input') ||
-      target.closest('textarea')
-    );
+    const interactiveEl = target.closest(INTERACTIVE_SELECTOR);
+    const isInteractive = Boolean(interactiveEl);
 
     if (isInteractive !== isHovering) {
       isHovering = isInteractive;
@@ -301,20 +251,35 @@
 
   function handleMouseEnter(e) {
     isVisible = true;
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    lastX = mouseX;
-    lastY = mouseY;
+    targetX = e.clientX;
+    targetY = e.clientY;
+    currentX = targetX;
+    currentY = targetY;
+    prevX = targetX;
+    prevY = targetY;
     if (cursorWrapper) {
-      cursorWrapper.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      cursorWrapper.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
       cursorWrapper.classList.add('visible');
     }
   }
 
-  // 3. Independent Asynchronous Render Loop for Particles & Aperture Rotation (120FPS)
+  // 120FPS Decoupled Render Loop
   function animationLoop() {
+    if (isVisible && cursorWrapper) {
+      // Direct 1:1 hardware translation
+      currentX = targetX;
+      currentY = targetY;
+      cursorWrapper.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+      if (prevX > 0 && prevY > 0) {
+        emitStardust(prevX, prevY, currentX, currentY);
+      }
+      prevX = currentX;
+      prevY = currentY;
+    }
+
     // Continuous Aperture Rotation
-    rotationAngle += isHovering ? 1.8 : 0.5;
+    rotationAngle += isHovering ? 1.5 : 0.4;
     if (ringElement) {
       ringElement.style.transform = `rotate(${rotationAngle}deg)`;
     }
@@ -326,7 +291,7 @@
         const p = particles[i];
         p.update();
         p.draw(ctx);
-        if (p.life <= 0 || p.alpha <= 0.02) {
+        if (p.life <= 0 || p.alpha <= 0.03) {
           particles.splice(i, 1);
         }
       }
@@ -335,15 +300,14 @@
     requestAnimationFrame(animationLoop);
   }
 
-  // Initialize
   function init() {
     createCursorDOM();
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
     document.addEventListener('mouseover', handleMouseOver, { passive: true });
     window.addEventListener('mousedown', handleMouseDown, { passive: true });
     window.addEventListener('mouseup', handleMouseUp, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    document.addEventListener('mouseenter', handleMouseEnter, { passive: true });
     requestAnimationFrame(animationLoop);
   }
 
