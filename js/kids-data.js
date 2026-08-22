@@ -10,25 +10,26 @@ const kidsGalleryData = [
     "frameNumber": 1,
     "collection": "janmashtami2024",
     "collectionName": "Krishna Janmashtami 2024",
-    "title": "Divine Melody of Vrindavan - Bal Krishna",
+    "title": "Divine Melody of Vrindavan - Bal Krishna (Sunset Edition)",
     "category": "kids",
     "type": "image",
     "isPlaceholder": false,
-    "src": "assets/images/kids/janmashtami/DSC_0686-2.jpg",
+    "src": "assets/images/kids/janmashtami/krishna_sunset_ghat.jpg",
     "variants": [
+      "assets/images/kids/janmashtami/krishna_sunset_ghat.jpg",
       "assets/images/kids/janmashtami/DSC_0686-2.jpg"
     ],
-    "isMultiEdit": false,
+    "isMultiEdit": true,
     "aspectRatio": "16:9",
     "orientation": "landscape",
     "exif": {
-      "camera": "NIKON D5600",
-      "lens": "AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR @ 40mm",
+      "camera": "NIKON D5600 & Z6III",
+      "lens": "AF-P DX NIKKOR @ 40mm & 85mm f/1.4",
       "aperture": "f/5.6",
       "shutter": "1/200s",
       "iso": "ISO 160",
       "location": "Pune, Maharashtra",
-      "story": "Bal Krishna seated in quiet contemplation, playing his divine bansuri. Photographed in warm cinematic tones capturing the serene spirit of Janmashtami. EXIF: NIKON D5600, 18-55mm @ 40mm, f/5."
+      "story": "Bal Krishna seated in quiet contemplation, playing his divine golden bansuri against a glowing sunset ghats atmosphere. Includes dual fine-art color grades."
     }
   },
   {

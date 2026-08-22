@@ -2,20 +2,20 @@ const galleryData = [
   /* 1. PORTRAITS */
   {
     id: "img-1",
-    title: "Portrait of Soul & Precision",
+    title: "Divine Melody of Vrindavan - Bal Krishna",
     category: "portraits",
     type: "image",
-    src: "assets/images/indian_portrait.png",
-    aspectRatio: "2:3",
-    orientation: "portrait",
+    src: "assets/images/krishna_sunset_ghat.jpg",
+    aspectRatio: "16:9",
+    orientation: "landscape",
     exif: {
       camera: "Nikon Z6III",
       lens: "Sirui Aurora 85mm f/1.4",
       aperture: "f/1.4",
       shutter: "1/500s",
       iso: "ISO 100",
-      location: "Pune Studio, India",
-      story: "Captured in native 2:3 vertical frame with razor-sharp focus on eye texture and dramatic split lighting. The 85mm f/1.4 rendering creates an immediate emotional connection."
+      location: "Pune Studio / Vrindavan",
+      story: "Master fine art portrait of Bal Krishna playing the divine golden bansuri against an amber sunset ghats atmosphere. Rendered with creamy 85mm f/1.4 optical depth of field."
     }
   },
   {
