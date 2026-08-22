@@ -42,7 +42,8 @@
   let cursorWrapper = null;
   let ringElement = null;
   let starElement = null;
-  let peacockElement = null;
+  let peacockPivotElement = null;
+  let peacockContainer = null;
   let shockwaveElement = null;
   let canvas = null;
   let ctx = null;
@@ -113,10 +114,9 @@
       </div>
 
       <!-- THEME 2: AUTHENTIC GOLDEN PEACOCK FEATHER (Janmashtami / Kids) -->
-      <div class="peacock-cursor-node" id="peacockCursorNode" style="display: none;">
-        <div class="peacock-feather-inner" id="peacockFeatherInner">
+      <div class="peacock-cursor-anchor peacock-cursor-node" id="peacockCursorNode" style="display: none;">
+        <div class="peacock-feather-pivot" id="peacockLuxuryPivot">
           <div class="peacock-divine-aura" id="peacockDivineAura"></div>
-
           <img 
             src="assets/images/cursor/peacock-feather.png" 
             srcset="assets/images/cursor/peacock-feather.webp 1x, assets/images/cursor/peacock-feather.png 1x"
@@ -135,10 +135,10 @@
     document.body.appendChild(cursorWrapper);
     ringElement = cursorWrapper.querySelector('.cursor-aperture-ring');
     starElement = document.getElementById('stardustCursorInner');
-    peacockElement = document.getElementById('peacockCursorNode');
+    peacockContainer = document.getElementById('peacockCursorNode');
+    peacockPivotElement = document.getElementById('peacockLuxuryPivot');
     shockwaveElement = document.getElementById('cursorClickShockwave');
 
-    // Auto-detect initial route theme
     if (window.location.pathname.includes('kids-gallery') || window.location.href.includes('kids-gallery')) {
       setCursorTheme('peacock');
     }
@@ -152,7 +152,7 @@
         cursorWrapper.classList.add('theme-peacock');
       }
       if (starElement) starElement.style.display = 'none';
-      if (peacockElement) peacockElement.style.display = 'block';
+      if (peacockContainer) peacockContainer.style.display = 'block';
     } else {
       currentTheme = 'default';
       if (cursorWrapper) {
@@ -160,22 +160,22 @@
         cursorWrapper.classList.add('theme-default');
       }
       if (starElement) starElement.style.display = 'flex';
-      if (peacockElement) peacockElement.style.display = 'none';
+      if (peacockContainer) peacockContainer.style.display = 'none';
     }
   }
 
   class StardustFairyParticle {
     constructor(x, y, vx, vy, isBurst = false) {
       const isPeacock = currentTheme === 'peacock';
-      this.x = x + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 18 : 10) : (isPeacock ? 8 : 4));
-      this.y = y + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 18 : 10) : (isPeacock ? 8 : 4));
+      this.x = x + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 14 : 10) : (isPeacock ? 4 : 4));
+      this.y = y + (Math.random() - 0.5) * (isBurst ? (isPeacock ? 14 : 10) : (isPeacock ? 4 : 4));
       
-      const speedMult = isBurst ? (isPeacock ? 4.4 : 3.5) : (isPeacock ? 1.0 : 0.8);
+      const speedMult = isBurst ? (isPeacock ? 4.4 : 3.5) : (isPeacock ? 0.7 : 0.8);
       this.vx = vx * 0.12 + (Math.random() - 0.5) * 1.3 * speedMult;
-      this.vy = vy * 0.12 + (Math.random() - 0.5) * 1.3 * speedMult - (isBurst ? 0 : (isPeacock ? 0.22 : 0));
+      this.vy = vy * 0.12 + (Math.random() - 0.5) * 1.3 * speedMult - (isBurst ? 0 : (isPeacock ? 0.2 : 0));
       
-      this.size = Math.random() * (isBurst ? 3.4 : 2.4) + 0.9;
-      this.maxLife = isBurst ? (isPeacock ? 42 : 26) : (isPeacock ? 48 : 22);
+      this.size = Math.random() * (isBurst ? 3.4 : 2.2) + 0.8;
+      this.maxLife = isBurst ? (isPeacock ? 38 : 26) : (isPeacock ? 42 : 22);
       this.life = this.maxLife;
       this.alpha = 1.0;
       
@@ -184,7 +184,7 @@
       this.r = c[0];
       this.g = c[1];
       this.b = c[2];
-      this.isStar = Math.random() > (isPeacock ? 0.52 : 0.6);
+      this.isStar = Math.random() > (isPeacock ? 0.55 : 0.6);
       this.rotation = Math.random() * 6.28;
       this.rotSpeed = (Math.random() - 0.5) * 0.1;
     }
@@ -192,11 +192,11 @@
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.vx *= 0.95;
-      this.vy *= 0.95;
+      this.vx *= 0.955;
+      this.vy *= 0.955;
       this.life--;
       this.alpha = Math.max(0, this.life / this.maxLife);
-      this.size *= 0.98;
+      this.size *= 0.985;
       this.rotation += this.rotSpeed;
     }
 
@@ -247,17 +247,21 @@
     if (dist < 1.5) return;
 
     const isPeacock = currentTheme === 'peacock';
-    const count = isPeacock ? Math.min(5, Math.max(1, Math.floor(dist / 5))) : Math.min(3, Math.max(1, Math.floor(dist / 6)));
+    const count = isPeacock ? Math.min(5, Math.max(1, Math.floor(dist / 4.5))) : Math.min(3, Math.max(1, Math.floor(dist / 6)));
     const vx = x1 - x0;
     const vy = y1 - y0;
 
     for (let i = 0; i < count; i++) {
       if (particles.length >= MAX_PARTICLES) break;
       const t = (i + 1) / (count + 1);
-      // Spawn trail offset from ocellus eye & plume when peacock
-      const spawnX = isPeacock ? (x0 + vx * t + 32) : (x0 + vx * t);
-      const spawnY = isPeacock ? (y0 + vy * t - 46) : (y0 + vy * t);
+      // Spawn trail directly from the contact point
+      const spawnX = x0 + vx * t;
+      const spawnY = y0 + vy * t;
       particles.push(new StardustFairyParticle(spawnX, spawnY, vx, vy, false));
+
+      if (isPeacock && Math.random() > 0.65) {
+        particles.push(new StardustFairyParticle(spawnX + 6, spawnY - 12, vx * 0.2, vy * 0.2, false));
+      }
     }
   }
 
@@ -271,7 +275,7 @@
     }
   }
 
-  // Pure data input handler (0 DOM writes, <0.01ms CPU cost)
+  // Pure data input handler
   function handleMouseMove(e) {
     targetX = e.clientX;
     targetY = e.clientY;
@@ -286,7 +290,7 @@
     }
   }
 
-  // Unified single-pass interactive element check
+  // Unified single-pass interactive check
   const INTERACTIVE_SELECTOR = 'a, button, .gallery-card, .museum-frame-card, .category-tile, .filter-btn, .sub-filter-btn, .modal-close-btn, .lightbox-nav-arrow, .multi-edit-btn, .audio-control-btn, input, select, textarea, [role="button"]';
 
   function handleMouseOver(e) {
@@ -368,22 +372,21 @@
       prevX = currentX;
       prevY = currentY;
 
-      // Peacock theme organic sway
+      // Peacock theme organic sway around quill tip (0, 0)
       if (currentTheme === 'peacock') {
         const speed = Math.hypot(velocityX, velocityY);
         if (speed > 0.5) {
-          targetTilt = Math.max(-14, Math.min(14, velocityX * 1.4));
+          targetTilt = Math.max(-14, Math.min(14, velocityX * 1.3));
         } else if (isHovering) {
-          targetTilt = -5 + Math.sin(frameCount * 0.08) * 3;
+          targetTilt = -4 + Math.sin(frameCount * 0.08) * 3;
         } else {
-          targetTilt = Math.sin(frameCount * 0.05) * 2;
+          targetTilt = Math.sin(frameCount * 0.05) * 1.8;
         }
         currentTilt += (targetTilt - currentTilt) * 0.15;
 
-        const innerFeather = document.getElementById('peacockFeatherInner');
-        if (innerFeather) {
+        if (peacockPivotElement) {
           const hoverScale = isHovering ? 1.15 : (isClicking ? 0.92 : 1.0);
-          innerFeather.style.transform = `rotate(${currentTilt}deg) scale(${hoverScale})`;
+          peacockPivotElement.style.transform = `rotate(${currentTilt}deg) scale(${hoverScale})`;
         }
       }
     }
@@ -427,7 +430,6 @@
     init();
   }
 
-  // Export Global Cursor Engine
   window.cursorEngine = {
     setTheme: setCursorTheme,
     getTheme: () => currentTheme,

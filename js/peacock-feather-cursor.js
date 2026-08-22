@@ -1,7 +1,7 @@
 // ==========================================================================
 // GARGI PHOTOGRAPHIC ARTS - AUTHENTIC GOLDEN PEACOCK FEATHER (MOR PANKH) CURSOR ENGINE
 // Sacred Shri Krishna Janmashtami Edition - Ultra-High Precision 120FPS Direct Pointer Sync
-// Features: Ultra-High Resolution Natural Mor Pankh, Radiant Ocellus, Long Peacock-Teal Stardust Trail & Supernova Burst
+// Features: Pixel-Perfect Quill Tip Hotspot, Authentic Mor Pankh, Stardust Trail Flowing Directly from Tip
 // ==========================================================================
 
 (function() {
@@ -38,12 +38,12 @@
 
   // DOM Elements
   let cursorWrapper = null;
-  let featherElement = null;
+  let pivotElement = null;
   let shockwaveElement = null;
   let canvas = null;
   let ctx = null;
   let particles = [];
-  const MAX_PARTICLES = 160; // Generous budget for long, flowing celestial stardust trails
+  const MAX_PARTICLES = 160;
 
   function createPeacockCursorDOM() {
     // 1. Stardust Canvas Overlay
@@ -61,38 +61,36 @@
       canvas.height = window.innerHeight;
     }, { passive: true });
 
-    // 2. Cursor Master Wrapper
+    // 2. Cursor Master Wrapper - Positioned at (targetX, targetY)
     cursorWrapper = document.createElement('div');
     cursorWrapper.id = 'peacockFeatherCursor';
     cursorWrapper.className = 'peacock-feather-cursor';
 
-    // 3. High-Detail Authentic Golden Peacock Feather (Mor Pankh) Image & Glow
+    // 3. Anchor & Pivot structure: (0, 0) is the exact quill tip hotspot
     cursorWrapper.innerHTML = `
-      <div class="peacock-feather-inner" id="peacockFeatherInner">
-        <!-- Divine Radial Glow Behind Ocellus -->
-        <div class="peacock-divine-aura" id="peacockDivineAura"></div>
-
-        <!-- High-Resolution Natural Mor Pankh with Native Angle -->
-        <img 
-          src="assets/images/cursor/peacock-feather.png" 
-          srcset="assets/images/cursor/peacock-feather.webp 1x, assets/images/cursor/peacock-feather.png 1x"
-          alt="Shri Krishna Golden Peacock Feather (Mor Pankh)" 
-          class="peacock-feather-img" 
-          id="peacockFeatherImg"
-          draggable="false"
-        />
-
-        <!-- Click Shockwave Ring at Quill Tip -->
+      <div class="peacock-cursor-anchor">
+        <div class="peacock-feather-pivot" id="peacockFeatherPivot">
+          <div class="peacock-divine-aura" id="peacockDivineAura"></div>
+          <img 
+            src="assets/images/cursor/peacock-feather.png" 
+            srcset="assets/images/cursor/peacock-feather.webp 1x, assets/images/cursor/peacock-feather.png 1x"
+            alt="Shri Krishna Golden Peacock Feather (Mor Pankh)" 
+            class="peacock-feather-img" 
+            id="peacockFeatherImg"
+            draggable="false"
+          />
+        </div>
+        <!-- Shockwave Ring Centered on Exact Quill Tip Contact Point (0,0) -->
         <div class="peacock-click-shockwave" id="peacockClickShockwave"></div>
       </div>
     `;
 
     document.body.appendChild(cursorWrapper);
-    featherElement = document.getElementById('peacockFeatherInner');
+    pivotElement = document.getElementById('peacockFeatherPivot');
     shockwaveElement = document.getElementById('peacockClickShockwave');
   }
 
-  // Pre-compiled RGBA color triples for zero GC/string formatting overhead
+  // Pre-compiled RGBA color triples for high-performance rendering
   const PEACOCK_PALETTE = [
     [0, 245, 212],   // Electric Peacock Teal
     [0, 229, 255],   // Cyan Starlight
@@ -106,26 +104,25 @@
   // Long-Living Celestial Stardust Particle
   class PeacockStardustParticle {
     constructor(x, y, vx, vy, isBurst = false) {
-      this.x = x + (Math.random() - 0.5) * (isBurst ? 18 : 10);
-      this.y = y + (Math.random() - 0.5) * (isBurst ? 18 : 10);
+      // Origin tightly clustered around the quill tip
+      this.x = x + (Math.random() - 0.5) * (isBurst ? 14 : 4);
+      this.y = y + (Math.random() - 0.5) * (isBurst ? 14 : 4);
 
-      const speedMult = isBurst ? (Math.random() * 4.2 + 2.0) : (Math.random() * 0.8 + 0.3);
-      this.vx = (vx * 0.15) + (Math.random() - 0.5) * 1.5 * (isBurst ? speedMult : 1);
-      this.vy = (vy * 0.15) + (Math.random() - 0.5) * 1.5 * (isBurst ? speedMult : 1) - (isBurst ? 0 : 0.22); // Gentle upward thermal lift
+      const speedMult = isBurst ? (Math.random() * 4.4 + 1.8) : (Math.random() * 0.7 + 0.3);
+      this.vx = (vx * 0.15) + (Math.random() - 0.5) * 1.4 * (isBurst ? speedMult : 1);
+      this.vy = (vy * 0.15) + (Math.random() - 0.5) * 1.4 * (isBurst ? speedMult : 1) - (isBurst ? 0 : 0.2);
 
-      // Long particle lifespan: 35-65 frames for rich lingering trails
-      this.maxLife = isBurst ? (Math.random() * 34 + 30) : (Math.random() * 42 + 36);
+      // Long particle lifespan: 35-65 frames
+      this.maxLife = isBurst ? (Math.random() * 34 + 28) : (Math.random() * 40 + 32);
       this.life = this.maxLife;
-      this.size = Math.random() * (isBurst ? 3.5 : 2.5) + 1.0;
+      this.size = Math.random() * (isBurst ? 3.4 : 2.2) + 0.8;
       this.alpha = 1.0;
 
-      // Color selection
       const c = PEACOCK_PALETTE[Math.floor(Math.random() * PEACOCK_PALETTE.length)];
       this.r = c[0];
       this.g = c[1];
       this.b = c[2];
 
-      // Particle geometry type
       this.isStar = Math.random() > 0.55;
       this.rotation = Math.random() * 6.28;
       this.rotSpeed = (Math.random() - 0.5) * 0.12;
@@ -134,8 +131,8 @@
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      this.vx *= 0.96; // Smooth deceleration
-      this.vy *= 0.96;
+      this.vx *= 0.955;
+      this.vy *= 0.955;
       this.life--;
       this.alpha = Math.max(0, this.life / this.maxLife);
       this.size *= 0.985;
@@ -146,8 +143,7 @@
       if (this.alpha <= 0.02) return;
       const a = this.alpha;
 
-      if (this.isStar && this.size > 1.1) {
-        // Draw 4-point Diamond Sparkle Star
+      if (this.isStar && this.size > 1.0) {
         const cx = this.x;
         const cy = this.y;
         const s = this.size * 1.6;
@@ -172,7 +168,6 @@
         ctx.fill();
         ctx.restore();
       } else {
-        // Draw Glowing Iridescent Stardust Disc
         ctx.save();
         ctx.fillStyle = `rgba(${this.r}, ${this.g}, ${this.b}, ${a * 0.9})`;
         ctx.shadowBlur = 6;
@@ -185,40 +180,44 @@
     }
   }
 
-  // Emit Continuous Long Peacock Stardust Trail from Ocellus & Plume (+32px, -46px from Hotspot)
+  // Emit Long Stardust Trail Flowing Directly from the Quill Tip Contact Point
   function emitPeacockTrail(x0, y0, x1, y1) {
     if (particles.length >= MAX_PARTICLES) return;
     const dist = Math.hypot(x1 - x0, y1 - y0);
     if (dist < 1.5) return;
 
-    const count = Math.min(5, Math.max(1, Math.floor(dist / 5)));
+    const count = Math.min(5, Math.max(1, Math.floor(dist / 4.5)));
     const vx = x1 - x0;
     const vy = y1 - y0;
 
     for (let i = 0; i < count; i++) {
       if (particles.length >= MAX_PARTICLES) break;
       const t = (i + 1) / (count + 1);
-      // Spawn trail offset from the peacock feather's majestic ocellus eye & crown
-      const spawnX = x0 + vx * t + 32;
-      const spawnY = y0 + vy * t - 46;
-      particles.push(new PeacockStardustParticle(spawnX, spawnY, vx * 0.3, vy * 0.3, false));
+      // Spawn trail directly from the quill tip contact point
+      const spawnX = x0 + vx * t;
+      const spawnY = y0 + vy * t;
+      particles.push(new PeacockStardustParticle(spawnX, spawnY, vx * 0.25, vy * 0.25, false));
+
+      // Occasional shimmer spark slightly up along the golden quill stem
+      if (Math.random() > 0.65) {
+        particles.push(new PeacockStardustParticle(spawnX + 6, spawnY - 12, vx * 0.2, vy * 0.2, false));
+      }
     }
   }
 
-  // Emit Divine Peacock Supernova Burst on Click
+  // Emit Divine Peacock Supernova Burst on Click directly from Quill Tip Contact Point
   function emitPeacockSupernova(x, y) {
     const burstCount = 30;
     for (let i = 0; i < burstCount; i++) {
       const angle = (Math.PI * 2 / burstCount) * i + (Math.random() - 0.5) * 0.3;
-      const speed = Math.random() * 4.8 + 1.8;
+      const speed = Math.random() * 4.6 + 1.8;
       const vx = Math.cos(angle) * speed;
       const vy = Math.sin(angle) * speed;
-      // Burst originates right from the quill tip and radiates
       particles.push(new PeacockStardustParticle(x, y, vx, vy, true));
     }
   }
 
-  // Pure data input handler (0 DOM writes, <0.01ms CPU cost)
+  // Pure data input handler
   function handleMouseMove(e) {
     targetX = e.clientX;
     targetY = e.clientY;
@@ -302,7 +301,7 @@
     frameCount++;
 
     if (isVisible && cursorWrapper) {
-      // 1:1 Direct pointer positioning (hotspot at quill tip)
+      // 1:1 Direct pointer positioning (Hotspot locked exactly at Quill Tip)
       currentX = targetX;
       currentY = targetY;
       cursorWrapper.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
@@ -310,28 +309,28 @@
       velocityX = currentX - prevX;
       velocityY = currentY - prevY;
 
-      // Emit continuous long peacock stardust trail
+      // Emit continuous long peacock stardust trail directly from the quill tip
       if (prevX > 0 && prevY > 0) {
         emitPeacockTrail(prevX, prevY, currentX, currentY);
       }
       prevX = currentX;
       prevY = currentY;
 
-      // Organic responsive feather sway & dynamic tilt pivoted at quill nib
+      // Organic responsive feather sway pivoted precisely at the quill tip (0, 0)
       const speed = Math.hypot(velocityX, velocityY);
       if (speed > 0.5) {
-        targetTilt = Math.max(-14, Math.min(14, velocityX * 1.4));
+        targetTilt = Math.max(-14, Math.min(14, velocityX * 1.3));
       } else if (isHovering) {
-        targetTilt = -5 + Math.sin(frameCount * 0.08) * 3;
+        targetTilt = -4 + Math.sin(frameCount * 0.08) * 3;
       } else {
-        targetTilt = Math.sin(frameCount * 0.05) * 2;
+        targetTilt = Math.sin(frameCount * 0.05) * 1.8;
       }
 
       currentTilt += (targetTilt - currentTilt) * 0.15;
 
-      if (featherElement) {
+      if (pivotElement) {
         const hoverScale = isHovering ? 1.15 : (isClicking ? 0.92 : 1.0);
-        featherElement.style.transform = `rotate(${currentTilt}deg) scale(${hoverScale})`;
+        pivotElement.style.transform = `rotate(${currentTilt}deg) scale(${hoverScale})`;
       }
     }
 
@@ -368,7 +367,6 @@
     init();
   }
 
-  // Export engine reference
   window.peacockCursor = {
     emitBurst: emitPeacockSupernova
   };
